@@ -1,20 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
-
-class Utilisateurs(models.Model):
-    
-    choix_role = [
-        ('admin', 'Administrateur'),
-        ('etudiant', 'Etudiant'),
-        ('enseignant', 'Enseignant')
-    ]
-    utilisateur_id = models.AutoField(primary_key=True)
-    user_name = models.CharField(max_length=20,null=False)
-    password = models.CharField(max_length=20,null=False)
-    role = models.CharField(choices=choix_role, default='etudiant')
-
-
 class Admins(models.Model):
     choix_poste = [
         ('directeur', 'Directeur'),
@@ -26,13 +12,13 @@ class Admins(models.Model):
     nom = models.CharField(max_length=20,null=False)
     prenom = models.CharField(max_length=20)
     poste = models.CharField(choices=choix_poste, default='concepteur')
-    utilisateur_id = models.ForeignKey(Utilisateurs, on_delete=models.CASCADE)
+    password = models.CharField(max_length=20,null=False)
 
 class Enseignants(models.Model):
     enseignant_id=models.AutoField(primary_key=True)
     nom=models.CharField(max_length=20,null=False)
     prenom=models.CharField(max_length=20)
-    utilisateur_id=models.ForeignKey(Utilisateurs,on_delete=models.CASCADE)
+    password = models.CharField(max_length=20,null=False)
     
 class Etudiants(models.Model):
     etudiant_id=models.AutoField(primary_key=True)
@@ -40,7 +26,7 @@ class Etudiants(models.Model):
     nom=models.CharField(max_length=20,null=False)
     prenom=models.CharField(max_length=20,null=False)
     dateNaiss=models.DateField(null=False)
-    utilisateur_id=models.ForeignKey(Utilisateurs,on_delete=models.CASCADE)
+    password = models.CharField(max_length=20,null=False)
 
 
 class Matieres(models.Model):
@@ -67,10 +53,3 @@ class Notes(models.Model):
     etudiant_id = models.ForeignKey(Etudiants, on_delete= models.CASCADE)
     evaluation_id = models.ForeignKey(Evaluation, on_delete=models.CASCADE)
     notes = models.IntegerField(null= False, validators=[MinValueValidator(0), MaxValueValidator(20)])
-
-
-
-
-
-
-

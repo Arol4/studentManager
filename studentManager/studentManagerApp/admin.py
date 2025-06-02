@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Utilisateurs,Admins,Enseignants,Etudiants,Matieres,Evaluation,Notes
-admin.site.register(Utilisateurs)
+from .models import Admins,Enseignants,Etudiants,Matieres,Evaluation,Notes
 admin.site.register(Admins)
 admin.site.register(Enseignants)
 admin.site.register(Etudiants)

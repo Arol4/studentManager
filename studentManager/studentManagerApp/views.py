@@ -3,6 +3,6 @@ from django.http import HttpResponse
 
 
 def home_view(request):
-    return render(request,'home-page.html')
+    return render(request,'studentManagerApp/log-in.html')
 
 # Create your views here.

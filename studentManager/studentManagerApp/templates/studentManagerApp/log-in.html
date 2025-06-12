@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentsManageR</title>
+    <link rel="stylesheet" href="{% static 'studentManagerApp/css/log-in.css' %}">
+    <link rel="shortcut icon" href="{% static 'studentManagerApp/images/favicon.png' %}" type="image/png">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Connexion</h1>
+        <form>
+            <div class="input-group">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="role">Rôle</label>
+                <select id="role" name="role" required>
+                    <option value="" disabled selected>Sélectionnez un rôle</option>
+                    <option value="etudiant">Étudiant</option>
+                    <option value="enseignant">Enseignant</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn">Se connecter</button>
+        </form>
+    </div>
+</body>
+</html>

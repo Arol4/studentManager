@@ -1,19 +1,12 @@
 <html>
     <head>
-        <title>Acceuil</title>
+        <title>StudentManagerApp</title>
     </head>
     <body>
         <h1>Connexion</h1>
-        <form>
-            <label>E-mail de l'utilisateur </label><input type="text" required><br>
-            <label>Mot de passe </label><input type="password" required><br>
-            <label>Role </label>
-            <select required>
-                <option disabled selected>Choisissez votre role </option>
-                <option>Etudiant</option>
-                <option>Enseignant</option>
-                <option>Administrateur</option>
-            </select><br>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
             <input type="submit" value="Se connecter">
             <input type="reset" value="Reinitialiser">
         </form>

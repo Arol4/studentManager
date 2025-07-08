@@ -1,35 +1,21 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudentsManageR</title>
-</head>
-<body>
-    <div class="login-container">
+<html>
+    <head>
+        <title>Acceuil</title>
+    </head>
+    <body>
         <h1>Connexion</h1>
         <form>
-            <div class="input-group">
-                <label for="username">Nom d'utilisateur</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            
-            <div class="input-group">
-                <label for="password">Mot de passe</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            
-            <div class="input-group">
-                <label for="role">Rôle</label>
-                <select id="role" name="role" required>
-                    <option value="" disabled selected>Sélectionnez un rôle</option>
-                    <option value="etudiant">Étudiant</option>
-                    <option value="enseignant">Enseignant</option>
-                    <option value="admin">Admin</option>
-                </select>
-            </div> 
-            <button type="submit" class="btn">Se connecter</button>
+            <label>E-mail de l'utilisateur </label><input type="text" required><br>
+            <label>Mot de passe </label><input type="password" required><br>
+            <label>Role </label>
+            <select required>
+                <option disabled selected>Choisissez votre role </option>
+                <option>Etudiant</option>
+                <option>Enseignant</option>
+                <option>Administrateur</option>
+            </select><br>
+            <input type="submit" value="Se connecter">
+            <input type="reset" value="Reinitialiser">
         </form>
-    </div>
-</body>
+    </body>
 </html>

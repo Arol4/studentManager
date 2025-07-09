@@ -1,19 +1,10 @@
-<html>
-    <head>
-        <title>StudentManagerApp</title>
-    </head>
-    <body>
-        {% if messages %}
-        {% for message in messages %}
-        {{message}}<br>
-        {% endfor %}
-        {% endif %}
-        <h1>Connexion</h1>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Se connecter">
-            <input type="reset" value="Reinitialiser">
-        </form>
-    </body>
-</html>
+{% extends 'studentManagerApp/base.html' %}
+{% block content %}
+<h1>Connexion</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Se connecter">
+    <input type="reset" value="Reinitialiser">
+</form>
+{% endblock %}

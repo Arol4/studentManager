@@ -13,6 +13,10 @@ class Administrateur(models.Model):
     prenom = models.CharField(max_length=20)
     poste = models.CharField(choices=choix_poste, default='concepteur')
     password = models.CharField(max_length=20,null=False)
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['nom','password'],name="Constraint_of_unicity_name_password_administrateur") 
+        ]
     def __str__(self):
         return f"{self.nom} {self.prenom} - {self.poste}"
 
@@ -21,6 +25,10 @@ class Enseignant(models.Model):
     nom=models.CharField(max_length=20,null=False)
     prenom=models.CharField(max_length=20)
     password = models.CharField(max_length=20,null=False)
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['nom','password'],name="Constraint_of_unicity_name_password_enseignant") 
+        ]
     def __str__(self):
         return f"{self.nom} {self.prenom}"
     
@@ -31,6 +39,10 @@ class Etudiant(models.Model):
     prenom=models.CharField(max_length=20,null=False)
     dateNaiss=models.DateField(null=False)
     password = models.CharField(max_length=20,null=False)
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['nom','password'],name="Constraint_of_unicity_name_password_etudiant") 
+        ]
     def __str__(self):
         return f"{self.nom} {self.prenom} - {self.matricule}"
 

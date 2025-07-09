@@ -5,7 +5,7 @@ class LoginForm(forms.Form):
     ('enseignant','Enseignant'),
     ('administrateur','Administrateur'),
     ]
-    email=forms.EmailField(label="E-mail de l'utilisateur")
+    nom=forms.CharField(label="Nom d'utilisateur")
     password=forms.CharField(widget=forms.PasswordInput(),label="Mot de passe")
     role=forms.ChoiceField(
         choices=roles,

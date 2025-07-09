@@ -8,7 +8,7 @@ class Administrateur(models.Model):
         ('vice_directeur', 'Vice directeur'),
         ('concepteur', 'Concepteur')
     ]
-    admin_id= models.AutoField(primary_key=True)
+    administrateur_id= models.AutoField(primary_key=True)
     nom = models.CharField(max_length=20,null=False)
     prenom = models.CharField(max_length=20)
     poste = models.CharField(choices=choix_poste, default='concepteur')

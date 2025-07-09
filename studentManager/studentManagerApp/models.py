@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
-class Admin(models.Model):
+class Administrateur(models.Model):
     choix_poste = [
         ('directeur', 'Directeur'),
         ('chef_departement', 'Chef de departememt'),

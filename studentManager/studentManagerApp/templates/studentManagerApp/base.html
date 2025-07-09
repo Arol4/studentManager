@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>StudentManagerApp</title>
+    </head>
+    <body>
+        {% if messages %}
+        {% for message in messages %}
+        {{message}}<br>
+        {% endfor %}
+        {% endif %}
+        {%  block content %}
+        {% endblock %}
+    </body>
+</html>

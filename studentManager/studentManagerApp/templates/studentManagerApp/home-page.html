@@ -1,10 +1,6 @@
-<html>
-    <head>
-        <title>StudentManagerApp</title>
-    </head>
-    <body>
-        <h1>acceuil</h1>
-        nom: {{user.nom}}<br>
-        role: {{user.role}}<br>
-    </body>
-</html>
+{% extends 'studentManagerApp/base.html' %}
+{% block content %}
+    <h1>acceuil</h1>
+    nom: {{user.nom}}<br>
+    role: {{user.role}}<br>
+{% endblock %}

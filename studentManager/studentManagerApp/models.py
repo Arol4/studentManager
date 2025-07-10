@@ -78,6 +78,6 @@ class Evaluation(models.Model):
 class Note(models.Model):
     etudiant_id = models.ForeignKey(Etudiant, on_delete= models.CASCADE)
     evaluation_id = models.ForeignKey(Evaluation, on_delete=models.CASCADE)
-    note = models.FloatField(null= False, validators=[MinValueValidator(0), MaxValueValidator(20)])
+    note = models.FloatField(null= True,blank=True, validators=[MinValueValidator(0), MaxValueValidator(20)])
     def __str__(self):
-        return f"{self.etudiant_id.nom} - {self.evaluation_id.type_evaluation} - Note: {self.note}"
+        return f"{self.etudiant_id.nom} - {self.evaluation_id.type_evaluation} - Note : {self.note}"

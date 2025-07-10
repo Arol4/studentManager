@@ -63,12 +63,12 @@ class Matiere(models.Model):
 
 class Evaluation(models.Model):
     choix_type = [
-        ('controle_continu', 'CC'),
-        ('session_normale', 'SN'),
+        ('CC', 'CC'),
+        ('SN', 'SN'),
     ]
 
     evaluation_id = models.AutoField(primary_key=True)
-    type_evaluation = models.CharField(choices= choix_type, default='controle_continu')
+    type_evaluation = models.CharField(choices= choix_type, default='CC')
     date_evaluation = models.DateField(auto_now_add=True)
     Matiere_id = models.ForeignKey(Matiere, on_delete=models.CASCADE)
     def __str__(self):
@@ -78,6 +78,6 @@ class Evaluation(models.Model):
 class Note(models.Model):
     etudiant_id = models.ForeignKey(Etudiant, on_delete= models.CASCADE)
     evaluation_id = models.ForeignKey(Evaluation, on_delete=models.CASCADE)
-    notes = models.IntegerField(null= False, validators=[MinValueValidator(0), MaxValueValidator(20)])
+    note = models.FloatField(null= False, validators=[MinValueValidator(0), MaxValueValidator(20)])
     def __str__(self):
-        return f"{self.etudiant_id.nom} {self.etudiant_id.prenom} - {self.evaluation_id.type_evaluation} - Note: {self.notes}"
+        return f"{self.etudiant_id.nom} - {self.evaluation_id.type_evaluation} - Note: {self.note}"

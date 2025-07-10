@@ -23,14 +23,16 @@ class Administrateur(models.Model):
 class Enseignant(models.Model):
     enseignant_id=models.AutoField(primary_key=True)
     nom=models.CharField(max_length=20,null=False)
-    prenom=models.CharField(max_length=20,null=True)
+    prenom=models.CharField(max_length=20,blank=True,null=True)
     password = models.CharField(max_length=20,null=False)
+    sexe = models.CharField(choices=[('m','Masculin'),('f','Féminin')],default='m')
     class Meta:
         constraints = [
             models.UniqueConstraint(fields=['nom','password'],name="Constraint_of_unicity_name_password_enseignant") 
         ]
     def __str__(self):
-        return f"{self.nom} {self.prenom}"
+        sexe = 'Mr' if (self.sexe == 'm') else 'Mme'
+        return f"{sexe} {self.nom}"
     
 class Etudiant(models.Model):
     etudiant_id=models.AutoField(primary_key=True)
@@ -39,6 +41,7 @@ class Etudiant(models.Model):
     prenom=models.CharField(max_length=20,null=False)
     dateNaiss=models.DateField(null=False)
     password = models.CharField(max_length=20,null=False)
+    sexe = models.CharField(choices=[('m','Masculin'),('f','Féminin')],default='m')
     class Meta:
         constraints = [
             models.UniqueConstraint(fields=['nom','password'],name="Constraint_of_unicity_name_password_etudiant") 
@@ -54,7 +57,8 @@ class Matiere(models.Model):
     nbre_credit = models.IntegerField()
     enseignant_id = models.ForeignKey(Enseignant, on_delete=models.CASCADE)
     def __str__(self):
-        return f"{self.libelle} - Semestre {self.semestre} - {self.enseignant_id.nom} {self.enseignant_id.prenom}"
+        sexe = 'Mr' if (self.enseignant_id.sexe == 'm') else 'Mme'
+        return f"{self.libelle} - Semestre {self.semestre} - {sexe} {self.enseignant_id.nom}"
 
 
 class Evaluation(models.Model):

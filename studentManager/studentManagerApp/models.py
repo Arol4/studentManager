@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import date
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Administrateur(models.Model):
@@ -35,8 +36,8 @@ class Enseignant(models.Model):
 class Etudiant(models.Model):
     etudiant_id=models.AutoField(primary_key=True)
     matricule=models.CharField(max_length=20,unique=True,null=False)
-    nom=models.CharField(max_length=20,null=False)
-    prenom=models.CharField(max_length=20,null=False)
+    nom=models.CharField(max_length=30,null=False)
+    prenom=models.CharField(max_length=30,null=False)
     dateNaiss=models.DateField(null=False)
     password = models.CharField(max_length=20,null=False)
     sexe = models.CharField(choices=[('m','Masculin'),('f','Féminin')],default='m')
@@ -67,11 +68,14 @@ class Evaluation(models.Model):
 
     evaluation_id = models.AutoField(primary_key=True)
     type_evaluation = models.CharField(choices= choix_type, default='CC')
-    date_evaluation = models.DateField(auto_now_add=True)
-    Matiere_id = models.ForeignKey(Matiere, on_delete=models.CASCADE)
+    date_evaluation = models.DateField(default=date.today)
+    matiere_id = models.ForeignKey(Matiere, on_delete=models.CASCADE)
     def __str__(self):
-        return f"{self.Matiere_id.libelle} - {self.type_evaluation} - {self.date_evaluation}"
-
+        return f"{self.matiere_id.libelle} - {self.type_evaluation} - {self.date_evaluation}"
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['matiere_id','type_evaluation'],name="Constraint_of_unicity_matiere_type_evaluation_evaluation") 
+        ]
 
 class Note(models.Model):
     etudiant_id = models.ForeignKey(Etudiant, on_delete= models.CASCADE)

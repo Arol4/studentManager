@@ -19,11 +19,15 @@ class NoteAdmin(admin.ModelAdmin):
     list_filter=('evaluation_id',)
     ordering=('evaluation_id','etudiant_id')
 
+class EvaluationAdmin(admin.ModelAdmin):
+    list_display=('matiere_id','type_evaluation',)
+    list_filter=('type_evaluation',)
+    ordering=('type_evaluation','matiere_id')
 admin.site.register(Administrateur,AdministrateurAdmin)
 admin.site.register(Enseignant)
 admin.site.register(Etudiant, EtudiantAdmin)
 admin.site.register(Matiere, MatiereAdmin)
-admin.site.register(Evaluation)
+admin.site.register(Evaluation, EvaluationAdmin)
 admin.site.register(Note, NoteAdmin)
 
 # Register your models here.

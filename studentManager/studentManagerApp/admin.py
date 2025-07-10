@@ -1,13 +1,29 @@
 from django.contrib import admin
 from .models import Administrateur,Enseignant,Etudiant,Matiere,Evaluation,Note
-admin.site.register(Administrateur)
-admin.site.register(Enseignant)
-admin.site.register(Etudiant)
-admin.site.register(Matiere)
-admin.site.register(Evaluation)
+class AdministrateurAdmin(admin.ModelAdmin):
+    list_display=('nom','prenom','poste',)
+    list_filter=('poste',)
+    ordering=('poste','nom')
+
+class EtudiantAdmin(admin.ModelAdmin):
+    list_display=('matricule','nom','prenom',)
+    ordering=('nom',)
+
+class MatiereAdmin(admin.ModelAdmin):
+    list_display=('libelle','semestre','nbre_credit','enseignant_id')
+    list_filter=('semestre',)
+    ordering=('semestre','libelle')
+
 class NoteAdmin(admin.ModelAdmin):
     list_display=('etudiant_id','evaluation_id','note',)
+    list_filter=('evaluation_id',)
     ordering=('evaluation_id','etudiant_id')
+
+admin.site.register(Administrateur,AdministrateurAdmin)
+admin.site.register(Enseignant)
+admin.site.register(Etudiant, EtudiantAdmin)
+admin.site.register(Matiere, MatiereAdmin)
+admin.site.register(Evaluation)
 admin.site.register(Note, NoteAdmin)
 
 # Register your models here.

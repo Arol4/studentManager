@@ -17,8 +17,6 @@ class Administrateur(models.Model):
         constraints = [
             models.UniqueConstraint(fields=['nom','password'],name="Constraint_of_unicity_name_password_administrateur") 
         ]
-    def __str__(self):
-        return f"{self.nom} {self.prenom} - {self.poste}"
 
 class Enseignant(models.Model):
     enseignant_id=models.AutoField(primary_key=True)
@@ -47,7 +45,7 @@ class Etudiant(models.Model):
             models.UniqueConstraint(fields=['nom','password'],name="Constraint_of_unicity_name_password_etudiant") 
         ]
     def __str__(self):
-        return f"{self.nom} {self.prenom} - {self.matricule}"
+        return f"{self.matricule} - {self.nom} {self.prenom}"
 
 
 class Matiere(models.Model):
@@ -72,7 +70,7 @@ class Evaluation(models.Model):
     date_evaluation = models.DateField(auto_now_add=True)
     Matiere_id = models.ForeignKey(Matiere, on_delete=models.CASCADE)
     def __str__(self):
-        return f"{self.type_evaluation} - {self.date_evaluation} - {self.Matiere_id.libelle}"
+        return f"{self.Matiere_id.libelle} - {self.type_evaluation} - {self.date_evaluation}"
 
 
 class Note(models.Model):

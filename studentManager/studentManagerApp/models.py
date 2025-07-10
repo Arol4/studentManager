@@ -23,7 +23,7 @@ class Administrateur(models.Model):
 class Enseignant(models.Model):
     enseignant_id=models.AutoField(primary_key=True)
     nom=models.CharField(max_length=20,null=False)
-    prenom=models.CharField(max_length=20)
+    prenom=models.CharField(max_length=20,null=True)
     password = models.CharField(max_length=20,null=False)
     class Meta:
         constraints = [

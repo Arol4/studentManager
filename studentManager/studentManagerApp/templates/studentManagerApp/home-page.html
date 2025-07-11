@@ -1,5 +1,17 @@
 {% extends 'studentManagerApp/initial-authentificate.html' %}
-{% block content_without_nav_footer %}
+{% block content_without_footer %}
+<nav>
+    <p>2024-2025</p>
+    Acceuil
+    {% if role != "etudiant" %}
+        <a href='#' >Édition des notes</a>
+    {% endif %}
+    <a href='#' >Tableau de notes</a>
+    <a href='#' >Profil</a>
+    <a href='#' >Déconnexion</a>
+</nav>
+<p>image ou initiale</p>
+<p>{{user.nom}}-{{role}}</p>
 <h1>acceuil</h1>
 nombre total d'étudiants : {{statistics.nombre_etudiants}}<br>
 nombre total de matières du semestre 1: {{statistics.nombre_matieres1}}<br>

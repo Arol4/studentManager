@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import LoginForm
-from .models import Etudiant,Enseignant,Administrateur
+from .models import Etudiant,Enseignant,Administrateur,Matiere
 
 
 def login_view(request):
@@ -35,6 +35,14 @@ def login_view(request):
     return render(request,'studentManagerApp/log-in.html',{'form':form})
 
 def home_page_view(request, id, role):
+    nombre_etudiants = Etudiant.objects.count()
+    nombre_matieres1 = len(Matiere.objects.filter(semestre=1))
+    nombre_matieres2 = len(Matiere.objects.filter(semestre=2))
+    nombre_enseignants = Enseignant.objects.count()
+    statistics = { 'nombre_etudiants':nombre_etudiants,
+                   'nombre_matieres1': nombre_matieres1,
+                    'nombre_matieres2':nombre_matieres2, 
+                    'nombre_enseignants':nombre_enseignants}
     if role == "etudiant":
         try:
             user=Etudiant.objects.get(etudiant_id=id)
@@ -53,5 +61,5 @@ def home_page_view(request, id, role):
         except Administrateur.DoesNotExist:
                 messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos administrateurs")
                 return redirect('login-page')
-    return render(request,'studentManagerApp/home-page.html',{'user':user,'role':role})
+    return render(request,'studentManagerApp/home-page.html',{'user':user, 'role':role, 'id':id, 'statistics': statistics})
 # Create your views here.

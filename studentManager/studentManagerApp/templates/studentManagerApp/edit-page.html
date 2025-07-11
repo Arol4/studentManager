@@ -13,5 +13,17 @@
 <p>image ou initiale</p>
 <p>{{user.nom}}-{{role}}</p>
 <h1>Editer les notes</h1>
+<form>
+    <label>Matière</label>
+    <select>
+    {% if liste_des_matieres_enseignees %}
+    {% for matiere_enseignee in liste_des_matieres_enseignees %}
+        <option>{{matiere_enseignee.libelle}}  - Semestre {{matiere_enseignee.semestre}}</option>
+    {% endfor %}
+    {% else %}
+    <option selected disabled> Aucune matière</option>
+    {% endif %}
+    </select>
+</form>
 
 {% endblock %}

@@ -1,4 +1,8 @@
 {% extends 'studentManagerApp/initial-authentificate.html' %}
 {% block content_without_nav_footer %}
 <h1>acceuil</h1>
+nombre total d'étudiants : {{statistics.nombre_etudiants}}<br>
+nombre total de matières du semestre 1: {{statistics.nombre_matieres1}}<br>
+nombre total de matières du semestre 2: {{statistics.nombre_matieres2}}<br>
+nombre total d'enseignant: {{statistics.nombre_enseignants}}
 {% endblock %}

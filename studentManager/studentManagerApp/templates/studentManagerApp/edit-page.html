@@ -1,0 +1,17 @@
+{% extends 'studentManagerApp/initial-authentificate.html' %}
+{% block content_without_footer %}
+<nav>
+    <p>2024-2025</p>
+    <a href="{% url 'home-page' role=role id=id %}" >Acceuil</a>
+    {% if role != "etudiant" %}
+        Édition des notes
+    {% endif %}
+    <a href='#' >Tableau de notes</a>
+    <a href='#' >Profil</a>
+    <a href='#' >Déconnexion</a>
+</nav>
+<p>image ou initiale</p>
+<p>{{user.nom}}-{{role}}</p>
+<h1>Editer les notes</h1>
+
+{% endblock %}

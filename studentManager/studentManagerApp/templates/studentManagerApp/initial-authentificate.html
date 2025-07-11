@@ -1,16 +1,6 @@
 {% extends 'studentManagerApp/base.html' %}
 {% block content %}
-<nav>
-    <p>2024-2025</p>
-    <a href="{% url 'home-page' role=role id=id %}" >Acceuil</a>
-    <a href='#' >Édition des notes</a>
-    <a href='#' >Tableau de notes</a>
-    <a href='#' >Profil</a>
-    <a href='#' >Déconnexion</a>
-</nav>
-<p>image ou initiale</p>
-<p>{{user.nom}}-{{role}}</p>
-{% block content_without_nav_footer %}
+{% block content_without_footer %}
 {% endblock %}
 <footer>
     Copyright 2024-2025

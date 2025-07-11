@@ -67,17 +67,19 @@ def edit_page_view(request, id, role):
     if role == "enseignant":
         try:
             user=Enseignant.objects.get(enseignant_id=id)
+            liste_des_matieres_enseignees = Matiere.objects.filter(enseignant_id=user)
         except Enseignant.DoesNotExist:
                 messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos enseignants")
                 return redirect('login-page')
     elif role == "administrateur":
         try:
             user=Administrateur.objects.get(administrateur_id=id)
+            liste_des_matieres_enseignees = Matiere.objects.all()
         except Administrateur.DoesNotExist:
                 messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos administrateurs")
                 return redirect('login-page')
     else:
         messages.error(request,"Les donneés que vous avez entré sont incorrectes")
         return redirect('login-page')
-    return render(request,'studentManagerApp/edit-page.html',{'user':user, 'role':role, 'id':id}) 
+    return render(request,'studentManagerApp/edit-page.html',{'user':user, 'role':role, 'id':id, 'liste_des_matieres_enseignees':liste_des_matieres_enseignees}) 
 # Create your views here.

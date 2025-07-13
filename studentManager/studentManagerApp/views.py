@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import LoginForm
-from .models import Etudiant,Enseignant,Administrateur,Matiere
+from .models import Etudiant, Enseignant, Administrateur, Matiere, Evaluation, Note
 
 
 def login_view(request):
@@ -75,6 +75,14 @@ def edit_page_view(request, id, role):
         try:
             user=Administrateur.objects.get(administrateur_id=id)
             liste_des_matieres_enseignees = Matiere.objects.all()
+            etudiants=Etudiant.objects.all()
+            ccs=[]
+            sns=[]
+            for matiere_enseignee in liste_des_matieres_enseignees:
+                cc = Evaluation.objects.get(matiere_id=matiere_enseignee,type_evaluation='CC')
+                ccs.append(Note.objects.filter(evaluation_id=cc))
+                sn = Evaluation.objects.get(matiere_id=matiere_enseignee,type_evaluation='SN')
+                sns.append(Note.objects.filter(evaluation_id=sn))
         except Administrateur.DoesNotExist:
                 messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos administrateurs")
                 return redirect('login-page')

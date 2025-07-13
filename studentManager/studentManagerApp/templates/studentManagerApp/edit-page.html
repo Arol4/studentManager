@@ -15,15 +15,27 @@
 <h1>Editer les notes</h1>
 <form>
     <label>Matière</label>
-    <select>
+    <select id="liste_des_matieres_enseignees">
     {% if liste_des_matieres_enseignees %}
+    <option selected disabled>Selectionnez une matière</option>
     {% for matiere_enseignee in liste_des_matieres_enseignees %}
-        <option>{{matiere_enseignee.libelle}}  - Semestre {{matiere_enseignee.semestre}}</option>
+        <option value="{{matiere_enseignee.libelle}}  - Semestre {{matiere_enseignee.semestre}}">{{matiere_enseignee.libelle}}  - Semestre {{matiere_enseignee.semestre}}</option>
     {% endfor %}
     {% else %}
     <option selected disabled> Aucune matière</option>
     {% endif %}
     </select>
+    <div id="notes_de_la_matiere_selectionnee"> Aucune matière sélectionneé </div>
 </form>
-
+<script>
+    const liste_des_matieres_enseignees=document.getElementById('liste_des_matieres_enseignees');
+    const notes_de_la_matiere_selectionnee=document.getElementById('notes_de_la_matiere_selectionnee');
+    liste_des_matieres_enseignees.addEventListener('change',function (){
+        if (liste_des_matieres_enseignees.value){
+            notes_de_la_matiere_selectionnee.textContent="Vous avez selectionné :" + liste_des_matieres_enseignees.options[liste_des_matieres_enseignees.selectedIndex].text;
+        }else{
+            notes_de_la_matiere_selectionnee.textContent="Aucune matière sélectionneé"
+        }
+    });
+</script>
 {% endblock %}

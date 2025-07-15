@@ -29,44 +29,75 @@
     <label>Type d'évaluation</label>
     <select id="types_evaluation">
         {% if liste_des_matieres_enseignees %}
-        <option value="CC" selected>Contrôle Continu (CC)</option>
+        <option value="" disabled selected>Selectionnez un type d'évaluation</option>
+        <option value="CC">Contrôle Continu (CC)</option>
         <option value="SN">Session Normale (SN)</option>
         {% else %}
         <option value="" disabled> Aucune matière</option>
         {% endif %}
     </select>
-    <div id="notes_de_la_matiere_selectionnee"> Aucune matière sélectionneé </div>
+    <div id="notes_de_la_matiere_selectionnee"> Sélectionnez une matière et un type d'évaluation pour afficher les notes des étudiants </div>
 </form>
 <script>
     const tableaux = {
         {% for matiere_enseignee in liste_des_matieres_enseignees %}
-        "{{ matiere_enseignee.libelle|escapejs }} - Semestre {{ matiere_enseignee.semestre|escapejs }}": {
-            headers : ["Noms et Prénoms", "CC", "SN"],
-            rows : [
-                {% for etudiant in etudiants %}
-                [
-                    "{{ etudiant.nom|escapejs }} {{ etudiant.prenom|escapejs }}",
-                    {% with cc_note=ccs|get_index:forloop.parentloop.counter0|get_index:forloop.counter0 %}
-                        {% if cc_note is None %}null{% else %}{{ cc_note }}{% endif %},
-                    {% endwith %}
-                    {% with sn_note=sns|get_index:forloop.parentloop.counter0|get_index:forloop.counter0 %}
-                        {% if sn_note is None %}null{% else %}{{ sn_note }}{% endif %}
-                    {% endwith %}
-                ]{% if not forloop.last %},{% endif %}
-                {% endfor %}
-            ] 
+        "{{ matiere_enseignee.libelle|escapejs }} - Semestre {{ matiere_enseignee.semestre|escapejs }}":{
+            "CC":{
+                headers:["Étudiant","Note"],
+                rows:[
+                    {% for etudiant in etudiants %}
+                    [
+                        "{{ etudiant.nom|escapejs }} {{ etudiant.prenom|escapejs }}",
+                        {% with cc_note=ccs|get_index:forloop.parentloop.counter0|get_index:forloop.counter0 %}
+                            {% if cc_note is None %}null{% else %}{{ cc_note }}{% endif %}
+                        {% endwith %}
+                    ]
+                    {% if not forloop.last %},{% endif %}
+                    {% endfor %}
+                ]
+            },
+            "SN":{
+                headers:["Étudiant","Note"],
+                rows:[
+                    {% for etudiant in etudiants %}
+                    [
+                        "{{ etudiant.nom|escapejs }} {{ etudiant.prenom|escapejs }}",
+                        {% with sn_note=sns|get_index:forloop.parentloop.counter0|get_index:forloop.counter0 %}
+                            {% if sn_note is None %}null{% else %}{{ sn_note }}{% endif %}
+                        {% endwith %}
+                    ]
+                    {% if not forloop.last %},{% endif %}
+                    {% endfor %}
+                ]
+            }
         }{% if not forloop.last %},{% endif %}
         {% endfor %}
     };
-
+    const types_evaluation = document.getElementById('types_evaluation');
     const liste_des_matieres_enseignees = document.getElementById('liste_des_matieres_enseignees');
     const notes_de_la_matiere_selectionnee = document.getElementById('notes_de_la_matiere_selectionnee');
     liste_des_matieres_enseignees.addEventListener('change', function() {
         const matiere_selectionnee = this.value;
+        const type_evaluation=types_evaluation.value;
         notes_de_la_matiere_selectionnee.innerHTML = '';
-        if (matiere_selectionnee && tableaux[matiere_selectionnee]) {
-            const tableau = creerTableauHTML(tableaux[matiere_selectionnee]);
+        if (matiere_selectionnee && type_evaluation && (tableaux[matiere_selectionnee])[type_evaluation]) {
+            const tableau = creerTableauHTML((tableaux[matiere_selectionnee])[type_evaluation]);
             notes_de_la_matiere_selectionnee.appendChild(tableau);
+        }else{
+            notes_de_la_matiere_selectionnee.textContent="Sélectionnez une matière et un type d'évaluation pour afficher les notes des étudiants";
+        }
+    });
+
+    types_evaluation.addEventListener('change', function() {
+        const type_evaluation = this.value;
+        const matiere_selectionnee = liste_des_matieres_enseignees.value;
+        notes_de_la_matiere_selectionnee.innerHTML = '';
+        if (matiere_selectionnee && type_evaluation && (tableaux[matiere_selectionnee])[type_evaluation]) {
+            const tableau = creerTableauHTML((tableaux[matiere_selectionnee])[type_evaluation]);
+            notes_de_la_matiere_selectionnee.appendChild(tableau);
+        }else{
+            notes_de_la_matiere_selectionnee.textContent="Sélectionnez une matière et un type d'évaluation pour afficher les notes des étudiants";
+
         }
     });
 

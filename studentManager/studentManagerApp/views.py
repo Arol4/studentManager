@@ -1,3 +1,4 @@
+from django.db.models import Prefetch
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import LoginForm
@@ -64,30 +65,86 @@ def home_page_view(request, id, role):
     return render(request,'studentManagerApp/home-page.html',{'user':user, 'role':role, 'id':id, 'statistics': statistics})
 
 def edit_page_view(request, id, role):
+    # Common setup
+    etudiants = Etudiant.objects.order_by('etudiant_id')
+    
     if role == "enseignant":
         try:
-            user=Enseignant.objects.get(enseignant_id=id)
-            liste_des_matieres_enseignees = Matiere.objects.filter(enseignant_id=user)
+            user = Enseignant.objects.get(enseignant_id=id)
+            matieres = Matiere.objects.filter(enseignant_id=user).order_by('matiere_id')
         except Enseignant.DoesNotExist:
-                messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos enseignants")
-                return redirect('login-page')
+            messages.error(request, "Les données ne correspondent à aucun enseignant")
+            return redirect('login-page')
+            
     elif role == "administrateur":
         try:
-            user=Administrateur.objects.get(administrateur_id=id)
-            liste_des_matieres_enseignees = Matiere.objects.all()
-            etudiants=Etudiant.objects.all()
-            ccs=[]
-            sns=[]
-            for matiere_enseignee in liste_des_matieres_enseignees:
-                cc = Evaluation.objects.get(matiere_id=matiere_enseignee,type_evaluation='CC')
-                ccs.append(Note.objects.filter(evaluation_id=cc))
-                sn = Evaluation.objects.get(matiere_id=matiere_enseignee,type_evaluation='SN')
-                sns.append(Note.objects.filter(evaluation_id=sn))
+            user = Administrateur.objects.get(administrateur_id=id)
+            matieres = Matiere.objects.all().order_by('matiere_id')
         except Administrateur.DoesNotExist:
-                messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos administrateurs")
-                return redirect('login-page')
+            messages.error(request, "Les données ne correspondent à aucun administrateur")
+            return redirect('login-page')
     else:
-        messages.error(request,"Les donneés que vous avez entré sont incorrectes")
+        messages.error(request, "Rôle incorrect")
         return redirect('login-page')
-    return render(request,'studentManagerApp/edit-page.html',{'user':user, 'role':role, 'id':id, 'liste_des_matieres_enseignees':liste_des_matieres_enseignees}) 
-# Create your views here.
+
+    # Prefetch evaluations and notes in optimized way
+    evaluations = Evaluation.objects.filter(
+        matiere_id__in=matieres,
+        type_evaluation__in=['CC', 'SN']
+    ).prefetch_related(
+        Prefetch('note_set', 
+                 queryset=Note.objects.filter(etudiant_id__in=etudiants),
+        to_attr='prefetched_notes')
+    )
+    
+    # Create evaluation mapping: {(matiere_id, type): evaluation}
+    eval_map = {}
+    for eval in evaluations:
+        key = (eval.matiere_id_id, eval.type_evaluation)
+        eval_map[key] = eval
+
+    # Prepare note data structure: {eval_id: {etudiant_id: note}}
+    note_data = {}
+    for eval in evaluations:
+        note_mapping = {}
+        for note in eval.prefetched_notes:
+            note_mapping[note.etudiant_id_id] = note.note
+        note_data[eval.evaluation_id] = note_mapping
+
+    # Build note matrices
+    ccs = []
+    sns = []
+    for matiere in matieres:
+        cc_notes = []
+        sn_notes = []
+        
+        # Get evaluations for this matiere
+        cc_eval = eval_map.get((matiere.matiere_id, 'CC'))
+        sn_eval = eval_map.get((matiere.matiere_id, 'SN'))
+        
+        # Build note lists for students
+        for etudiant in etudiants:
+            # CC notes
+            if cc_eval:
+                cc_notes.append(note_data[cc_eval.evaluation_id].get(etudiant.etudiant_id))
+            else:
+                cc_notes.append(None)
+                
+            # SN notes
+            if sn_eval:
+                sn_notes.append(note_data[sn_eval.evaluation_id].get(etudiant.etudiant_id))
+            else:
+                sn_notes.append(None)
+                
+        ccs.append(cc_notes)
+        sns.append(sn_notes)
+
+    return render(request, 'studentManagerApp/edit-page.html', {
+        'user': user,
+        'role': role,
+        'id': id,
+        'liste_des_matieres_enseignees': matieres,
+        'etudiants': etudiants,
+        'ccs': ccs,
+        'sns': sns
+    })

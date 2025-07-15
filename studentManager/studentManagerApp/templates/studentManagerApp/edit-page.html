@@ -26,6 +26,15 @@
     <option value="" disabled> Aucune matière</option>
     {% endif %}
     </select>
+    <label>Type d'évaluation</label>
+    <select id="types_evaluation">
+        {% if liste_des_matieres_enseignees %}
+        <option value="CC" selected>Contrôle Continu (CC)</option>
+        <option value="SN">Session Normale (SN)</option>
+        {% else %}
+        <option value="" disabled> Aucune matière</option>
+        {% endif %}
+    </select>
     <div id="notes_de_la_matiere_selectionnee"> Aucune matière sélectionneé </div>
 </form>
 <script>

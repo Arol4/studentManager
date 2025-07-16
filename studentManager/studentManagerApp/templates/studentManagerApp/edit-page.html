@@ -14,30 +14,30 @@
 <p>image ou initiale</p>
 <p>{{user.nom}}-{{role}}</p>
 <h1>Editer les notes</h1>
-<form>
-    <label>Matière</label>
-    <select id="liste_des_matieres_enseignees">
+
+<label>Matière</label>
+<select id="liste_des_matieres_enseignees">
+{% if liste_des_matieres_enseignees %}
+<option value="" disabled selected>Selectionnez une matière</option>
+{% for matiere_enseignee in liste_des_matieres_enseignees %}
+    <option value="{{ matiere_enseignee.libelle|escape }} - Semestre {{ matiere_enseignee.semestre|escape }}">{{ matiere_enseignee.libelle|escape }} - Semestre {{ matiere_enseignee.semestre|escape }}</option>
+{% endfor %}
+{% else %}
+<option value="" disabled> Aucune matière</option>
+{% endif %}
+</select>
+<label>Type d'évaluation</label>
+<select id="types_evaluation">
     {% if liste_des_matieres_enseignees %}
-    <option value="" disabled selected>Selectionnez une matière</option>
-    {% for matiere_enseignee in liste_des_matieres_enseignees %}
-        <option value="{{ matiere_enseignee.libelle|escape }} - Semestre {{ matiere_enseignee.semestre|escape }}">{{ matiere_enseignee.libelle|escape }} - Semestre {{ matiere_enseignee.semestre|escape }}</option>
-    {% endfor %}
+    <option value="" disabled selected>Selectionnez un type d'évaluation</option>
+    <option value="CC">Contrôle Continu (CC)</option>
+    <option value="SN">Session Normale (SN)</option>
     {% else %}
     <option value="" disabled> Aucune matière</option>
     {% endif %}
-    </select>
-    <label>Type d'évaluation</label>
-    <select id="types_evaluation">
-        {% if liste_des_matieres_enseignees %}
-        <option value="" disabled selected>Selectionnez un type d'évaluation</option>
-        <option value="CC">Contrôle Continu (CC)</option>
-        <option value="SN">Session Normale (SN)</option>
-        {% else %}
-        <option value="" disabled> Aucune matière</option>
-        {% endif %}
-    </select>
-    <div id="notes_de_la_matiere_selectionnee"> Sélectionnez une matière et un type d'évaluation pour afficher les notes des étudiants </div>
-</form>
+</select>
+<div id="notes_de_la_matiere_selectionnee"> Sélectionnez une matière et un type d'évaluation pour afficher les notes des étudiants </div>
+
 <script>
     const tableaux = {
         {% for matiere_enseignee in liste_des_matieres_enseignees %}
@@ -83,6 +83,9 @@
         if (matiere_selectionnee && type_evaluation && (tableaux[matiere_selectionnee])[type_evaluation]) {
             const tableau = creerTableauHTML((tableaux[matiere_selectionnee])[type_evaluation]);
             notes_de_la_matiere_selectionnee.appendChild(tableau);
+            const saveButton = document.createElement('button');
+            saveButton.textContent = 'Enregistrer les notes';
+            notes_de_la_matiere_selectionnee.appendChild(saveButton);
         }else{
             notes_de_la_matiere_selectionnee.textContent="Sélectionnez une matière et un type d'évaluation pour afficher les notes des étudiants";
         }
@@ -95,6 +98,9 @@
         if (matiere_selectionnee && type_evaluation && (tableaux[matiere_selectionnee])[type_evaluation]) {
             const tableau = creerTableauHTML((tableaux[matiere_selectionnee])[type_evaluation]);
             notes_de_la_matiere_selectionnee.appendChild(tableau);
+            const saveButton = document.createElement('button');
+            saveButton.textContent = 'Enregistrer les notes';
+            notes_de_la_matiere_selectionnee.appendChild(saveButton);
         }else{
             notes_de_la_matiere_selectionnee.textContent="Sélectionnez une matière et un type d'évaluation pour afficher les notes des étudiants";
 
@@ -120,7 +126,7 @@
             const row = document.createElement('tr');
             rowData.forEach((cellData, index) => {
                 const td = document.createElement('td');
-                if (index > 0 && cellData !== null) {
+                if (index > 0) {
                     const input = document.createElement('input');
                     input.type = 'number';
                     input.value = cellData;

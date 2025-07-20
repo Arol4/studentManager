@@ -1,6 +1,10 @@
 from django.db.models import Prefetch
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt 
+from datetime import date
+import json
 from .forms import LoginForm
 from .models import Etudiant, Enseignant, Administrateur, Matiere, Evaluation, Note
 
@@ -148,3 +152,40 @@ def edit_page_view(request, id, role):
         'ccs': ccs,
         'sns': sns
     })
+
+@csrf_exempt
+def enregistrer_notes(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            matiere_id = int(data['matiere_id'])
+            type_evaluation = data['type_evaluation']
+            notes = data['notes']  # Doit être un dict {etudiant_id: note}
+
+            try:
+                matiere = Matiere.objects.get(matiere_id=matiere_id)
+            except Matiere.DoesNotExist:
+                return JsonResponse({'error': 'Matière non trouvée'}, status=404)
+            
+            for etudiant_id, note in notes.items():
+                try:
+                    etudiant = Etudiant.objects.get(etudiant_id=etudiant_id)
+                except Etudiant.DoesNotExist:
+                    return JsonResponse({'error': f'Étudiant {etudiant_id} non trouvé'}, status=404)
+                evaluation, created = Evaluation.objects.get_or_create(
+                    matiere_id=matiere,
+                    type_evaluation=type_evaluation,
+                    defaults={'date_evaluation': date.today()}
+                )
+                Note.objects.update_or_create(
+                    etudiant_id=etudiant,
+                    evaluation_id=evaluation,
+                    defaults={'note': note}
+                )
+            return JsonResponse({'message': 'Notes enregistrées avec succès'})
+        except Exception as e:
+            return JsonResponse({
+                'error': str(e)
+            }, status=400)
+    
+    return JsonResponse({'error': 'Méthode non autorisée'}, status=405)

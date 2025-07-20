@@ -15,12 +15,13 @@
 <p>{{user.nom}}-{{role}}</p>
 <h1>Editer les notes</h1>
 
+{% csrf_token %}
 <label>Matière</label>
 <select id="liste_des_matieres_enseignees">
 {% if liste_des_matieres_enseignees %}
 <option value="" disabled selected>Selectionnez une matière</option>
 {% for matiere_enseignee in liste_des_matieres_enseignees %}
-    <option value="{{ matiere_enseignee.libelle|escape }} - Semestre {{ matiere_enseignee.semestre|escape }}">{{ matiere_enseignee.libelle|escape }} - Semestre {{ matiere_enseignee.semestre|escape }}</option>
+    <option value="{{ matiere_enseignee.matiere_id|escape }}">{{ matiere_enseignee.libelle|escape }} - Semestre {{ matiere_enseignee.semestre|escape }}</option>
 {% endfor %}
 {% else %}
 <option value="" disabled> Aucune matière</option>
@@ -41,17 +42,16 @@
 <script>
     const tableaux = {
         {% for matiere_enseignee in liste_des_matieres_enseignees %}
-        "{{ matiere_enseignee.libelle|escapejs }} - Semestre {{ matiere_enseignee.semestre|escapejs }}":{
+        "{{ matiere_enseignee.matiere_id|escapejs }}":{
             "CC":{
                 headers:["Étudiant","Note"],
                 rows:[
                     {% for etudiant in etudiants %}
-                    [
-                        "{{ etudiant.nom|escapejs }} {{ etudiant.prenom|escapejs }}",
-                        {% with cc_note=ccs|get_index:forloop.parentloop.counter0|get_index:forloop.counter0 %}
-                            {% if cc_note is None %}null{% else %}{{ cc_note }}{% endif %}
-                        {% endwith %}
-                    ]
+                    {
+                        id: {{etudiant.etudiant_id}},
+                        nom: "{{ etudiant.nom|escapejs }} {{ etudiant.prenom|escapejs }}",
+                        note: {% with cc_note=ccs|get_index:forloop.parentloop.counter0|get_index:forloop.counter0 %}{% if cc_note is None %}null{% else %}{{ cc_note }}{% endif %}{% endwith %}
+                    }
                     {% if not forloop.last %},{% endif %}
                     {% endfor %}
                 ]
@@ -60,12 +60,11 @@
                 headers:["Étudiant","Note"],
                 rows:[
                     {% for etudiant in etudiants %}
-                    [
-                        "{{ etudiant.nom|escapejs }} {{ etudiant.prenom|escapejs }}",
-                        {% with sn_note=sns|get_index:forloop.parentloop.counter0|get_index:forloop.counter0 %}
-                            {% if sn_note is None %}null{% else %}{{ sn_note }}{% endif %}
-                        {% endwith %}
-                    ]
+                    {
+                        id: {{etudiant.etudiant_id}},
+                        nom: "{{ etudiant.nom|escapejs }} {{ etudiant.prenom|escapejs }}",
+                        note: {% with sn_note=sns|get_index:forloop.parentloop.counter0|get_index:forloop.counter0 %}{% if sn_note is None %}null{% else %}{{ sn_note }}{% endif %}{% endwith %}
+                    }
                     {% if not forloop.last %},{% endif %}
                     {% endfor %}
                 ]
@@ -85,6 +84,7 @@
             notes_de_la_matiere_selectionnee.appendChild(tableau);
             const saveButton = document.createElement('button');
             saveButton.textContent = 'Enregistrer les notes';
+            saveButton.addEventListener('click', enregistrerNotes);
             notes_de_la_matiere_selectionnee.appendChild(saveButton);
         }else{
             notes_de_la_matiere_selectionnee.textContent="Sélectionnez une matière et un type d'évaluation pour afficher les notes des étudiants";
@@ -100,6 +100,7 @@
             notes_de_la_matiere_selectionnee.appendChild(tableau);
             const saveButton = document.createElement('button');
             saveButton.textContent = 'Enregistrer les notes';
+            saveButton.addEventListener('click', enregistrerNotes);
             notes_de_la_matiere_selectionnee.appendChild(saveButton);
         }else{
             notes_de_la_matiere_selectionnee.textContent="Sélectionnez une matière et un type d'évaluation pour afficher les notes des étudiants";
@@ -124,27 +125,72 @@
         const tbody = document.createElement('tbody');
         data.rows.forEach(rowData => {
             const row = document.createElement('tr');
-            rowData.forEach((cellData, index) => {
-                const td = document.createElement('td');
-                if (index > 0) {
-                    const input = document.createElement('input');
-                    input.type = 'number';
-                    input.value = cellData;
-                    input.min = 0;
-                    input.max = 20;
-                    input.step = 0.5;
-                    input.style.width = '50px';
-                    td.appendChild(input);
-                } else {
-                    td.textContent = cellData !== null ? cellData : '';
-                }
-                row.appendChild(td);
-            });
+            row.setAttribute('data-id', rowData.id);
+            
+            const tdNom = document.createElement('td');
+            tdNom.textContent = rowData.nom;
+            row.appendChild(tdNom);
+        
+            const tdNote = document.createElement('td');
+            const input = document.createElement('input');
+            input.type = 'number';
+            input.value = rowData.note;
+            input.min = 0;
+            input.max = 20;
+            input.step = 0.5;
+            input.style.width = '50px';
+            tdNote.appendChild(input);
+            row.appendChild(tdNote);
+            
             tbody.appendChild(row);
         });
         
         table.appendChild(tbody);
         return table;
+    }
+
+    function enregistrerNotes() {
+        const matiere_selectionnee = liste_des_matieres_enseignees.value;
+        const type_evaluation = types_evaluation.value;
+        const rows = notes_de_la_matiere_selectionnee.querySelectorAll('tbody tr');
+        
+        const notes = {};
+        rows.forEach(row => {
+            const id = row.getAttribute('data-id');
+            const input = row.querySelector('input');
+            const note = parseFloat(input.value);
+            notes[id] = isNaN(note) ? null : note;
+        });
+        const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        fetch("{% url 'enregistrer_notes' %}", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrfToken
+            },
+            body: JSON.stringify({
+                matiere_id: matiere_selectionnee,
+                type_evaluation: type_evaluation,
+                notes: notes 
+            })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erreur réseau');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.message) {
+                alert(data.message);
+            } else {
+                alert('Erreur inconnue');
+            }
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+            alert('Erreur réseau : ' + error.message);
+        });
     }
 </script>
 {% endblock %}

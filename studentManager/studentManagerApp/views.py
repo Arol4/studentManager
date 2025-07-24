@@ -153,6 +153,9 @@ def edit_page_view(request, id, role):
         'sns': sns
     })
 
+def tableau_notes_view(request, id, role):
+    return render(request, 'studentManagerApp/tableau-notes.html', {'role':role, 'id':id} )
+
 @csrf_exempt
 def enregistrer_notes(request):
     if request.method == 'POST':

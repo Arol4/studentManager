@@ -154,7 +154,68 @@ def edit_page_view(request, id, role):
     })
 
 def tableau_notes_view(request, id, role):
-    return render(request, 'studentManagerApp/tableau-notes.html', {'role':role, 'id':id} )
+    if role == "etudiant":
+        try:
+            user = Etudiant.objects.get(etudiant_id=id)
+        except Etudiant.DoesNotExist:
+            messages.error(request, "Les données ne correspondent à aucun étudiant")
+            return redirect('login-page')
+        matieres = Matiere.objects.all()
+        notes_cc=[]
+        notes_sn=[]
+        for matiere in matieres:
+            try:
+                evaluation_cc = Evaluation.objects.get(matiere_id=matiere, type_evaluation='CC')
+                note_cc = Note.objects.get(etudiant_id=user, evaluation_id=evaluation_cc).note
+            except (Evaluation.DoesNotExist, Note.DoesNotExist):
+                note_cc = None
+            
+            try:
+                evaluation_sn = Evaluation.objects.get(matiere_id=matiere, type_evaluation='SN')
+                note_sn = Note.objects.get(etudiant_id=user, evaluation_id=evaluation_sn).note
+            except (Evaluation.DoesNotExist, Note.DoesNotExist):
+                note_sn = None
+            
+            notes_cc.append(note_cc)
+            notes_sn.append(note_sn)
+    elif role == "enseignant":
+        try:
+            user = Enseignant.objects.get(enseignant_id=id)
+        except Enseignant.DoesNotExist:
+            messages.error(request, "Les données ne correspondent à aucun enseignant")
+            return redirect('login-page')
+        matieres = Matiere.objects.filter(enseignant_id=user)
+        ccs=[]
+        sns=[]
+        etudiants = Etudiant.objects.all()
+        for matiere in matieres:
+            notes_cc=[]
+            notes_sn=[]
+            try:
+                eval_cc = Evaluation.objects.get(type_evaluation='CC', matiere_id = matiere)
+            except Evaluation.DoesNotExist:
+                eval_cc=Evaluation.objects.create(type_evaluation='cc', matiere_id = matiere, date_evaluation=date.today)
+                # Il faut verifier si la ligne precedante est bien correcte( plus de detail sur le bloc note)
+            
+            try:
+                eval_cc = Evaluation.objects.get(type_evaluation='CC', matiere_id = matiere)
+            except Evaluation.DoesNotExist:
+                eval_cc=Evaluation.objects.create(type_evaluation='cc', matiere_id = matiere, date_evaluation=date.today)
+                # Il faut verifier si la ligne precedante est bien correcte( plus de detail sur le bloc note)
+
+
+                
+            
+    elif role == "administrateur":
+        try:
+            user = Administrateur.objects.get(administrateur_id=id)
+        except Administrateur.DoesNotExist:
+            messages.error(request, "Les données ne correspondent à aucun administrateur")
+            return redirect('login-page')
+    else:
+        messages.error(request, "Rôle incorrect")
+        return redirect('login-page')
+    return render(request, 'studentManagerApp/tableau-notes.html', {'role':role, 'id':id, 'user':user} )
 
 @csrf_exempt
 def enregistrer_notes(request):

@@ -3,7 +3,6 @@
 <nav>
     <p>2024-2025</p>
     <a href="{% url 'home-page' role=role id=id %}" >Acceuil</a>
-    
     {% if role != "etudiant" %}
         <a href="{% url 'edit-page' role=role id=id %}"> Édition des notes</a>
     {% endif %}
@@ -12,6 +11,6 @@
     <a href='#' >Déconnexion</a>
 </nav>
 <p>image ou initiale</p>
-<p>{{id}}-{{role}}</p>
+<p>{{user.nom}}-{{role}}</p>
 <h1>tableau de note</h1>
 {% endblock %}

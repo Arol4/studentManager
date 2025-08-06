@@ -180,6 +180,8 @@ def tableau_notes_view(request, id, role):
             notes_sn.append(note_sn)
         # Je crée un dictionnaire contenant les notes de CC et de SN
         notes={'CC':notes_cc, 'SN':note_sn}
+        # Je prépare le dictionnaire contenant les variables á transmettre á la vue du tableau de note
+        variables= {'role':role, 'id':id, 'user':user, 'notes':notes, 'matieres':matieres}
     elif role == "enseignant" or role == "administrateur":
         if role == "enseignant":
             try:
@@ -222,11 +224,11 @@ def tableau_notes_view(request, id, role):
             sns.append(notes_sn)
         # Je crée un dictionnaire contenant les notes de CC et de SN de tous les étudiants
         notes={'CC':ccs, 'SN':sns}
+        # Je prépare le dictionnaire contenant les variables á transmettre á la vue du tableau de note
+        variables= {'role':role, 'id':id, 'user':user, 'notes':notes, 'matieres':matieres, 'etudiants':etudiants}
     else:
         messages.error(request, "Rôle incorrect")
         return redirect('login-page')
-    # Je prépare le dictionnaire contenant les variables á transmettre á la vue du tableau de note
-    variables= {'role':role, 'id':id, 'user':user, 'notes':notes}
     return render(request, 'studentManagerApp/tableau-notes.html', variables)
     
 

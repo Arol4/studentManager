@@ -178,6 +178,8 @@ def tableau_notes_view(request, id, role):
             # Je mets les  notes de CC et SN dans leurs listes respectives
             notes_cc.append(note_cc)
             notes_sn.append(note_sn)
+        # Je crée un dictionnaire contenant les notes de CC et de SN
+        notes={'CC':notes_cc, 'SN':note_sn}
     elif role == "enseignant" or role == "administrateur":
         if role == "enseignant":
             try:
@@ -218,10 +220,15 @@ def tableau_notes_view(request, id, role):
             # Je mets les listes de notes de CC et SN dans le grand classeur
             ccs.append(notes_cc)
             sns.append(notes_sn)
+        # Je crée un dictionnaire contenant les notes de CC et de SN de tous les étudiants
+        notes={'CC':ccs, 'SN':sns}
     else:
         messages.error(request, "Rôle incorrect")
         return redirect('login-page')
-    return render(request, 'studentManagerApp/tableau-notes.html', {'role':role, 'id':id, 'user':user} )
+    # Je prépare le dictionnaire contenant les variables á transmettre á la vue du tableau de note
+    variables= {'role':role, 'id':id, 'user':user, 'notes':notes}
+    return render(request, 'studentManagerApp/tableau-notes.html', variables)
+    
 
 @csrf_exempt
 def enregistrer_notes(request):

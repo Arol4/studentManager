@@ -153,6 +153,7 @@ def edit_page_view(request, id, role):
         'sns': sns
     })
 
+# Vue qui renvoie vers le tableau de note
 def tableau_notes_view(request, id, role):
     if role == "etudiant":
         try:
@@ -161,57 +162,62 @@ def tableau_notes_view(request, id, role):
             messages.error(request, "Les données ne correspondent à aucun étudiant")
             return redirect('login-page')
         matieres = Matiere.objects.all()
+        # J'initialise les listes contenants les notes de CC et de SN de toutes les matières pour l'étudiant conserné
         notes_cc=[]
         notes_sn=[]
+        # Je récupere les notes de CC et de SN pour chaque matiere pour l'étudiant conserné
         for matiere in matieres:
-            try:
-                evaluation_cc = Evaluation.objects.get(matiere_id=matiere, type_evaluation='CC')
-                note_cc = Note.objects.get(etudiant_id=user, evaluation_id=evaluation_cc).note
-            except (Evaluation.DoesNotExist, Note.DoesNotExist):
-                note_cc = None
-            
-            try:
-                evaluation_sn = Evaluation.objects.get(matiere_id=matiere, type_evaluation='SN')
-                note_sn = Note.objects.get(etudiant_id=user, evaluation_id=evaluation_sn).note
-            except (Evaluation.DoesNotExist, Note.DoesNotExist):
-                note_sn = None
-            
+            # Je récupere ou cree les evaluations concernées
+            evaluation_cc,_ = Evaluation.objects.get_or_create(matiere_id=matiere, type_evaluation='CC')
+            evaluation_sn,_ = Evaluation.objects.get_or_create(matiere_id=matiere, type_evaluation='SN')
+            # Je récupere les notes de CC et de SN de l'étudiant concerné
+            note,_ = Note.objects.get_or_create(etudiant_id=user, evaluation_id=evaluation_cc)
+            note_cc=note.note
+            note,_ = Note.objects.get_or_create(etudiant_id=user, evaluation_id=evaluation_sn)
+            note_sn=note.note            
+            # Je mets les  notes de CC et SN dans leurs listes respectives
             notes_cc.append(note_cc)
             notes_sn.append(note_sn)
-    elif role == "enseignant":
-        try:
-            user = Enseignant.objects.get(enseignant_id=id)
-        except Enseignant.DoesNotExist:
-            messages.error(request, "Les données ne correspondent à aucun enseignant")
-            return redirect('login-page')
-        matieres = Matiere.objects.filter(enseignant_id=user)
+    elif role == "enseignant" or role == "administrateur":
+        if role == "enseignant":
+            try:
+                user = Enseignant.objects.get(enseignant_id=id)
+            except Enseignant.DoesNotExist:
+                messages.error(request, "Les données ne correspondent à aucun enseignant")
+                return redirect('login-page')
+            matieres = Matiere.objects.filter(enseignant_id=user)
+        else:
+            try:
+                user = Administrateur.objects.get(administrateur_id=id)
+            except Administrateur.DoesNotExist:
+                messages.error(request, "Les données ne correspondent à aucun administrateur")
+                return redirect('login-page')
+            matieres = Matiere.objects.all()
+        # J'initialise 2 grands classeurs pour toutes les notes de CC et de SN des matières concernées et tous les étudiants
         ccs=[]
         sns=[]
         etudiants = Etudiant.objects.all()
+        # Je récupere les notes de tous les étudiants dans les matières concernées 
         for matiere in matieres:
+            # J'initialise les listes contenant les notes de CC et de SN de tous les étudiants pour matière 
             notes_cc=[]
             notes_sn=[]
-            try:
-                eval_cc = Evaluation.objects.get(type_evaluation='CC', matiere_id = matiere)
-            except Evaluation.DoesNotExist:
-                eval_cc=Evaluation.objects.create(type_evaluation='cc', matiere_id = matiere, date_evaluation=date.today)
-                # Il faut verifier si la ligne precedante est bien correcte( plus de detail sur le bloc note)
-            
-            try:
-                eval_cc = Evaluation.objects.get(type_evaluation='CC', matiere_id = matiere)
-            except Evaluation.DoesNotExist:
-                eval_cc=Evaluation.objects.create(type_evaluation='cc', matiere_id = matiere, date_evaluation=date.today)
-                # Il faut verifier si la ligne precedante est bien correcte( plus de detail sur le bloc note)
-
-
-                
-            
-    elif role == "administrateur":
-        try:
-            user = Administrateur.objects.get(administrateur_id=id)
-        except Administrateur.DoesNotExist:
-            messages.error(request, "Les données ne correspondent à aucun administrateur")
-            return redirect('login-page')
+            # Je récupere ou cree les evaluations concernées
+            eval_cc, _= Evaluation.objects.get_or_create(type_evaluation='CC', matiere_id = matiere)
+            eval_sn, _ = Evaluation.objects.get_or_create(type_evaluation='SN', matiere_id = matiere)
+            # Je récupere les notes de CC et de SN de chaque etudiant
+            for etudiant in etudiants:
+                # Je récupere les notes de CC et de SN de l'étudiant
+                note,_ = Note.objects.get_or_create(etudiant_id=etudiant, evaluation_id=eval_cc)
+                note_cc=note.note
+                note,_ = Note.objects.get_or_create(etudiant_id=etudiant, evaluation_id=eval_sn)
+                note_sn=note.note  
+                # Je mets ces notes dans leurs listes respectives
+                notes_cc.append(note_cc)
+                notes_sn.append(note_sn)
+            # Je mets les listes de notes de CC et SN dans le grand classeur
+            ccs.append(notes_cc)
+            sns.append(notes_sn)
     else:
         messages.error(request, "Rôle incorrect")
         return redirect('login-page')
@@ -224,7 +230,7 @@ def enregistrer_notes(request):
             data = json.loads(request.body)
             matiere_id = int(data['matiere_id'])
             type_evaluation = data['type_evaluation']
-            notes = data['notes']  # Doit être un dict {etudiant_id: note}
+            notes = data['notes']
 
             try:
                 matiere = Matiere.objects.get(matiere_id=matiere_id)

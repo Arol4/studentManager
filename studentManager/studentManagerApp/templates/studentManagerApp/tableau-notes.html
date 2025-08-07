@@ -1,4 +1,5 @@
 {% extends 'studentManagerApp/initial-authentificate.html' %}
+{% load custom_filters %}
 {% block content_without_footer %}
 <nav>
     <p>2024-2025</p>
@@ -13,4 +14,27 @@
 <p>image ou initiale</p>
 <p>{{user.nom}}-{{role}}</p>
 <h1>tableau de note</h1>
+{% if role == "etudiant"%}
+    <table>
+    <tr><td>Nom(s) et Prénom(s)</td><td><strong>{{user.nom}} {{user.prenom}}</strong><td></tr>
+    <tr><td>Né le</td><td><strong>{{user.dateNaiss}}</strong><td></tr>
+    <tr><td>Matricule</td><td><strong>{{user.matricule}}</strong><td></tr>
+    </table>
+    <table border="1">
+        <tr>
+            <th>Matière</th>
+            <th>Crédit affectée</th>
+            <th>Controle Continu</th>
+            <th>Session Normale</th>
+        </tr>
+        {% for matiere in matieres %}
+            <tr>
+                <td>{{ matiere.libelle }}</td>
+                <td>{{ matiere.nbre_credit }}</td>
+                <td>{% with note=notes.CC|get_index:forloop.counter0 %} {% if note%}{{note}}{% endif %}{% endwith %}</td>
+                <td>{% with note=notes.SN|get_index:forloop.counter0 %} {% if note%}{{note}}{% endif %}{% endwith %}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
 {% endblock %}

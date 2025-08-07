@@ -230,7 +230,6 @@ def tableau_notes_view(request, id, role):
         messages.error(request, "Rôle incorrect")
         return redirect('login-page')
     return render(request, 'studentManagerApp/tableau-notes.html', variables)
-    
 
 @csrf_exempt
 def enregistrer_notes(request):

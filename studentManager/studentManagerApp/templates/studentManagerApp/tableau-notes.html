@@ -26,13 +26,23 @@
             <th>Crédit affectée</th>
             <th>Controle Continu</th>
             <th>Session Normale</th>
+            <th>Moyenne</th>
+            <th>Grade</th>
         </tr>
         {% for matiere in matieres %}
             <tr>
+                {% with note_cc=notes.CC|get_index:forloop.counter0 note_sn=notes.SN|get_index:forloop.counter0 %}
+                    {% with moy=note_sn|get_final_note:note_cc %}
+                        {% with grade=moy|get_grade %}
                 <td>{{ matiere.libelle }}</td>
-                <td>{{ matiere.nbre_credit }}</td>
-                <td>{% with note=notes.CC|get_index:forloop.counter0 %} {% if note%}{{note}}{% endif %}{% endwith %}</td>
-                <td>{% with note=notes.SN|get_index:forloop.counter0 %} {% if note%}{{note}}{% endif %}{% endwith %}</td>
+                <td>{{ matiere.nbre_credit }}</td>  
+                <td>{% if note_cc %}{{note_cc}}{% endif %}</td>
+                <td>{% if note_sn %}{{note_sn}}{% endif %}</td>
+                <td>{% if moy %}{{moy}}{% endif %} </td>
+                <td>{% if grade %}{{grade}}{% endif %} </td>
+                        {% endwith %}
+                    {% endwith %}
+                {% endwith %}
             </tr>
         {% endfor %}
     </table>

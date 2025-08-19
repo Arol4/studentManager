@@ -30,3 +30,14 @@ def get_grade(note):
         return grade
     except (TypeError, NameError):
         return None        
+
+@register.filter
+def get_decision(note):
+    try:
+        if note>=10:
+            DEC="VA"
+        else:
+            DEC="NV"
+        return DEC
+    except (TypeError, NameError):
+        return None        

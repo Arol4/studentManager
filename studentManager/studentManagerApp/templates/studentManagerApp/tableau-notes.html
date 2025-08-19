@@ -34,15 +34,55 @@
                 {% with note_cc=notes.CC|get_index:forloop.counter0 note_sn=notes.SN|get_index:forloop.counter0 %}
                     {% with moy=note_sn|get_final_note:note_cc %}
                         {% with grade=moy|get_grade %}
-                <td>{{ matiere.libelle }}</td>
-                <td>{{ matiere.nbre_credit }}</td>  
-                <td>{% if note_cc %}{{note_cc}}{% endif %}</td>
-                <td>{% if note_sn %}{{note_sn}}{% endif %}</td>
-                <td>{% if moy %}{{moy}}{% endif %} </td>
-                <td>{% if grade %}{{grade}}{% endif %} </td>
+                            <td>{{ matiere.libelle }}</td>
+                            <td>{{ matiere.nbre_credit }}</td>  
+                            <td>{% if note_cc %}{{note_cc}}{% endif %}</td>
+                            <td>{% if note_sn %}{{note_sn}}{% endif %}</td>
+                            <td>{% if moy %}{{moy}}{% endif %} </td>
+                            <td>{% if grade %}{{grade}}{% endif %} </td>
                         {% endwith %}
                     {% endwith %}
                 {% endwith %}
+            </tr>
+        {% endfor %}
+    </table>
+{% elif role == "administrateur"  %}
+    <table border = "1">
+        <tr>
+            <th rowspan='2' >Nom(s) et Prénom(s)</th>
+            {% for  matiere in matieres %}
+                <th colspan='5' >{{matiere.libelle}} {{matiere.semestre}}</th>
+            {% endfor %}
+        </tr>
+        <tr>
+            {% for matiere in matieres %}
+                <th>CC</th>
+                <th>SN</th>
+                <th>MOY</th>
+                <th>CR</th>
+                <th>DEC</th>
+            {% endfor %}
+        </tr>
+        {% for etudiant in etudiants %}
+            <tr>
+                <td>{{etudiant.nom}} {{etudiant.prenom}}</td>
+                {% for matiere in matieres %}
+                    {% with cc_note=notes.CC|get_index:forloop.counter0|get_index:forloop.parentloop.counter0 %}
+                    {% with sn_note=notes.SN|get_index:forloop.counter0|get_index:forloop.parentloop.counter0 %}
+                    {% with moy=sn_note|get_final_note:cc_note %}
+                    {% with credit=matiere.nbre_credit %}
+                    {% with decision=moy|get_decision %}
+                        <td>{% if cc_note %}{{cc_note}}{% endif %}</td>
+                        <td>{% if sn_note %}{{sn_note}}{% endif %}</td>
+                        <td>{% if moy %}{{moy}}{% endif %}</td>
+                        <td>{{credit}}</td>
+                        <td>{% if decision %}{{decision}}{% endif %}</td>
+                    {% endwith %}
+                    {% endwith %}
+                    {% endwith %}
+                    {% endwith %}
+                    {% endwith %}
+                {% endfor %}
             </tr>
         {% endfor %}
     </table>

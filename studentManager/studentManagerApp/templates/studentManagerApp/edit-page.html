@@ -9,7 +9,7 @@
     {% endif %}
     <a href="{% url 'tableau-notes' role=role id=id %}" >Tableau de notes</a>
     <a href='#' >Profil</a>
-    <a href='#' >Déconnexion</a>
+    <a href="{% url 'login-page' %}" >Déconnexion</a>
 </nav>
 <p>image ou initiale</p>
 <p>{{user.nom}}-{{role}}</p>

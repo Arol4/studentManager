@@ -267,3 +267,27 @@ def enregistrer_notes(request):
             }, status=400)
     
     return JsonResponse({'error': 'Méthode non autorisée'}, status=405)
+
+def profile_page_view(request, id, role):
+    if role == "etudiant":
+        try:
+            user = Etudiant.objects.get(etudiant_id=id)
+        except Etudiant.DoesNotExist:
+            messages.error(request, "Les données ne correspondent à aucun étudiant")
+            return redirect('login-page')
+    elif role == "enseignant":
+        try:
+            user = Enseignant.objects.get(enseignant_id=id)
+        except Enseignant.DoesNotExist:
+            messages.error(request, "Les données ne correspondent à aucun enseignant")
+            return redirect('login-page')
+    elif role == "administrateur":
+        try:
+            user = Administrateur.objects.get(administrateur_id=id)
+        except Administrateur.DoesNotExist:
+            messages.error(request, "Les données ne correspondent à aucun administrateur")
+            return redirect('login-page')
+    else:
+        messages.error(request, "Rôle incorrect")
+        return redirect('login-page')
+    return render(request, 'studentManagerApp/profile-page.html', {'user': user, 'role': role, 'id': id})

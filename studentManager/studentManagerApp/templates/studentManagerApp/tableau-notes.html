@@ -8,7 +8,7 @@
         <a href="{% url 'edit-page' role=role id=id %}"> Édition des notes</a>
     {% endif %}
     Tableau de notes
-    <a href='#' >Profil</a>
+    <a href="{% url 'profile-page' role=role id=id %}" >Profil</a>
     <a href="{% url 'login-page' %}" >Déconnexion</a>
 </nav>
 <p>image ou initiale</p>
@@ -16,9 +16,9 @@
 <h1>tableau de note</h1>
 {% if role == "etudiant" %}
     <table>
+    <tr><td>Matricule</td><td><strong>{{user.matricule}}</strong><td></tr>
     <tr><td>Nom(s) et Prénom(s)</td><td><strong>{{user.nom}} {{user.prenom}}</strong><td></tr>
     <tr><td>Né le</td><td><strong>{{user.dateNaiss}}</strong><td></tr>
-    <tr><td>Matricule</td><td><strong>{{user.matricule}}</strong><td></tr>
     </table>
     <table border="1">
         <tr>

@@ -8,7 +8,7 @@
         Édition des notes
     {% endif %}
     <a href="{% url 'tableau-notes' role=role id=id %}" >Tableau de notes</a>
-    <a href='#' >Profil</a>
+    <a href="{% url 'profile-page' role=role id=id %}" >Profil</a>
     <a href="{% url 'login-page' %}" >Déconnexion</a>
 </nav>
 <p>image ou initiale</p>

@@ -3,16 +3,16 @@
 {% block content_without_footer %}
 <nav>
     <p>2024-2025</p>
-    <a href="{% url 'home-page' role=role id=id %}" >Acceuil</a>
-    {% if role != "etudiant" %}
+    <a href="{% url 'home-page' role=user.role id=user.id %}" >Acceuil</a>
+    {% if user.role != "etudiant" %}
         Édition des notes
     {% endif %}
-    <a href="{% url 'tableau-notes' role=role id=id %}" >Tableau de notes</a>
-    <a href="{% url 'profile-page' role=role id=id %}" >Profil</a>
+    <a href="{% url 'tableau-notes' role=user.role id=user.id %}" >Tableau de notes</a>
+    <a href="{% url 'profile-page' role=user.role id=user.id %}" >Profil</a>
     <a href="{% url 'login-page' %}" >Déconnexion</a>
 </nav>
 <p>image ou initiale</p>
-<p>{{user.nom}}-{{role}}</p>
+<p>{{user.nom}}-{{user.role}}</p>
 <h1>Editer les notes</h1>
 {% csrf_token %}
 <label>Matière</label>
@@ -35,7 +35,7 @@
 <label>Type d'évaluation</label>
 <select id="types_evaluation">
     {% if liste_des_matieres_enseignees %}
-        {% if role == "administrateur" %}
+        {% if user.role == "administrateur" %}
     <option value="" disabled selected>Selectionnez un type d'évaluation</option>
     <option value="CC">Contrôle Continu (CC)</option>
     <option value="SN">Session Normale (SN)</option>

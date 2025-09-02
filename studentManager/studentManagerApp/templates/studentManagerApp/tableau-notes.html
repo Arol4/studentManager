@@ -3,18 +3,18 @@
 {% block content_without_footer %}
 <nav>
     <p>2024-2025</p>
-    <a href="{% url 'home-page' role=role id=id %}" >Acceuil</a>
-    {% if role != "etudiant" %}
-        <a href="{% url 'edit-page' role=role id=id %}"> Édition des notes</a>
+    <a href="{% url 'home-page' role=user.role id=user.id %}" >Acceuil</a>
+    {% if user.role != "etudiant" %}
+        <a href="{% url 'edit-page' role=user.role id=user.id %}"> Édition des notes</a>
     {% endif %}
     Tableau de notes
-    <a href="{% url 'profile-page' role=role id=id %}" >Profil</a>
+    <a href="{% url 'profile-page' role=user.role id=user.id %}" >Profil</a>
     <a href="{% url 'login-page' %}" >Déconnexion</a>
 </nav>
 <p>image ou initiale</p>
-<p>{{user.nom}}-{{role}}</p>
+<p>{{user.nom}}-{{user.role}}</p>
 <h1>tableau de note</h1>
-{% if role == "etudiant" %}
+{% if user.role == "etudiant" %}
     <table>
     <tr><td>Matricule</td><td><strong>{{user.matricule}}</strong><td></tr>
     <tr><td>Nom(s) et Prénom(s)</td><td><strong>{{user.nom}} {{user.prenom}}</strong><td></tr>
@@ -50,18 +50,18 @@
             </tr>
         {% endfor %}
     </table>
-{% elif role == "administrateur" or  role == "enseignant" %}
+{% elif user.role == "administrateur" or  user.role == "enseignant" %}
     <table border = "1">
         <tr>
             <th rowspan='2' >Nom(s) et Prénom(s)</th>
             {% for  matiere in matieres %}
-                <th colspan={% if role == "administrateur" %}'5'{% else %}'1'{% endif %} >{{matiere.libelle}} {{matiere.semestre}}</th>
+                <th colspan={% if user.role == "administrateur" %}'5'{% else %}'1'{% endif %} >{{matiere.libelle}} {{matiere.semestre}}</th>
             {% endfor %}
         </tr>
         <tr>
             {% for matiere in matieres %}
                 <th>CC</th>
-                {% if role == "administrateur" %}
+                {% if user.role == "administrateur" %}
                     <th>SN</th>
                     <th>MOY</th>
                     <th>CR</th>
@@ -79,7 +79,7 @@
                     {% with credit=matiere.nbre_credit %}
                     {% with decision=moy|get_decision %}
                         <td>{% if cc_note %}{{cc_note}}{% endif %}</td>
-                        {% if role == "administrateur" %}
+                        {% if user.role == "administrateur" %}
                             <td>{% if sn_note %}{{sn_note}}{% endif %}</td>
                             <td>{% if moy %}{{moy}}{% endif %}</td>
                             <td>{{credit}}</td>

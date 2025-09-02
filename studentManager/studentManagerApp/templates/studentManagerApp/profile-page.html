@@ -2,25 +2,25 @@
 {% block content_without_footer %}
 <nav>
     <p>2024-2025</p>
-    <a href="{% url 'home-page' role=role id=id %}" >Acceuil</a>
-    {% if role != "etudiant" %}
-        <a href="{% url 'edit-page' role=role id=id %}" >Édition des notes</a>
+    <a href="{% url 'home-page' role=user.role id=user.id %}" >Acceuil</a>
+    {% if user.role != "etudiant" %}
+        <a href="{% url 'edit-page' role=user.role id=user.id %}" >Édition des notes</a>
     {% endif %}
-    <a href="{% url 'tableau-notes' role=role id=id %}" >Tableau de notes</a>
+    <a href="{% url 'tableau-notes' role=user.role id=user.id %}" >Tableau de notes</a>
     Profil
     <a href="{% url 'login-page' %}" >Déconnexion</a>
 </nav>
 <p>image ou initiale</p>
-<p>{{ user.nom }}-{{ role }}</p>
+<p>{{ user.nom }}-{{ user.role }}</p>
 <h1>Profil</h1>
 <table>
-    {% if role == "etudiant" %}
+    {% if user.role == "etudiant" %}
         <tr><td>Matricule</td><td><strong>{{ user.matricule }}</strong></td></tr>
         <tr><td>Nom(s) et Prénom(s)</td><td><strong>{{ user.nom }} {{ user.prenom }}</strong></td></tr>
         <tr><td>Né le</td><td><strong>{{ user.dateNaiss }}</strong></td></tr>
-    {% elif role == "enseignant" %}
+    {% elif user.role == "enseignant" %}
         <tr><td>Nom(s) et Prénom(s)<td><td><strong>{{ user.nom }}{% if user.prenom %} {{ user.prenom }} {% endif %}</strong></td></tr>
-    {% elif role == "administrateur" %}
+    {% elif user.role == "administrateur" %}
         <tr><td>Nom(s) et Pénom(s)</td><td><strong>{{ user.nom }} {% if user.prenom %} {{ user.prenom }} {% endif %}</strong></td></tr>
         <tr><td>Poste</td><td><strong>{{ user.poste}}</strong></td></tr>
     {% endif %}

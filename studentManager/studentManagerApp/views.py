@@ -66,7 +66,13 @@ def home_page_view(request, id, role):
         except Administrateur.DoesNotExist:
                 messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos administrateurs")
                 return redirect('login-page')
-    return render(request,'studentManagerApp/home-page.html',{'user':user, 'role':role, 'id':id, 'statistics': statistics})
+    
+    del(user.password)
+    delattr(user, role + "_id")
+    del(user._state)
+    user.id = id
+    user.role = role
+    return render(request,'studentManagerApp/home-page.html',{'user':user, 'statistics': statistics})
 
 def edit_page_view(request, id, role):
     # Common setup
@@ -142,11 +148,12 @@ def edit_page_view(request, id, role):
                 
         ccs.append(cc_notes)
         sns.append(sn_notes)
-
+    delattr(user, role + "_id")
+    del(user._state)
+    user.id = id
+    user.role = role
     return render(request, 'studentManagerApp/edit-page.html', {
         'user': user,
-        'role': role,
-        'id': id,
         'liste_des_matieres_enseignees': matieres,
         'etudiants': etudiants,
         'ccs': ccs,
@@ -181,7 +188,12 @@ def tableau_notes_view(request, id, role):
         # Je crée un dictionnaire contenant les notes de CC et de SN
         notes={'CC':notes_cc, 'SN':notes_sn}
         # Je prépare le dictionnaire contenant les variables á transmettre á la vue du tableau de note
-        variables= {'role':role, 'id':id, 'user':user, 'notes':notes, 'matieres':matieres}
+        del(user.password)
+        del(user._state)
+        delattr(user, role + "_id")
+        user.id = id
+        user.role = role
+        variables= {'user':user, 'notes':notes, 'matieres':matieres}
     elif role == "enseignant" or role == "administrateur":
         if role == "enseignant":
             try:
@@ -225,7 +237,12 @@ def tableau_notes_view(request, id, role):
         # Je crée un dictionnaire contenant les notes de CC et de SN de tous les étudiants
         notes={'CC':ccs, 'SN':sns}
         # Je prépare le dictionnaire contenant les variables á transmettre á la vue du tableau de note
-        variables= {'role':role, 'id':id, 'user':user, 'notes':notes, 'matieres':matieres, 'etudiants':etudiants}
+        del(user.password)
+        delattr(user, role + "_id")
+        del(user._state)
+        user.id = id
+        user.role = role
+        variables= {'user':user, 'notes':notes, 'matieres':matieres, 'etudiants':etudiants}
     else:
         messages.error(request, "Rôle incorrect")
         return redirect('login-page')
@@ -290,4 +307,10 @@ def profile_page_view(request, id, role):
     else:
         messages.error(request, "Rôle incorrect")
         return redirect('login-page')
-    return render(request, 'studentManagerApp/profile-page.html', {'user': user, 'role': role, 'id': id})
+    
+    del(user.password)
+    del(user._state)
+    delattr(user, role + "_id")
+    user.id = id
+    user.role = role
+    return render(request, 'studentManagerApp/profile-page.html', {'user': user})

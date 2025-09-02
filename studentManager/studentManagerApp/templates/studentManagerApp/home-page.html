@@ -3,15 +3,15 @@
 <nav>
     <p>2024-2025</p>
     Acceuil
-    {% if role != "etudiant" %}
-        <a href="{% url 'edit-page' role=role id=id %}" >Édition des notes</a>
+    {% if user.role != "etudiant" %}
+        <a href="{% url 'edit-page' role=user.role id=user.id %}" >Édition des notes</a>
     {% endif %}
-    <a href="{% url 'tableau-notes' role=role id=id %}" >Tableau de notes</a>
-    <a href="{% url 'profile-page' role=role id=id %}" >Profil</a>
+    <a href="{% url 'tableau-notes' role=user.role id=user.id %}" >Tableau de notes</a>
+    <a href="{% url 'profile-page' role=user.role id=user.id %}" >Profil</a>
     <a href="{% url 'login-page' %}" >Déconnexion</a>
 </nav>
 <p>image ou initiale</p>
-<p>{{user.nom}}-{{role}}</p>
+<p>{{user.nom}}-{{user.role}}</p>
 <h1>acceuil</h1>
 nombre total d'étudiants : {{statistics.nombre_etudiants}}<br>
 nombre total de matières du semestre 1: {{statistics.nombre_matieres1}}<br>

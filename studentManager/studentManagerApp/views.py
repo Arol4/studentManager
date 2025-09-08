@@ -37,7 +37,7 @@ def login_view(request):
             return redirect('home-page', id=id, role=role)
     else:
         form=LoginForm()
-    return render(request,'studentManagerApp/log-in.html',{'form':form})
+    return render(request,'studentManagerApp/HTML/log-in.html',{'form':form})
 
 def home_page_view(request, id, role):
     nombre_etudiants = Etudiant.objects.count()
@@ -72,7 +72,7 @@ def home_page_view(request, id, role):
     del(user._state)
     user.id = id
     user.role = role
-    return render(request,'studentManagerApp/home-page.html',{'user':user, 'statistics': statistics})
+    return render(request,'studentManagerApp/HTML/home-page.html',{'user':user, 'statistics': statistics})
 
 def edit_page_view(request, id, role):
     # Common setup
@@ -152,7 +152,7 @@ def edit_page_view(request, id, role):
     del(user._state)
     user.id = id
     user.role = role
-    return render(request, 'studentManagerApp/edit-page.html', {
+    return render(request, 'studentManagerApp/HTML/edit-page.html', {
         'user': user,
         'liste_des_matieres_enseignees': matieres,
         'etudiants': etudiants,
@@ -246,7 +246,7 @@ def tableau_notes_view(request, id, role):
     else:
         messages.error(request, "Rôle incorrect")
         return redirect('login-page')
-    return render(request, 'studentManagerApp/tableau-notes.html', variables)
+    return render(request, 'studentManagerApp/HTML/tableau-notes.html', variables)
 
 @csrf_exempt
 def enregistrer_notes(request):
@@ -313,4 +313,4 @@ def profile_page_view(request, id, role):
     delattr(user, role + "_id")
     user.id = id
     user.role = role
-    return render(request, 'studentManagerApp/profile-page.html', {'user': user})
+    return render(request, 'studentManagerApp/HTML/profile-page.html', {'user': user})

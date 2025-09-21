@@ -7,8 +7,9 @@ from datetime import date
 import json
 from .forms import LoginForm
 from .models import Etudiant, Enseignant, Administrateur, Matiere, Evaluation, Note
+import logging
 
-
+logger = logging.getLogger('studentManagerApp')
 def login_view(request):
     if request.method =='POST':
         form=LoginForm(request.POST)
@@ -33,7 +34,8 @@ def login_view(request):
                     id=Administrateur.objects.get(nom=nom,password=password).administrateur_id
                 except Administrateur.DoesNotExist:
                         messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos administrateurs")
-                        return redirect('login-page')               
+                        return redirect('login-page')
+            logger.info(f"Connexion réussie de l'utilisateur {nom} ({role}).")                 
             return redirect('home-page', id=id, role=role)
     else:
         form=LoginForm()

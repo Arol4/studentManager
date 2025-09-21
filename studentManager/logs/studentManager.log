@@ -1,0 +1,7 @@
+INFO 2025-09-21 15:29:36,631 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-09-21 15:29:37,267 autoreload Watching for file changes with StatReloader
+INFO 2025-09-21 15:29:46,109 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 596
+INFO 2025-09-21 15:29:50,006 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-09-21 15:29:57,331 views Connexion réussie de l'utilisateur Djeufack Kafack (etudiant).
+INFO 2025-09-21 15:29:57,333 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-09-21 15:29:57,352 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 596

@@ -5,3 +5,122 @@ INFO 2025-09-21 15:29:50,006 basehttp "GET / HTTP/1.1" 200 955
 INFO 2025-09-21 15:29:57,331 views Connexion réussie de l'utilisateur Djeufack Kafack (etudiant).
 INFO 2025-09-21 15:29:57,333 basehttp "POST / HTTP/1.1" 302 0
 INFO 2025-09-21 15:29:57,352 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 596
+INFO 2025-09-23 13:05:41,338 autoreload Watching for file changes with StatReloader
+INFO 2025-09-23 13:05:48,846 basehttp "GET / HTTP/1.1" 200 955
+WARNING 2025-09-23 13:05:49,041 log Not Found: /favicon.ico
+WARNING 2025-09-23 13:05:49,042 basehttp "GET /favicon.ico HTTP/1.1" 404 3387
+INFO 2025-09-23 13:05:59,624 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-09-23 13:05:59,633 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-09-23 13:05:59,667 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 689
+INFO 2025-09-23 13:06:34,965 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58217
+INFO 2025-09-23 13:06:35,027 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 304 0
+INFO 2025-09-23 13:07:03,898 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-09-23 13:07:38,980 views Connexion réussie de l'utilisateur Tambou (enseignant).
+INFO 2025-09-23 13:07:38,981 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-09-23 13:07:39,000 basehttp "GET /home-page/enseignant/7 HTTP/1.1" 200 664
+INFO 2025-09-23 13:08:09,361 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2025-09-23 13:08:10,020 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-09-23 13:08:10,050 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-09-23 13:08:10,074 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-09-23 13:08:10,082 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-09-23 13:08:10,090 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-09-23 13:08:10,094 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-09-23 13:08:10,098 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-09-23 13:08:18,700 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-09-23 13:08:18,755 basehttp "GET /admin/ HTTP/1.1" 200 14412
+INFO 2025-09-23 13:08:18,825 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-09-23 13:08:18,860 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-09-23 13:08:18,864 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-09-23 13:08:18,864 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-09-23 13:09:03,904 basehttp "GET /admin/studentManagerApp/enseignant/ HTTP/1.1" 200 14134
+INFO 2025-09-23 13:09:03,993 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-09-23 13:09:04,003 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-09-23 13:09:04,004 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-09-23 13:09:04,006 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-09-23 13:09:04,007 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-09-23 13:09:04,017 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-09-23 13:09:04,018 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-23 13:09:04,019 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-09-23 13:09:04,027 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-09-23 13:09:04,033 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-09-23 13:09:04,069 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-09-23 13:09:04,088 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-09-23 13:09:08,022 basehttp "GET /admin/studentManagerApp/enseignant/9/change/ HTTP/1.1" 200 13777
+INFO 2025-09-23 13:09:08,089 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-09-23 13:09:08,094 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-09-23 13:09:08,098 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-23 13:09:08,113 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-09-23 13:09:08,114 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-09-23 13:09:11,424 basehttp "GET /admin/studentManagerApp/enseignant/ HTTP/1.1" 200 14134
+INFO 2025-09-23 13:09:14,980 basehttp "GET /admin/studentManagerApp/matiere/ HTTP/1.1" 200 17875
+INFO 2025-09-23 13:09:15,051 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-23 13:09:15,075 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-09-23 13:09:15,075 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-09-23 13:09:29,760 basehttp "GET /admin/studentManagerApp/etudiant/ HTTP/1.1" 200 16609
+INFO 2025-09-23 13:09:29,833 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-23 13:09:31,020 basehttp "GET /admin/studentManagerApp/enseignant/ HTTP/1.1" 200 14134
+INFO 2025-09-23 13:09:31,077 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-23 13:09:43,816 basehttp "GET /admin/studentManagerApp/enseignant/add/ HTTP/1.1" 200 13506
+INFO 2025-09-23 13:09:43,896 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-23 13:09:59,166 basehttp "POST /admin/studentManagerApp/enseignant/add/ HTTP/1.1" 302 0
+INFO 2025-09-23 13:09:59,201 basehttp "GET /admin/studentManagerApp/enseignant/ HTTP/1.1" 200 14639
+INFO 2025-09-23 13:09:59,255 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-23 13:09:59,280 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-09-23 13:10:08,923 basehttp "GET /edit-page/enseignant/7 HTTP/1.1" 200 18397
+INFO 2025-09-23 13:10:10,389 basehttp "GET /home-page/enseignant/7 HTTP/1.1" 200 664
+INFO 2025-09-23 13:10:11,332 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-09-23 13:10:27,535 views Connexion réussie de l'utilisateur Wandji (enseignant).
+INFO 2025-09-23 13:10:27,536 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-09-23 13:10:27,554 basehttp "GET /home-page/enseignant/11 HTTP/1.1" 200 667
+INFO 2025-09-23 13:10:30,339 basehttp "GET /edit-page/enseignant/11 HTTP/1.1" 200 1297
+INFO 2025-09-23 13:20:45,013 autoreload Watching for file changes with StatReloader
+INFO 2025-09-23 13:20:50,279 basehttp "GET /edit-page/enseignant/11 HTTP/1.1" 200 907
+INFO 2025-09-23 13:20:59,970 basehttp "GET /home-page/enseignant/11 HTTP/1.1" 200 667
+INFO 2025-09-23 13:21:00,975 basehttp "GET /edit-page/enseignant/11 HTTP/1.1" 200 907
+INFO 2025-09-23 13:21:04,284 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-09-23 13:21:18,749 views Connexion réussie de l'utilisateur Tambou (enseignant).
+INFO 2025-09-23 13:21:18,750 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-09-23 13:21:18,774 basehttp "GET /home-page/enseignant/7 HTTP/1.1" 200 664
+INFO 2025-09-23 13:21:20,257 basehttp "GET /edit-page/enseignant/7 HTTP/1.1" 200 18445
+INFO 2025-09-23 13:21:39,447 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 57969
+INFO 2025-09-23 13:21:39,535 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-23 13:21:53,208 basehttp "GET /admin/studentManagerApp/note/?evaluation_id__evaluation_id__exact=12 HTTP/1.1" 200 21426
+INFO 2025-09-23 13:21:53,285 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-23 13:22:05,235 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-09-23 13:22:10,593 basehttp "GET /admin/studentManagerApp/note/142/change/?_changelist_filters=evaluation_id__evaluation_id__exact%3D12 HTTP/1.1" 200 17546
+INFO 2025-09-23 13:22:10,666 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-23 13:22:14,213 basehttp "GET /admin/ HTTP/1.1" 200 14432
+INFO 2025-09-23 13:25:47,609 autoreload Watching for file changes with StatReloader
+INFO 2025-09-23 13:25:53,857 basehttp "GET /edit-page/enseignant/7 HTTP/1.1" 200 18407
+INFO 2025-09-23 13:26:06,320 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-09-23 13:26:13,877 views Connexion réussie de l'utilisateur Djeufack Kafack (etudiant).
+INFO 2025-09-23 13:26:13,878 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-09-23 13:26:13,917 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 596
+INFO 2025-09-23 13:26:15,409 basehttp "GET /tableau-notes/etudiant/1 HTTP/1.1" 200 5249
+INFO 2025-09-23 13:26:17,454 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 596
+INFO 2025-09-23 13:26:28,152 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-09-23 13:26:36,397 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-09-23 13:26:36,398 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-09-23 13:26:36,421 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 689
+INFO 2025-09-23 13:26:41,001 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58227
+INFO 2025-09-28 16:34:19,978 autoreload Watching for file changes with StatReloader
+INFO 2025-09-28 16:34:25,932 basehttp "GET / HTTP/1.1" 200 955
+WARNING 2025-09-28 16:34:26,205 log Not Found: /favicon.ico
+WARNING 2025-09-28 16:34:26,207 basehttp "GET /favicon.ico HTTP/1.1" 404 3387
+INFO 2025-09-28 16:34:41,737 views Connexion réussie de l'utilisateur Tambou (enseignant).
+INFO 2025-09-28 16:34:41,746 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-09-28 16:34:41,777 basehttp "GET /home-page/enseignant/7 HTTP/1.1" 200 664
+INFO 2025-09-28 16:35:08,467 basehttp "GET /edit-page/enseignant/7 HTTP/1.1" 200 18416
+INFO 2025-09-28 16:35:08,525 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 304 0
+INFO 2025-09-28 16:43:08,092 autoreload Watching for file changes with StatReloader
+INFO 2025-09-28 16:43:11,667 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-09-28 16:43:33,539 views Connexion réussie de l'utilisateur Tambou (enseignant).
+INFO 2025-09-28 16:43:33,549 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-09-28 16:43:33,590 basehttp "GET /home-page/enseignant/7 HTTP/1.1" 200 664
+INFO 2025-09-28 16:43:38,392 basehttp "GET /edit-page/enseignant/7 HTTP/1.1" 200 18420
+INFO 2025-09-28 16:43:48,663 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-09-28 16:44:03,715 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-09-28 16:44:03,716 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-09-28 16:44:03,736 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 689
+INFO 2025-09-28 16:44:05,325 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58239
+INFO 2025-09-28 16:44:16,746 basehttp "GET / HTTP/1.1" 200 955

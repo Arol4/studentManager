@@ -16,9 +16,9 @@
 <p>{{user.nom}}-{{user.role}}</p>
 <h1>Editer les notes</h1>
 {% csrf_token %}
-<label>Matière</label>
-<select id="liste_des_matieres_enseignees">
 {% if liste_des_matieres_enseignees %}
+    <label>Matière</label>
+    <select id="liste_des_matieres_enseignees">
     {% if liste_des_matieres_enseignees|length == 1 %}
         {% for matiere_enseignee in liste_des_matieres_enseignees %}
     <option value="{{ matiere_enseignee.matiere_id|escape }}">{{ matiere_enseignee.libelle|escape }} - Semestre {{ matiere_enseignee.semestre|escape }}</option>
@@ -29,25 +29,23 @@
     <option value="{{ matiere_enseignee.matiere_id|escape }}">{{ matiere_enseignee.libelle|escape }} - Semestre {{ matiere_enseignee.semestre|escape }}</option>
         {% endfor %}
     {% endif %}
-{% else %}
-<option value="" disabled> Aucune matière</option>
-{% endif %}
-</select>
-<label>Type d'évaluation</label>
-<select id="types_evaluation">
-    {% if liste_des_matieres_enseignees %}
-        {% if user.role == "administrateur" %}
-    <option value="" disabled selected>Selectionnez un type d'évaluation</option>
-    <option value="CC">Contrôle Continu (CC)</option>
-    <option value="SN">Session Normale (SN)</option>
-        {% else %}
-    <option value="CC" selected>Contrôle Continu (CC)</option>
-        {% endif %}
+    </select>
+    <label>Type d'évaluation</label>
+    {% if user.role == "administrateur" %}
+    <select id="types_evaluation">
+        <option value="" disabled selected>Selectionnez un type d'évaluation</option>
+        <option value="CC">Contrôle Continu (CC)</option>
+        <option value="SN">Session Normale (SN)</option>
+    </select>
     {% else %}
-    <option value="" disabled> Aucune matière</option>
+    <select id="types_evaluation" disabled>
+        <option value="CC" selected>Contrôle Continu (CC)</option>
+    </select>
     {% endif %}
-</select>
-<div id="notes_de_la_matiere_selectionnee"> Sélectionnez une matière et un type d'évaluation pour afficher les notes des étudiants </div>
+    <div id="notes_de_la_matiere_selectionnee"> Sélectionnez une matière et un type d'évaluation pour afficher les notes des étudiants </div>
+{% else %}
+<p>Aucune matière</p>
+{% endif %}
 <script src = "{% static 'studentManagerApp/JS/edit-page.js' %}"></script>
 <script>
     window.notesData = {

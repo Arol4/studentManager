@@ -348,6 +348,8 @@ def profile_page_view(request, id, role):
 def log_out_view(request):
     if 'session_token' in request.COOKIES:
         token = request.COOKIES['session_token']
+        session_utilisateur = SessionUtilisateur.objects.get(token_session = token)
+        logger.info(f"Déconnexion réussie de l'utilisateur {session_utilisateur.name} ({session_utilisateur.type_utilisateur}).") 
         SessionUtilisateur.objects.filter(token_session=token).delete()
     response = redirect('login-page')
     response.delete_cookie('session_token')

@@ -692,3 +692,33 @@ INFO 2025-10-15 18:26:34,852 basehttp "GET / HTTP/1.1" 302 0
 INFO 2025-10-15 18:26:34,906 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 603
 INFO 2025-10-15 18:26:36,830 basehttp "GET /log-out HTTP/1.1" 302 0
 INFO 2025-10-15 18:26:36,849 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-15 19:32:08,052 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 19:33:48,635 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 19:33:57,931 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-15 19:34:06,801 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-15 19:34:06,802 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-15 19:34:06,840 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-15 19:34:38,986 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-10-15 19:34:39,074 basehttp "GET /admin/ HTTP/1.1" 200 15252
+INFO 2025-10-15 19:34:41,124 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 15193
+INFO 2025-10-15 19:34:41,230 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-15 19:42:28,270 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 19:42:47,399 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-15 19:42:47,447 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-15 19:42:50,638 views Déconnexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-15 19:42:50,646 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-15 19:42:50,676 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-15 19:43:29,227 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 12270
+INFO 2025-10-15 19:43:29,321 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-15 19:43:59,497 views Connexion réussie de l'utilisateur Tambou (enseignant).
+INFO 2025-10-15 19:43:59,498 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-15 19:43:59,527 basehttp "GET /home-page/enseignant/7 HTTP/1.1" 200 671
+INFO 2025-10-15 19:44:02,572 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 15180
+INFO 2025-10-15 19:44:02,643 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-15 19:44:19,896 basehttp "GET /admin/studentManagerApp/sessionutilisateur/?type_utilisateur__exact=etudiant HTTP/1.1" 200 12992
+INFO 2025-10-15 19:44:19,978 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-15 19:44:22,193 basehttp "GET /admin/studentManagerApp/sessionutilisateur/? HTTP/1.1" 200 15180
+INFO 2025-10-15 19:44:22,257 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-15 19:44:28,798 views Déconnexion réussie de l'utilisateur Tambou (enseignant).
+INFO 2025-10-15 19:44:28,807 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-15 19:44:28,826 basehttp "GET / HTTP/1.1" 200 955

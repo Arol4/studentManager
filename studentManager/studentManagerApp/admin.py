@@ -3,7 +3,7 @@ from .models import Administrateur,Enseignant,Etudiant,Matiere,Evaluation,Note,S
 class AdministrateurAdmin(admin.ModelAdmin):
     list_display=('nom','prenom','poste',)
     list_filter=('poste',)
-    ordering=('poste','nom')
+    ordering=('poste','nom',)
 
 class EtudiantAdmin(admin.ModelAdmin):
     list_display=('matricule','nom','prenom',)
@@ -12,22 +12,22 @@ class EtudiantAdmin(admin.ModelAdmin):
 class MatiereAdmin(admin.ModelAdmin):
     list_display=('libelle','semestre','nbre_credit','enseignant_id')
     list_filter=('semestre',)
-    ordering=('semestre','libelle')
+    ordering=('semestre','libelle',)
 
 class NoteAdmin(admin.ModelAdmin):
     list_display=('etudiant_id','evaluation_id','note',)
     list_filter=('evaluation_id',)
-    ordering=('evaluation_id','etudiant_id')
+    ordering=('evaluation_id','etudiant_id',)
 
 class EvaluationAdmin(admin.ModelAdmin):
     list_display=('matiere_id','type_evaluation',)
     list_filter=('type_evaluation',)
-    ordering=('type_evaluation','matiere_id')
+    ordering=('type_evaluation','matiere_id',)
 
 class SessionUtilisateurAdmin(admin.ModelAdmin):
-    list_display=('type_utilisateur','utilisateur_id','date_creation','date_expiration',)
+    list_display=('type_utilisateur','name','date_creation','date_expiration',)
     list_filter=('type_utilisateur',)
-    ordering=('type_utilisateur','date_creation')
+    ordering=('type_utilisateur','date_creation','name',)
 admin.site.register(Administrateur,AdministrateurAdmin)
 admin.site.register(Enseignant)
 admin.site.register(Etudiant, EtudiantAdmin)

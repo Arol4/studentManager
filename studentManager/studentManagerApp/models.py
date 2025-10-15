@@ -96,8 +96,17 @@ class SessionUtilisateur(models.Model):
     date_expiration = models.DateTimeField(default=timezone.now())
     ip_address = models.GenericIPAddressField(null=True, blank=True)
     user_agent = models.TextField(null = True, blank = True)
+    name = models.CharField(null = True, blank = True)
 
     def save(self, *args, **kwargs):
         if self.date_expiration and timezone.is_naive(self.date_expiration):
             self.date_expiration = timezone.make_aware(self.date_expiration, timezone.get_current_timezone())
+
+        if self.type_utilisateur == 'etudiant':
+            self.name = (Etudiant.objects.get(etudiant_id=self.utilisateur_id)).nom
+        elif self.type_utilisateur == 'enseignant':
+            self.name = (Enseignant.objects.get(enseignant_id=self.utilisateur_id)).nom
+        elif self.type_utilisateur == 'administrateur':
+            self.name = (Administrateur.objects.get(administrateur_id=self.utilisateur_id)).nom
+
         super().save(*args, **kwargs)

@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import date
+from django.utils import timezone
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Administrateur(models.Model):
@@ -81,3 +82,22 @@ class Note(models.Model):
     etudiant_id = models.ForeignKey(Etudiant, on_delete= models.CASCADE)
     evaluation_id = models.ForeignKey(Evaluation, on_delete=models.CASCADE)
     note = models.FloatField(null= True,blank=True, validators=[MinValueValidator(0), MaxValueValidator(20)])
+
+class SessionUtilisateur(models.Model):
+    TYPE_UTILISATEUR = (
+        ('etudiant', 'Étudiant'),
+        ('enseignant', 'Enseignant'),
+        ('administrateur', 'Administrateur')
+    )
+    type_utilisateur = models.CharField(max_length=20, choices=TYPE_UTILISATEUR)
+    utilisateur_id = models.PositiveIntegerField()
+    token_session = models.CharField(max_length=100, unique=True)
+    date_creation = models.DateTimeField(auto_now_add=True)
+    date_expiration = models.DateTimeField(default=timezone.now())
+    ip_address = models.GenericIPAddressField(null=True, blank=True)
+    user_agent = models.TextField(null = True, blank = True)
+
+    def save(self, *args, **kwargs):
+        if self.date_expiration and timezone.is_naive(self.date_expiration):
+            self.date_expiration = timezone.make_aware(self.date_expiration, timezone.get_current_timezone())
+        super().save(*args, **kwargs)

@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+SESSION_COOKIE_AGE = 7 # in days
 # Application definition
 
 INSTALLED_APPS = [
@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'studentManagerApp.middleware.AuthMiddleware',
 ]
 
 ROOT_URLCONF = 'studentManager.urls'

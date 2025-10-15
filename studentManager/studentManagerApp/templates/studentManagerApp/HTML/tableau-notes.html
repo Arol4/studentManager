@@ -9,7 +9,7 @@
     {% endif %}
     Tableau de notes
     <a href="{% url 'profile-page' role=user.role id=user.id %}" >Profil</a>
-    <a href="{% url 'login-page' %}" >Déconnexion</a>
+    <a href="{% url 'log-out' %}" >Déconnexion</a>
 </nav>
 <p>image ou initiale</p>
 <p>{{user.nom}}-{{user.role}}</p>

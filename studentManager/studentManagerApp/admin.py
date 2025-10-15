@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Administrateur,Enseignant,Etudiant,Matiere,Evaluation,Note
+from .models import Administrateur,Enseignant,Etudiant,Matiere,Evaluation,Note,SessionUtilisateur
 class AdministrateurAdmin(admin.ModelAdmin):
     list_display=('nom','prenom','poste',)
     list_filter=('poste',)
@@ -23,11 +23,17 @@ class EvaluationAdmin(admin.ModelAdmin):
     list_display=('matiere_id','type_evaluation',)
     list_filter=('type_evaluation',)
     ordering=('type_evaluation','matiere_id')
+
+class SessionUtilisateurAdmin(admin.ModelAdmin):
+    list_display=('type_utilisateur','utilisateur_id','date_creation','date_expiration',)
+    list_filter=('type_utilisateur',)
+    ordering=('type_utilisateur','date_creation')
 admin.site.register(Administrateur,AdministrateurAdmin)
 admin.site.register(Enseignant)
 admin.site.register(Etudiant, EtudiantAdmin)
 admin.site.register(Matiere, MatiereAdmin)
 admin.site.register(Evaluation, EvaluationAdmin)
 admin.site.register(Note, NoteAdmin)
+admin.site.register(SessionUtilisateur, SessionUtilisateurAdmin)
 
 # Register your models here.

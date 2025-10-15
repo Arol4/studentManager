@@ -1,13 +1,16 @@
 from django.db.models import Prefetch
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.http import JsonResponse
+from django.conf import settings
+from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt 
 from datetime import date
 import json
 from .forms import LoginForm
-from .models import Etudiant, Enseignant, Administrateur, Matiere, Evaluation, Note
+from .models import Etudiant, Enseignant, Administrateur, Matiere, Evaluation, Note, SessionUtilisateur
 import logging
+import secrets
+import datetime
 
 logger = logging.getLogger('studentManagerApp')
 def login_view(request):
@@ -19,24 +22,49 @@ def login_view(request):
             role=form.cleaned_data['role']
             if role == "etudiant":
                 try:
-                    id=Etudiant.objects.get(nom=nom,password=password).etudiant_id
+                    utilisateur = Etudiant.objects.get(nom=nom,password=password)
+                    id = utilisateur.etudiant_id
+                    
                 except Etudiant.DoesNotExist:
                         messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos étudiants")
                         return redirect('login-page')
             elif role == "enseignant":
                 try:
-                    id=Enseignant.objects.get(nom=nom,password=password).enseignant_id
+                    utilisateur = Enseignant.objects.get(nom=nom,password=password)
+                    id = utilisateur.enseignant_id
                 except Enseignant.DoesNotExist:
                         messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos enseigants")
                         return redirect('login-page')
             else:
                 try:
-                    id=Administrateur.objects.get(nom=nom,password=password).administrateur_id
+                    utilisateur= Administrateur.objects.get(nom=nom,password=password)
+                    id = utilisateur.administrateur_id
                 except Administrateur.DoesNotExist:
                         messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos administrateurs")
                         return redirect('login-page')
+            token = secrets.token_urlsafe(50)
+            date_expiration = datetime.datetime.now() + datetime.timedelta(days=settings.SESSION_COOKIE_AGE)
+            session = SessionUtilisateur(
+                type_utilisateur = role,
+                utilisateur_id = id,
+                token_session = token,
+                date_expiration = date_expiration,
+                ip_address = request.META.get('REMOTE_ADDR'),
+                user_agent = request.META.get('HTTP_USER_AGENT', '')
+            )
+            session.save()
+            response = redirect('home-page', id=id, role=role)
+            response.set_cookie(
+                'session_token',
+                token,
+                expires=date_expiration,
+                httponly=True,
+                secure=True if request.is_secure() else False
+            )
             logger.info(f"Connexion réussie de l'utilisateur {nom} ({role}).")                 
-            return redirect('home-page', id=id, role=role)
+            return response
+    elif request.role and request.utilisateur_id:
+        return redirect('home-page', id=request.utilisateur_id, role=request.role)
     else:
         form=LoginForm()
     return render(request,'studentManagerApp/HTML/log-in.html',{'form':form})
@@ -316,3 +344,14 @@ def profile_page_view(request, id, role):
     user.id = id
     user.role = role
     return render(request, 'studentManagerApp/HTML/profile-page.html', {'user': user})
+
+def log_out_view(request):
+    if 'session_token' in request.COOKIES:
+        token = request.COOKIES['session_token']
+        SessionUtilisateur.objects.filter(token_session=token).delete()
+    response = redirect('login-page')
+    response.delete_cookie('session_token')
+    response['Cache-Control'] = 'no-cache, no-store, must_revalidate'
+    response['Pragma'] = 'no-cache'
+    response['Expires'] = '0'
+    return response

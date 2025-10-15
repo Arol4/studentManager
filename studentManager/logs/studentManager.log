@@ -124,3 +124,571 @@ INFO 2025-09-28 16:44:03,716 basehttp "POST / HTTP/1.1" 302 0
 INFO 2025-09-28 16:44:03,736 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 689
 INFO 2025-09-28 16:44:05,325 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58239
 INFO 2025-09-28 16:44:16,746 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-05 08:05:58,907 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 17:25:04,303 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 17:25:09,047 basehttp "GET / HTTP/1.1" 200 955
+WARNING 2025-10-05 17:25:09,236 log Not Found: /favicon.ico
+WARNING 2025-10-05 17:25:09,237 basehttp "GET /favicon.ico HTTP/1.1" 404 3553
+INFO 2025-10-05 17:25:25,553 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-05 17:25:25,554 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-05 17:25:25,590 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-05 17:25:40,081 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2025-10-05 17:25:40,643 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-10-05 17:25:40,656 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-10-05 17:25:40,667 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-10-05 17:25:40,677 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-10-05 17:25:40,679 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-10-05 17:25:40,685 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-10-05 17:25:40,689 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-10-05 17:25:44,242 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4340
+INFO 2025-10-05 17:25:55,163 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-10-05 17:25:55,225 basehttp "GET /admin/ HTTP/1.1" 200 15184
+INFO 2025-10-05 17:25:55,291 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-10-05 17:25:55,298 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-10-05 17:25:55,300 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-10-05 17:25:55,301 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-10-05 17:25:57,966 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 12809
+INFO 2025-10-05 17:25:58,048 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-10-05 17:25:58,074 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-10-05 17:25:58,085 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-10-05 17:25:58,090 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-10-05 17:25:58,091 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-10-05 17:25:58,097 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-10-05 17:25:58,103 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-10-05 17:25:58,110 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-05 17:25:58,113 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-10-05 17:25:58,120 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-10-05 17:25:58,141 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-10-05 17:25:58,186 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-10-05 17:26:02,145 basehttp "GET /admin/studentManagerApp/sessionutilisateur/1/change/ HTTP/1.1" 200 16493
+INFO 2025-10-05 17:26:02,215 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-10-05 17:26:02,225 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-10-05 17:26:02,226 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-10-05 17:26:02,227 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-10-05 17:26:02,234 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-10-05 17:26:02,236 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-05 17:26:02,248 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-10-05 17:26:02,327 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-10-05 17:26:02,336 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-10-05 17:26:56,863 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-05 17:27:20,130 basehttp "GET /admin/studentManagerApp/sessionutilisateur/1/change/ HTTP/1.1" 200 16493
+INFO 2025-10-05 17:27:20,223 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-05 17:27:28,687 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-05 17:27:28,702 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-05 17:27:32,512 basehttp "GET /admin/studentManagerApp/sessionutilisateur/1/change/ HTTP/1.1" 302 0
+INFO 2025-10-05 17:27:32,544 basehttp "GET /admin/ HTTP/1.1" 200 15366
+INFO 2025-10-05 17:27:32,622 basehttp "GET /static/admin/img/icon-alert.svg HTTP/1.1" 200 504
+INFO 2025-10-05 17:27:35,719 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 11439
+INFO 2025-10-05 17:27:35,798 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-05 17:27:56,949 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-05 17:27:56,966 basehttp "GET / HTTP/1.1" 200 1072
+INFO 2025-10-05 17:28:06,592 views Connexion réussie de l'utilisateur Djeufack Kafack (etudiant).
+INFO 2025-10-05 17:28:06,593 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-05 17:28:06,623 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 603
+INFO 2025-10-05 17:28:11,074 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 12809
+INFO 2025-10-05 17:28:11,141 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-05 17:28:15,706 basehttp "GET /admin/studentManagerApp/sessionutilisateur/2/change/ HTTP/1.1" 200 16493
+INFO 2025-10-05 17:28:15,777 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-05 17:29:19,486 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-05 17:29:19,501 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-05 17:29:23,267 basehttp "GET /admin/studentManagerApp/sessionutilisateur/2/change/ HTTP/1.1" 302 0
+INFO 2025-10-05 17:29:23,296 basehttp "GET /admin/ HTTP/1.1" 200 15366
+INFO 2025-10-05 21:01:48,774 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:01:54,202 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-05 21:02:22,312 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:02:22,962 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:02:24,452 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:02:25,036 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:02:28,594 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:02:29,144 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:02:33,733 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:02:34,359 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:02:39,210 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-05 21:03:17,679 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-05 21:03:17,680 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-05 21:03:17,712 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-05 21:03:23,362 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 12809
+INFO 2025-10-05 21:03:23,466 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-05 21:03:25,715 basehttp "GET /admin/studentManagerApp/sessionutilisateur/3/change/ HTTP/1.1" 200 16493
+INFO 2025-10-05 21:03:25,795 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-05 21:04:37,857 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-05 21:06:35,809 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:06:36,520 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:06:37,942 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:06:38,626 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:06:40,070 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:06:40,766 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:06:42,440 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:06:43,070 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:06:44,468 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:06:45,032 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:06:51,968 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-05 21:07:54,281 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:07:54,954 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:07:56,447 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:07:57,037 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:08:01,328 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:08:01,978 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:08:06,588 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-05 21:08:33,693 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:08:34,368 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:08:41,025 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:08:41,704 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:08:44,287 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:08:44,881 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:08:48,797 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-05 21:09:14,040 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:09:14,749 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:09:17,264 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:09:18,025 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:09:22,699 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-05 21:10:12,905 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:10:13,612 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:10:16,132 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:10:16,825 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:10:20,424 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-05 21:10:44,376 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:10:45,066 autoreload Watching for file changes with StatReloader
+ERROR 2025-10-05 21:10:48,175 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py", line 17, in __call__
+    print(request.nom)
+          ^^^^^^^^^^^
+AttributeError: 'WSGIRequest' object has no attribute 'nom'
+ERROR 2025-10-05 21:10:48,178 basehttp "GET / HTTP/1.1" 500 65166
+INFO 2025-10-05 21:11:05,224 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:11:05,913 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:11:11,639 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-05 21:11:12,173 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:11:37,209 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-05 21:12:19,208 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 12809
+INFO 2025-10-05 21:12:19,303 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-05 21:12:21,769 basehttp "GET /admin/studentManagerApp/sessionutilisateur/3/change/ HTTP/1.1" 200 16493
+INFO 2025-10-05 21:12:21,855 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-05 21:14:40,557 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-05 21:14:41,230 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:14:42,755 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-05 21:14:43,782 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:14:47,381 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-05 21:14:48,200 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:14:49,615 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-05 21:14:50,170 autoreload Watching for file changes with StatReloader
+INFO 2025-10-05 21:14:54,653 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-05 21:16:43,916 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-05 21:16:44,565 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:16:08,732 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:16:21,586 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 12809
+INFO 2025-10-06 05:16:21,698 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-06 05:16:23,998 basehttp "GET /admin/studentManagerApp/sessionutilisateur/3/change/ HTTP/1.1" 200 16493
+INFO 2025-10-06 05:16:24,075 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-06 05:16:29,021 basehttp "GET /admin/studentManagerApp/sessionutilisateur/3/delete/ HTTP/1.1" 200 11470
+INFO 2025-10-06 05:16:29,252 basehttp "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2025-10-06 05:16:30,828 basehttp "POST /admin/studentManagerApp/sessionutilisateur/3/delete/ HTTP/1.1" 302 0
+INFO 2025-10-06 05:16:30,865 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 11630
+INFO 2025-10-06 05:16:30,931 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-06 05:16:30,952 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-10-06 05:17:00,000 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-06 05:17:29,509 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-06 05:17:29,512 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-06 05:17:29,541 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-06 05:17:35,690 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 12809
+INFO 2025-10-06 05:17:35,756 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2025-10-06 05:18:02,149 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py", line 66, in login_view
+    return redirect('home-page', id=request.utilisateur[request.role+'_id'], role=request.role)
+                                    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+TypeError: 'Administrateur' object is not subscriptable
+ERROR 2025-10-06 05:18:02,152 basehttp "GET / HTTP/1.1" 500 70014
+INFO 2025-10-06 05:24:01,581 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-06 05:24:02,394 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:24:05,958 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-06 05:24:06,589 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:24:21,273 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 12809
+INFO 2025-10-06 05:24:21,364 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-06 05:25:03,561 basehttp "POST /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 11549
+INFO 2025-10-06 05:25:05,068 basehttp "POST /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 302 0
+INFO 2025-10-06 05:25:05,105 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 11588
+INFO 2025-10-06 05:25:05,184 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-06 05:27:23,163 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-06 05:27:23,784 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:28:12,363 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-06 05:28:13,019 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:28:15,620 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-06 05:28:16,332 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:28:27,050 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-06 05:28:27,721 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:28:29,294 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-06 05:28:29,868 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:28:35,171 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-06 05:28:35,738 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:28:37,327 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-06 05:28:38,037 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:28:40,737 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-06 05:28:41,327 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:29:02,211 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-06 05:29:02,949 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:29:04,496 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-06 05:29:05,310 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:29:07,607 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-06 05:29:08,218 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:29:11,765 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-06 05:29:12,337 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:29:14,792 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-06 05:29:15,626 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:29:23,208 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-06 05:29:23,831 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:29:54,039 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-06 05:29:54,617 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:29:57,280 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-06 05:29:57,916 autoreload Watching for file changes with StatReloader
+INFO 2025-10-06 05:30:07,443 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 11439
+INFO 2025-10-06 05:30:07,532 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-06 05:30:23,934 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-06 05:30:44,777 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-06 05:30:44,778 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-06 05:30:44,816 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-06 05:30:53,382 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-06 05:30:53,429 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-06 05:31:03,642 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-06 05:31:03,661 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-06 05:31:10,720 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-06 05:31:32,561 views Connexion réussie de l'utilisateur Djeufack Kafack (etudiant).
+INFO 2025-10-06 05:31:32,563 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-06 05:31:32,597 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 603
+INFO 2025-10-06 05:35:31,501 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-06 05:35:31,534 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 603
+INFO 2025-10-06 05:35:35,524 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-06 05:35:35,539 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-06 05:35:38,531 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 603
+INFO 2025-10-06 05:35:40,138 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 603
+INFO 2025-10-06 05:35:47,166 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 603
+INFO 2025-10-06 05:35:54,404 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 11439
+INFO 2025-10-06 05:35:54,496 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-06 05:36:04,190 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-06 05:36:04,208 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-06 05:36:14,970 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-06 05:36:19,679 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-06 05:36:19,700 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-06 05:37:29,681 views Connexion réussie de l'utilisateur Tambou (enseignant).
+INFO 2025-10-06 05:37:29,682 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-06 05:37:29,714 basehttp "GET /home-page/enseignant/7 HTTP/1.1" 200 671
+INFO 2025-10-06 05:37:36,002 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 12809
+INFO 2025-10-06 05:37:36,088 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-06 05:37:37,434 basehttp "GET /admin/studentManagerApp/sessionutilisateur/7/change/ HTTP/1.1" 200 16493
+INFO 2025-10-06 05:37:37,515 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-06 05:37:54,525 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-06 05:38:12,688 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-06 05:38:12,710 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-06 05:38:16,991 basehttp "GET /home-page/enseignant/7 HTTP/1.1" 200 671
+INFO 2025-10-06 05:38:20,268 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-06 05:38:20,291 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-07 22:46:25,844 autoreload Watching for file changes with StatReloader
+INFO 2025-10-07 22:46:30,821 basehttp "GET / HTTP/1.1" 200 955
+WARNING 2025-10-07 22:46:31,151 log Not Found: /favicon.ico
+WARNING 2025-10-07 22:46:31,153 basehttp "GET /favicon.ico HTTP/1.1" 404 3553
+INFO 2025-10-07 22:47:04,519 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2025-10-07 22:47:05,052 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-10-07 22:47:05,065 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-10-07 22:47:05,072 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-10-07 22:47:05,077 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-10-07 22:47:05,079 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-10-07 22:47:05,082 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-10-07 22:47:05,091 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-10-07 22:47:10,957 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-10-07 22:47:11,009 basehttp "GET /admin/ HTTP/1.1" 200 15252
+INFO 2025-10-07 22:47:11,075 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-10-07 22:47:11,108 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-10-07 22:47:11,110 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-10-07 22:47:11,113 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-10-07 22:47:13,190 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 11439
+INFO 2025-10-07 22:47:13,262 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-10-07 22:47:13,285 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-10-07 22:47:13,285 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-10-07 22:47:13,290 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-10-07 22:47:13,291 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-10-07 22:47:13,298 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-10-07 22:47:13,299 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-10-07 22:47:13,302 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-07 22:47:13,315 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-10-07 22:47:13,317 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-10-07 22:47:13,330 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-10-07 22:47:13,359 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-10-07 22:47:35,640 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-07 22:48:05,328 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-07 22:48:05,330 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-07 22:48:05,368 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-07 22:48:11,865 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 12809
+INFO 2025-10-07 22:48:11,922 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-07 22:48:18,088 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-07 22:48:18,125 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-07 22:48:34,376 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-07 22:48:34,394 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-07 22:48:38,169 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-07 22:48:39,786 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-07 22:51:25,384 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 11439
+INFO 2025-10-07 22:51:25,460 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-07 23:03:52,025 autoreload Watching for file changes with StatReloader
+INFO 2025-10-07 23:03:58,543 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-07 23:04:21,030 views Connexion réussie de l'utilisateur Tambou (enseignant).
+INFO 2025-10-07 23:04:21,031 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-07 23:04:21,062 basehttp "GET /home-page/enseignant/7 HTTP/1.1" 200 671
+INFO 2025-10-07 23:04:42,777 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-10-07 23:04:42,871 basehttp "GET /admin/ HTTP/1.1" 200 15252
+INFO 2025-10-07 23:04:46,030 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 12809
+INFO 2025-10-07 23:04:46,121 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-07 23:04:48,173 basehttp "GET /admin/studentManagerApp/sessionutilisateur/9/change/ HTTP/1.1" 200 16493
+INFO 2025-10-07 23:04:48,250 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-07 23:04:48,612 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-10-07 23:04:48,614 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-10-07 23:04:48,615 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-10-07 23:04:48,615 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-10-07 23:04:48,626 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-10-07 23:04:48,631 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-10-07 23:04:48,695 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-10-07 23:04:48,700 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-10-07 23:04:55,855 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-07 23:04:55,867 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-09 04:44:50,266 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 04:44:59,662 basehttp "GET / HTTP/1.1" 200 955
+WARNING 2025-10-09 04:45:04,073 log Not Found: /favicon.ico
+WARNING 2025-10-09 04:45:04,116 basehttp "GET /favicon.ico HTTP/1.1" 404 3553
+INFO 2025-10-09 04:45:19,802 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-09 04:45:19,804 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-09 04:45:19,853 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-09 04:46:29,666 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-10-09 04:46:29,801 basehttp "GET /admin/ HTTP/1.1" 200 15252
+INFO 2025-10-09 04:46:32,732 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 12813
+INFO 2025-10-09 04:46:32,979 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-09 04:46:42,193 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-09 04:46:42,248 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-09 04:46:54,385 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-09 04:46:54,401 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-09 04:53:25,252 autoreload Watching for file changes with StatReloader
+INFO 2025-10-09 04:53:38,645 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-09 04:53:54,725 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-09 04:53:54,726 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-09 04:53:54,765 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-09 04:54:13,112 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-09 04:54:13,193 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-10 07:31:52,682 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 07:33:02,562 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-10 07:33:03,420 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 07:34:07,920 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-10 07:34:07,978 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+WARNING 2025-10-10 07:34:08,176 log Not Found: /favicon.ico
+WARNING 2025-10-10 07:34:08,178 basehttp "GET /favicon.ico HTTP/1.1" 404 3553
+INFO 2025-10-10 07:34:14,381 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-10 07:34:14,434 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-10 07:34:44,210 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-10 07:34:44,213 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-10 07:34:44,244 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-10 07:45:20,804 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 07:45:26,519 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-10 07:45:26,561 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-10 07:45:31,990 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-10 07:45:32,025 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-10 07:48:13,318 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-10 07:48:14,300 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 07:48:15,875 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-10 07:48:17,013 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 07:48:18,571 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-10 07:48:19,317 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 07:48:21,870 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-10 07:48:22,644 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 07:48:24,213 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-10 07:48:24,859 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 07:48:27,501 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-10 07:48:28,556 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 07:48:30,130 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-10 07:48:31,238 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 07:48:44,930 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-10 07:48:45,591 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 07:48:48,843 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-10 07:48:49,532 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 07:48:51,748 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-10 07:48:52,366 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 07:48:53,962 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-10 07:48:54,655 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 07:49:03,821 basehttp "GET / HTTP/1.1" 200 955
+ERROR 2025-10-10 07:49:24,473 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py", line 48, in login_view
+    print("\n"+ date_expiration)
+          ~~~~^~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "datetime.datetime") to str
+ERROR 2025-10-10 07:49:24,478 basehttp "POST / HTTP/1.1" 500 72503
+INFO 2025-10-10 07:49:39,945 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-10 07:49:40,636 autoreload Watching for file changes with StatReloader
+INFO 2025-10-10 07:49:47,127 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-10 07:49:47,128 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-10 07:49:47,201 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-10 07:50:04,707 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-10 07:50:04,737 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-10 07:50:19,811 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-10 07:50:19,813 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-10 07:50:19,834 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-15 17:35:21,421 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 17:35:26,751 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-15 17:35:26,813 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+WARNING 2025-10-15 17:35:26,983 log Not Found: /favicon.ico
+WARNING 2025-10-15 17:35:26,984 basehttp "GET /favicon.ico HTTP/1.1" 404 3553
+INFO 2025-10-15 17:35:57,757 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-15 17:35:57,799 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-15 17:36:06,615 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-10-15 17:36:06,702 basehttp "GET /admin/ HTTP/1.1" 200 15252
+INFO 2025-10-15 17:36:07,248 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-10-15 17:36:07,262 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-10-15 17:36:07,277 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-10-15 17:36:07,280 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-10-15 17:36:07,281 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-10-15 17:36:07,282 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-10-15 17:36:07,301 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-10-15 17:36:07,316 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-10-15 17:36:07,317 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-10-15 17:36:07,318 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-10-15 17:36:11,259 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 11439
+INFO 2025-10-15 17:36:11,322 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-10-15 17:36:11,338 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-10-15 17:36:11,340 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-10-15 17:36:11,340 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-10-15 17:36:11,340 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-10-15 17:36:11,350 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-10-15 17:36:11,354 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-10-15 17:36:11,363 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-10-15 17:36:11,366 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-15 17:36:11,375 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-10-15 17:36:11,380 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-10-15 17:36:11,418 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-10-15 17:38:32,413 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 17:38:43,136 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-15 17:39:38,747 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-15 17:39:38,749 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-15 17:39:38,821 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-15 17:43:54,082 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 17:43:57,409 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-15 17:43:57,438 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-15 17:44:09,947 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 12813
+INFO 2025-10-15 17:44:10,046 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-15 17:44:14,838 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-15 17:44:14,866 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-15 17:44:25,749 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-15 17:44:25,750 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-15 17:44:25,778 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-15 17:45:41,259 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-15 17:45:41,275 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-15 17:45:51,216 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 11439
+INFO 2025-10-15 17:45:51,296 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-15 17:49:16,728 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 17:49:34,639 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-15 17:49:48,685 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-15 17:49:48,687 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-15 17:49:48,745 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-15 17:50:47,744 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-15 17:50:48,455 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 17:51:49,349 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-15 17:51:52,767 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 17:51:54,673 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-15 17:51:55,876 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 17:53:38,539 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-15 17:53:39,278 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 17:53:40,717 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-15 17:53:41,271 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 17:54:39,606 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2025-10-15 17:54:40,209 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 18:03:47,852 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 18:03:52,840 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-15 18:03:52,891 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-15 18:04:00,940 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-15 18:04:00,973 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-15 18:04:23,491 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 18:04:29,071 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-15 18:04:42,479 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-15 18:04:42,480 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-15 18:04:42,511 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-15 18:10:00,369 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-15 18:10:01,048 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 18:10:04,519 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-15 18:10:05,218 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 18:10:06,433 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-15 18:10:07,129 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 18:10:08,430 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-15 18:10:08,989 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 18:10:13,287 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-15 18:10:14,057 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 18:10:15,279 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-15 18:10:15,959 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 18:11:01,172 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-15 18:11:01,842 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 18:11:15,626 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-15 18:11:16,262 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 18:12:03,633 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 18:12:07,935 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-15 18:12:07,983 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-15 18:13:36,505 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 12809
+INFO 2025-10-15 18:13:36,619 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-15 18:13:38,920 basehttp "GET /admin/studentManagerApp/sessionutilisateur/2/change/ HTTP/1.1" 200 16493
+INFO 2025-10-15 18:13:39,034 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-15 18:13:39,322 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-10-15 18:13:39,330 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-10-15 18:13:39,332 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-10-15 18:13:39,334 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-10-15 18:13:39,348 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-10-15 18:13:39,349 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-10-15 18:13:39,422 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-10-15 18:13:39,422 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-10-15 18:13:51,005 basehttp "GET /admin/studentManagerApp/sessionutilisateur/2/change/ HTTP/1.1" 200 16493
+INFO 2025-10-15 18:13:51,076 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-15 18:14:48,979 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\middleware.py changed, reloading.
+INFO 2025-10-15 18:14:49,744 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 18:14:55,042 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-15 18:14:55,095 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-15 18:14:58,379 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-15 18:14:58,403 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-15 18:15:01,429 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-15 18:15:03,524 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58246
+INFO 2025-10-15 18:15:03,672 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 4483
+INFO 2025-10-15 18:15:05,145 basehttp "GET /tableau-notes/administrateur/1 HTTP/1.1" 200 56256
+INFO 2025-10-15 18:15:09,836 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58246
+INFO 2025-10-15 18:15:11,060 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-15 18:21:44,012 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 18:23:19,056 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 18:23:58,798 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 18:24:03,806 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-15 18:24:20,608 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-15 18:24:20,610 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-15 18:24:20,639 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-15 18:24:26,579 basehttp "GET /admin/studentManagerApp/sessionutilisateur/2/change/ HTTP/1.1" 302 0
+INFO 2025-10-15 18:24:26,635 basehttp "GET /admin/ HTTP/1.1" 200 15434
+INFO 2025-10-15 18:24:26,838 basehttp "GET /static/admin/img/icon-alert.svg HTTP/1.1" 200 504
+INFO 2025-10-15 18:24:28,988 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 15155
+INFO 2025-10-15 18:24:29,088 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-15 18:24:29,115 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-10-15 18:24:29,121 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-10-15 18:25:18,126 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\admin.py changed, reloading.
+INFO 2025-10-15 18:25:18,803 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 18:25:27,617 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-15 18:25:27,655 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-15 18:25:32,730 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 14893
+INFO 2025-10-15 18:25:32,826 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-15 18:25:57,785 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-15 18:25:57,809 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-15 18:26:00,408 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 12270
+INFO 2025-10-15 18:26:00,463 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-15 18:26:14,158 views Connexion réussie de l'utilisateur Djeufack Kafack (etudiant).
+INFO 2025-10-15 18:26:14,162 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-15 18:26:14,182 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 603
+INFO 2025-10-15 18:26:34,852 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-15 18:26:34,906 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 603
+INFO 2025-10-15 18:26:36,830 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-15 18:26:36,849 basehttp "GET / HTTP/1.1" 200 955

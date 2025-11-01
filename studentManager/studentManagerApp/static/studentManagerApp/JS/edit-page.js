@@ -63,9 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
         table.appendChild(thead);
         
         const tbody = document.createElement('tbody');
-        data.rows.forEach(rowData => {
+        Object.entries(data.rows).forEach(([id, rowData]) => {
             const row = document.createElement('tr');
-            row.setAttribute('data-id', rowData.id);
+            row.setAttribute('data-id', parseInt(id, 10));
             
             const tdNom = document.createElement('td');
             tdNom.textContent = rowData.nom;
@@ -141,6 +141,10 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             if (data.message) {
                 alert(data.message);
+                Object.entries(notes).forEach(([id, note]) =>
+                {
+                    ((((window.notesData).tableaux[matiere_selectionnee][type_evaluation]).rows)[id]).note = note; 
+                });
             } else {
                 alert('Erreur inconnue');
             }

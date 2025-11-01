@@ -1585,3 +1585,69 @@ INFO 2025-10-31 14:19:55,866 basehttp "GET /static/studentManagerApp/JS/edit-pag
 INFO 2025-10-31 14:20:01,728 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
 WARNING 2025-10-31 14:20:07,863 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
 WARNING 2025-10-31 14:20:07,864 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-11-01 05:15:58,785 autoreload Watching for file changes with StatReloader
+INFO 2025-11-01 05:16:02,048 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-11-01 05:16:02,097 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-11-01 05:16:04,116 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 54453
+INFO 2025-11-01 05:16:04,319 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 7025
+WARNING 2025-11-01 05:16:30,743 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-01 05:16:30,744 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-11-01 05:20:18,404 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 54453
+INFO 2025-11-01 05:20:18,470 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 7058
+WARNING 2025-11-01 05:20:28,696 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-01 05:20:28,697 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-11-01 05:21:48,730 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 54453
+INFO 2025-11-01 05:21:48,816 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 7053
+WARNING 2025-11-01 05:22:01,728 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-01 05:22:01,730 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-11-01 05:25:39,445 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 54453
+INFO 2025-11-01 05:25:39,507 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 7041
+INFO 2025-11-01 05:25:59,092 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2025-11-01 05:26:14,271 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-11-01 05:26:14,327 basehttp "GET /admin/ HTTP/1.1" 200 15252
+INFO 2025-11-01 05:26:19,986 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58521
+INFO 2025-11-01 05:26:20,088 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-11-01 05:26:31,215 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-01 05:26:31,217 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-11-01 05:27:07,852 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+WARNING 2025-11-01 05:27:12,899 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-01 05:27:12,899 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-11-01 05:27:20,272 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-11-01 05:27:20,295 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 200 4219
+INFO 2025-11-01 05:27:32,501 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-11-01 05:27:32,627 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58522
+INFO 2025-11-01 05:27:32,712 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-11-01 05:28:45,260 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-01 05:28:45,261 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-11-01 05:32:53,902 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 54454
+INFO 2025-11-01 05:32:53,979 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 7040
+WARNING 2025-11-01 05:33:08,342 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-01 05:33:08,343 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-11-01 05:33:21,526 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-11-01 05:34:01,428 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 54455
+WARNING 2025-11-01 05:34:01,520 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-01 05:34:01,521 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-11-01 05:34:01,536 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 7037
+INFO 2025-11-01 05:34:19,642 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+WARNING 2025-11-01 05:34:25,087 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-01 05:34:25,090 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-11-01 05:35:59,998 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 54456
+INFO 2025-11-01 05:36:00,076 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 304 0
+INFO 2025-11-01 05:37:07,879 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-11-01 05:37:40,545 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+WARNING 2025-11-01 05:38:19,948 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-01 05:38:19,949 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-11-01 05:41:02,755 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 54456
+INFO 2025-11-01 05:41:02,828 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 7058
+INFO 2025-11-01 05:47:50,042 autoreload Watching for file changes with StatReloader
+INFO 2025-11-01 05:47:53,718 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-11-01 05:47:53,823 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-11-01 05:47:58,413 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 54456
+INFO 2025-11-01 05:47:58,650 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 7044
+WARNING 2025-11-01 05:48:14,368 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-01 05:48:14,369 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-11-01 05:48:22,984 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-11-01 05:49:24,873 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-11-01 05:49:58,969 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-11-01 05:50:43,549 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 54456
+INFO 2025-11-01 05:50:43,613 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 6753

@@ -61,29 +61,27 @@
             "{{ matiere_enseignee.matiere_id|escapejs }}":{
                 "CC":{
                     headers:["Étudiant","Note"],
-                    rows:[
+                    rows:{
                         {% for etudiant in etudiants %}
-                        {
-                            id: {{etudiant.etudiant_id}},
-                            nom: "{{ etudiant.nom|escapejs }} {{ etudiant.prenom|escapejs }}",
-                            note: {% with cc_note=ccs|get_index:forloop.parentloop.counter0|get_index:forloop.counter0 %}{% if cc_note is None %}null{% else %}{{ cc_note }}{% endif %}{% endwith %}
-                        }
+                        "{{ etudiant.etudiant_id|escapejs }}":{
+                                nom: "{{ etudiant.nom|escapejs }} {{ etudiant.prenom|escapejs }}",
+                                note: {% with cc_note=ccs|get_index:forloop.parentloop.counter0|get_index:forloop.counter0 %}{% if cc_note is None %}null{% else %}{{ cc_note }}{% endif %}{% endwith %}
+                            }
                         {% if not forloop.last %},{% endif %}
                         {% endfor %}
-                    ]
+                    }
                 },
                 "SN":{
                     headers:["Étudiant","Note"],
-                    rows:[
+                    rows:{
                         {% for etudiant in etudiants %}
-                        {
-                            id: {{etudiant.etudiant_id}},
-                            nom: "{{ etudiant.nom|escapejs }} {{ etudiant.prenom|escapejs }}",
-                            note: {% with sn_note=sns|get_index:forloop.parentloop.counter0|get_index:forloop.counter0 %}{% if sn_note is None %}null{% else %}{{ sn_note }}{% endif %}{% endwith %}
-                        }
+                        "{{ etudiant.etudiant_id|escapejs }}":{
+                                nom: "{{ etudiant.nom|escapejs }} {{ etudiant.prenom|escapejs }}",
+                                note: {% with sn_note=sns|get_index:forloop.parentloop.counter0|get_index:forloop.counter0 %}{% if sn_note is None %}null{% else %}{{ sn_note }}{% endif %}{% endwith %}
+                            }
                         {% if not forloop.last %},{% endif %}
                         {% endfor %}
-                    ]
+                    }
                 }
             }{% if not forloop.last %},{% endif %}
             {% endfor %}

@@ -93,7 +93,7 @@ class SessionUtilisateur(models.Model):
     utilisateur_id = models.PositiveIntegerField()
     token_session = models.CharField(max_length=100, unique=True)
     date_creation = models.DateTimeField(auto_now_add=True)
-    date_expiration = models.DateTimeField(default=timezone.now())
+    date_expiration = models.DateTimeField()
     ip_address = models.GenericIPAddressField(null=True, blank=True)
     user_agent = models.TextField(null = True, blank = True)
     name = models.CharField(null = True, blank = True)

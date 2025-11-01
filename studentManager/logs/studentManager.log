@@ -722,3 +722,866 @@ INFO 2025-10-15 19:44:22,257 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
 INFO 2025-10-15 19:44:28,798 views Déconnexion réussie de l'utilisateur Tambou (enseignant).
 INFO 2025-10-15 19:44:28,807 basehttp "GET /log-out HTTP/1.1" 302 0
 INFO 2025-10-15 19:44:28,826 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-15 20:47:28,989 autoreload Watching for file changes with StatReloader
+INFO 2025-10-15 20:47:34,720 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-15 20:47:49,311 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-15 20:47:49,313 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-15 20:47:49,354 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-15 20:47:50,842 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58246
+INFO 2025-10-15 20:53:02,969 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58250
+INFO 2025-10-15 20:54:07,930 views Déconnexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-15 20:54:07,941 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-15 20:54:07,976 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-17 15:02:26,043 autoreload Watching for file changes with StatReloader
+INFO 2025-10-17 15:02:30,655 basehttp "GET / HTTP/1.1" 200 955
+WARNING 2025-10-17 15:02:30,836 log Not Found: /favicon.ico
+WARNING 2025-10-17 15:02:30,838 basehttp "GET /favicon.ico HTTP/1.1" 404 3553
+INFO 2025-10-17 15:03:07,049 views Connexion réussie de l'utilisateur Djeufack Kafack (etudiant).
+INFO 2025-10-17 15:03:07,051 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-17 15:03:07,087 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 603
+INFO 2025-10-17 15:03:16,956 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-17 15:03:17,000 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 603
+INFO 2025-10-17 15:04:03,088 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-17 15:04:19,604 views Connexion réussie de l'utilisateur Tambou (enseignant).
+INFO 2025-10-17 15:04:19,605 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-17 15:04:19,624 basehttp "GET /home-page/enseignant/7 HTTP/1.1" 200 671
+INFO 2025-10-17 15:04:26,022 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-17 15:04:26,044 basehttp "GET /home-page/enseignant/7 HTTP/1.1" 200 671
+INFO 2025-10-17 15:04:35,073 basehttp "GET /tableau-notes/etudiant/1 HTTP/1.1" 200 5256
+INFO 2025-10-17 15:04:36,430 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 603
+INFO 2025-10-17 15:04:45,441 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-10-17 15:04:45,502 basehttp "GET /admin/ HTTP/1.1" 200 15252
+INFO 2025-10-17 15:04:46,141 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-10-17 15:04:46,148 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-10-17 15:04:46,155 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-10-17 15:04:46,165 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-10-17 15:04:46,173 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-10-17 15:04:46,175 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-10-17 15:04:46,185 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-10-17 15:04:46,202 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-10-17 15:04:46,202 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-10-17 15:04:46,203 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-10-17 15:04:51,652 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 15681
+INFO 2025-10-17 15:04:51,722 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-10-17 15:04:51,748 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-10-17 15:04:51,748 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-10-17 15:04:51,750 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-10-17 15:04:51,750 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-10-17 15:04:51,759 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-10-17 15:04:51,763 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-10-17 15:04:51,772 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-17 15:04:51,775 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-10-17 15:04:51,781 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-10-17 15:04:51,795 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-10-17 15:04:51,834 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-10-17 15:04:51,836 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-10-17 15:04:51,838 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-10-17 15:06:06,744 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-17 15:06:25,707 views Déconnexion réussie de l'utilisateur Djeufack Kafack (etudiant).
+INFO 2025-10-17 15:06:25,714 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-17 15:06:25,730 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-17 15:06:36,005 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-10-17 15:06:36,048 basehttp "GET /admin/ HTTP/1.1" 200 15252
+INFO 2025-10-17 15:06:38,940 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 15180
+INFO 2025-10-17 15:06:39,025 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-17 15:06:40,968 basehttp "GET /admin/studentManagerApp/sessionutilisateur/5/change/ HTTP/1.1" 200 17084
+INFO 2025-10-17 15:06:41,055 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-10-17 15:06:41,061 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-10-17 15:06:41,061 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-10-17 15:06:41,066 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-10-17 15:06:41,067 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-17 15:06:41,070 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-10-17 15:06:41,079 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-10-17 15:06:41,123 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-10-17 15:06:41,123 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-10-17 15:07:24,043 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-17 15:07:48,098 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-17 15:07:48,099 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-17 15:07:48,116 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-17 15:07:50,020 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58246
+INFO 2025-10-17 15:07:50,089 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 4483
+INFO 2025-10-17 15:07:53,837 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-17 15:07:55,667 basehttp "GET /tableau-notes/administrateur/1 HTTP/1.1" 200 56256
+INFO 2025-10-17 15:07:57,515 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58246
+INFO 2025-10-17 15:17:44,370 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58250
+INFO 2025-10-17 15:25:12,657 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58360
+INFO 2025-10-17 15:25:40,291 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58364
+INFO 2025-10-17 15:25:54,262 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58364
+INFO 2025-10-17 15:38:10,515 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58373
+INFO 2025-10-17 15:42:56,906 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58373
+INFO 2025-10-19 22:53:55,669 autoreload Watching for file changes with StatReloader
+INFO 2025-10-19 22:54:00,114 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-19 22:54:00,160 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+WARNING 2025-10-19 22:54:00,346 log Not Found: /favicon.ico
+WARNING 2025-10-19 22:54:00,348 basehttp "GET /favicon.ico HTTP/1.1" 404 3553
+INFO 2025-10-19 22:54:04,931 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-19 22:54:21,271 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+WARNING 2025-10-19 22:54:47,975 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-19 22:54:47,976 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-19 23:04:46,908 autoreload Watching for file changes with StatReloader
+INFO 2025-10-19 23:04:50,257 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-19 23:04:50,286 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-19 23:04:54,621 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-19 23:05:40,420 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-19 23:06:10,296 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-19 23:06:26,685 autoreload Watching for file changes with StatReloader
+INFO 2025-10-19 23:06:36,011 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-19 23:08:19,677 autoreload Watching for file changes with StatReloader
+INFO 2025-10-19 23:08:25,409 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-19 23:08:26,551 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-19 23:08:27,420 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-19 23:08:28,123 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-19 23:08:45,210 autoreload Watching for file changes with StatReloader
+INFO 2025-10-19 23:08:51,613 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-19 23:08:51,640 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-19 23:08:55,967 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-19 23:08:57,891 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-19 23:08:59,308 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-19 23:09:53,477 autoreload Watching for file changes with StatReloader
+INFO 2025-10-19 23:09:57,114 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-19 23:09:57,149 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-19 23:10:01,953 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-19 23:10:29,747 views Déconnexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-19 23:10:29,758 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-19 23:10:29,795 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-19 23:10:56,627 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-19 23:11:18,230 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-19 23:11:18,232 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-19 23:11:18,246 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-19 23:11:20,751 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-19 23:11:20,898 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 5297
+INFO 2025-10-19 23:13:28,732 autoreload Watching for file changes with StatReloader
+INFO 2025-10-19 23:13:32,402 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-19 23:13:51,059 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-19 23:13:51,061 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-19 23:13:51,083 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-19 23:13:52,464 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-19 23:14:10,594 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-19 23:14:10,613 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-19 23:14:12,536 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-19 23:14:12,655 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 5303
+INFO 2025-10-19 23:15:11,439 autoreload Watching for file changes with StatReloader
+INFO 2025-10-19 23:15:18,412 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-19 23:15:18,510 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 5301
+INFO 2025-10-19 23:15:51,988 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-19 23:15:52,013 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-19 23:15:53,714 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-19 23:22:12,209 autoreload Watching for file changes with StatReloader
+INFO 2025-10-19 23:24:28,810 autoreload Watching for file changes with StatReloader
+INFO 2025-10-19 23:24:48,099 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-19 23:25:05,721 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-19 23:25:05,723 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-19 23:25:05,756 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-19 23:25:06,967 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-19 23:25:07,107 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 5334
+INFO 2025-10-20 14:41:36,875 autoreload Watching for file changes with StatReloader
+INFO 2025-10-20 14:41:51,720 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-20 14:41:51,826 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+WARNING 2025-10-20 14:41:52,081 log Not Found: /favicon.ico
+WARNING 2025-10-20 14:41:52,082 basehttp "GET /favicon.ico HTTP/1.1" 404 3553
+INFO 2025-10-20 14:41:53,965 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-20 14:42:15,183 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-20 14:42:30,236 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-20 14:42:30,239 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-20 14:42:30,265 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-20 14:42:32,219 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-20 14:42:32,761 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 5340
+WARNING 2025-10-20 14:42:59,326 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-20 14:42:59,327 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-20 14:45:16,052 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+WARNING 2025-10-20 14:45:16,217 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-20 14:45:16,219 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-20 14:45:17,660 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+WARNING 2025-10-20 14:45:17,818 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-20 14:45:17,820 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-20 14:50:21,027 autoreload Watching for file changes with StatReloader
+INFO 2025-10-20 14:50:26,675 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-20 14:50:26,767 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-20 14:50:29,495 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+WARNING 2025-10-20 14:51:07,354 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-20 14:51:07,355 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-20 14:52:04,500 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-20 14:52:44,763 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-20 14:52:44,764 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-20 14:52:44,787 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-20 14:52:47,358 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-20 14:52:47,728 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 5620
+WARNING 2025-10-20 14:52:52,817 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-20 14:52:52,818 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-20 14:55:14,409 autoreload Watching for file changes with StatReloader
+INFO 2025-10-20 14:55:28,998 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-20 14:55:39,533 views Connexion réussie de l'utilisateur Djeufack Kafack (etudiant).
+INFO 2025-10-20 14:55:39,535 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-20 14:55:39,575 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 603
+INFO 2025-10-20 14:55:43,601 views Déconnexion réussie de l'utilisateur Djeufack Kafack (etudiant).
+INFO 2025-10-20 14:55:43,615 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-20 14:55:43,634 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-20 14:56:02,336 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-20 14:56:02,337 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-20 14:56:02,360 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-20 14:56:04,236 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-20 14:56:04,670 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 5340
+WARNING 2025-10-20 14:56:09,573 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-20 14:56:09,575 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-21 07:32:35,979 autoreload Watching for file changes with StatReloader
+INFO 2025-10-21 07:32:46,909 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-21 07:32:46,981 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+WARNING 2025-10-21 07:32:47,291 log Not Found: /favicon.ico
+WARNING 2025-10-21 07:32:47,293 basehttp "GET /favicon.ico HTTP/1.1" 404 3553
+INFO 2025-10-21 07:32:53,911 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-21 07:32:54,274 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 5340
+WARNING 2025-10-21 07:33:07,307 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-21 07:33:07,309 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-21 07:33:58,466 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+WARNING 2025-10-21 07:33:58,576 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-21 07:33:58,578 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-21 07:34:55,247 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-21 07:48:45,546 autoreload Watching for file changes with StatReloader
+INFO 2025-10-21 07:49:09,924 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-21 07:49:28,439 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-21 07:49:28,443 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-21 07:49:28,480 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-21 07:49:31,245 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-21 07:49:31,436 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 5410
+WARNING 2025-10-21 07:50:39,936 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-21 07:50:39,938 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-21 07:51:23,497 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-21 07:51:24,895 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-21 07:51:24,988 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 304 0
+INFO 2025-10-21 07:52:07,366 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-10-21 07:52:07,501 basehttp "GET /admin/ HTTP/1.1" 200 15252
+INFO 2025-10-21 07:52:12,963 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 18734
+INFO 2025-10-21 07:52:13,160 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-21 07:52:26,604 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58504
+INFO 2025-10-21 07:52:26,734 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-21 07:53:07,061 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-10-21 07:53:32,084 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58504
+INFO 2025-10-21 07:53:32,219 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-21 07:54:32,966 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-21 07:54:32,968 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-21 07:56:42,792 autoreload Watching for file changes with StatReloader
+INFO 2025-10-21 07:56:47,814 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+WARNING 2025-10-21 07:56:47,937 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-21 07:56:47,939 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-21 07:56:48,106 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 5440
+INFO 2025-10-29 16:34:17,307 autoreload Watching for file changes with StatReloader
+INFO 2025-10-29 16:34:42,601 basehttp "GET / HTTP/1.1" 200 955
+WARNING 2025-10-29 16:34:42,858 log Not Found: /favicon.ico
+WARNING 2025-10-29 16:34:42,859 basehttp "GET /favicon.ico HTTP/1.1" 404 3553
+INFO 2025-10-29 16:34:53,517 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-29 16:34:53,519 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-29 16:34:53,546 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 16:34:55,445 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 16:34:55,650 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 5410
+INFO 2025-10-29 16:35:07,047 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2025-10-29 16:35:07,163 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-10-29 16:35:07,172 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-10-29 16:35:07,172 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-10-29 16:35:07,172 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-10-29 16:35:07,174 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-10-29 16:35:07,175 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-10-29 16:35:07,207 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-10-29 16:35:15,184 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:35:15,252 basehttp "GET /admin/ HTTP/1.1" 200 15252
+INFO 2025-10-29 16:35:15,336 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-10-29 16:35:15,372 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-10-29 16:35:15,375 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-10-29 16:35:15,378 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-10-29 16:35:17,878 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 19241
+INFO 2025-10-29 16:35:17,978 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-10-29 16:35:17,979 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-10-29 16:35:17,980 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-10-29 16:35:17,981 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-10-29 16:35:17,996 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-10-29 16:35:18,008 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-10-29 16:35:18,008 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-10-29 16:35:18,017 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-10-29 16:35:18,020 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:35:18,048 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-10-29 16:35:18,058 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-10-29 16:35:18,088 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-10-29 16:35:18,096 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-10-29 16:35:18,097 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-10-29 16:35:29,764 basehttp "GET /admin/studentManagerApp/matiere/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:35:29,791 basehttp "GET /admin/login/?next=/admin/studentManagerApp/matiere/ HTTP/1.1" 200 4225
+INFO 2025-10-29 16:35:32,864 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:35:32,888 basehttp "GET /admin/login/?next=/admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 4247
+INFO 2025-10-29 16:35:39,262 basehttp "POST /admin/login/?next=/admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:35:39,331 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 19241
+INFO 2025-10-29 16:35:39,428 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:35:58,685 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:35:58,717 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 200 4219
+INFO 2025-10-29 16:36:06,945 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:36:07,112 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58504
+INFO 2025-10-29 16:36:07,201 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:36:17,860 basehttp "GET /admin/studentManagerApp/evaluation/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:36:17,883 basehttp "GET /admin/login/?next=/admin/studentManagerApp/evaluation/ HTTP/1.1" 200 4231
+INFO 2025-10-29 16:36:54,398 autoreload Watching for file changes with StatReloader
+INFO 2025-10-29 16:36:58,523 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-29 16:36:58,559 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 16:37:02,184 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 16:37:04,266 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 16:37:05,469 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 16:37:14,829 basehttp "POST /admin/login/?next=/admin/studentManagerApp/evaluation/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:37:14,980 basehttp "GET /admin/studentManagerApp/evaluation/ HTTP/1.1" 200 21609
+INFO 2025-10-29 16:37:15,078 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:37:16,915 basehttp "GET /admin/studentManagerApp/etudiant/ HTTP/1.1" 200 17144
+INFO 2025-10-29 16:37:16,977 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:37:19,128 basehttp "GET /admin/studentManagerApp/evaluation/ HTTP/1.1" 200 21609
+INFO 2025-10-29 16:37:19,199 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:37:20,290 basehttp "GET /admin/studentManagerApp/matiere/ HTTP/1.1" 200 18410
+INFO 2025-10-29 16:37:20,369 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:37:22,422 basehttp "GET /admin/studentManagerApp/enseignant/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:37:22,449 basehttp "GET /admin/login/?next=/admin/studentManagerApp/enseignant/ HTTP/1.1" 200 4231
+INFO 2025-10-29 16:37:29,028 basehttp "POST /admin/login/?next=/admin/studentManagerApp/enseignant/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:37:29,069 basehttp "GET /admin/studentManagerApp/enseignant/ HTTP/1.1" 200 14953
+INFO 2025-10-29 16:37:29,143 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:37:30,980 basehttp "GET /admin/studentManagerApp/administrateur/ HTTP/1.1" 200 14920
+INFO 2025-10-29 16:37:31,056 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:37:34,126 basehttp "GET /admin/studentManagerApp/enseignant/ HTTP/1.1" 200 14953
+INFO 2025-10-29 16:37:34,202 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:37:35,503 basehttp "GET /admin/studentManagerApp/etudiant/ HTTP/1.1" 200 17144
+INFO 2025-10-29 16:37:35,583 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:37:36,657 basehttp "GET /admin/studentManagerApp/evaluation/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:37:36,683 basehttp "GET /admin/login/?next=/admin/studentManagerApp/evaluation/ HTTP/1.1" 200 4231
+INFO 2025-10-29 16:37:42,055 basehttp "POST /admin/login/?next=/admin/studentManagerApp/evaluation/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:37:42,109 basehttp "GET /admin/studentManagerApp/evaluation/ HTTP/1.1" 200 21609
+INFO 2025-10-29 16:37:42,197 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:37:43,959 basehttp "GET /admin/studentManagerApp/matiere/ HTTP/1.1" 200 18410
+INFO 2025-10-29 16:37:44,032 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:37:45,390 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58504
+INFO 2025-10-29 16:37:45,459 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:37:46,514 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 19241
+INFO 2025-10-29 16:37:46,580 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:37:48,017 basehttp "GET /admin/studentManagerApp/administrateur/ HTTP/1.1" 200 14920
+INFO 2025-10-29 16:37:48,090 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:37:50,286 basehttp "GET /admin/studentManagerApp/etudiant/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:37:50,314 basehttp "GET /admin/login/?next=/admin/studentManagerApp/etudiant/ HTTP/1.1" 200 4227
+INFO 2025-10-29 16:37:55,025 basehttp "POST /admin/login/?next=/admin/studentManagerApp/etudiant/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:37:55,074 basehttp "GET /admin/studentManagerApp/etudiant/ HTTP/1.1" 200 17144
+INFO 2025-10-29 16:37:55,174 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:37:57,402 basehttp "GET /admin/studentManagerApp/evaluation/ HTTP/1.1" 200 21609
+INFO 2025-10-29 16:37:57,472 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:37:58,804 basehttp "GET /admin/studentManagerApp/matiere/ HTTP/1.1" 200 18410
+INFO 2025-10-29 16:37:58,863 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:37:59,928 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58504
+INFO 2025-10-29 16:37:59,997 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:38:01,002 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 19241
+INFO 2025-10-29 16:38:01,075 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:38:02,417 basehttp "GET /admin/studentManagerApp/administrateur/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:38:02,445 basehttp "GET /admin/login/?next=/admin/studentManagerApp/administrateur/ HTTP/1.1" 200 4239
+INFO 2025-10-29 16:38:07,210 basehttp "POST /admin/login/?next=/admin/studentManagerApp/administrateur/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:38:07,252 basehttp "GET /admin/studentManagerApp/administrateur/ HTTP/1.1" 200 14920
+INFO 2025-10-29 16:38:07,346 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:38:23,557 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-29 16:38:23,588 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 16:38:34,646 basehttp "GET /admin/studentManagerApp/administrateur/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:38:34,664 basehttp "GET /admin/login/?next=/admin/studentManagerApp/administrateur/ HTTP/1.1" 200 4239
+INFO 2025-10-29 16:38:39,381 basehttp "POST /admin/login/?next=/admin/studentManagerApp/administrateur/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:38:39,419 basehttp "GET /admin/studentManagerApp/administrateur/ HTTP/1.1" 200 14920
+INFO 2025-10-29 16:38:39,501 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:39:06,661 basehttp "GET /admin HTTP/1.1" 301 0
+INFO 2025-10-29 16:39:06,675 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:39:06,690 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2025-10-29 16:39:07,051 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-10-29 16:39:07,125 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-10-29 16:39:07,138 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-10-29 16:39:07,140 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-10-29 16:39:07,147 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-10-29 16:39:07,149 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-10-29 16:39:07,151 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-10-29 16:39:14,840 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:39:14,865 basehttp "GET /admin/ HTTP/1.1" 200 15252
+INFO 2025-10-29 16:39:14,918 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-10-29 16:39:14,938 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-10-29 16:39:14,940 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-10-29 16:39:14,940 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-10-29 16:39:17,884 basehttp "GET /admin/studentManagerApp/administrateur/ HTTP/1.1" 200 14920
+INFO 2025-10-29 16:39:17,920 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-10-29 16:39:17,947 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-10-29 16:39:17,948 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-10-29 16:39:17,948 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-10-29 16:39:17,948 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-10-29 16:39:17,956 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:39:17,957 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-10-29 16:39:17,959 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-10-29 16:39:17,966 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-10-29 16:39:17,968 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-10-29 16:39:17,974 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-10-29 16:39:18,006 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-10-29 16:39:18,006 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-10-29 16:39:18,007 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-10-29 16:39:19,711 basehttp "GET /admin/studentManagerApp/enseignant/ HTTP/1.1" 200 14953
+INFO 2025-10-29 16:39:19,756 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:39:21,436 basehttp "GET /admin/studentManagerApp/etudiant/ HTTP/1.1" 200 17144
+INFO 2025-10-29 16:39:21,477 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:39:22,510 basehttp "GET /admin/studentManagerApp/evaluation/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:39:22,525 basehttp "GET /admin/login/?next=/admin/studentManagerApp/evaluation/ HTTP/1.1" 200 4231
+INFO 2025-10-29 16:39:43,493 basehttp "POST /admin/login/?next=/admin/studentManagerApp/evaluation/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:39:43,535 basehttp "GET /admin/studentManagerApp/evaluation/ HTTP/1.1" 200 21609
+INFO 2025-10-29 16:39:43,595 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:40:43,360 basehttp "GET /admin HTTP/1.1" 301 0
+INFO 2025-10-29 16:40:43,387 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:40:43,416 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2025-10-29 16:40:48,159 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:40:48,198 basehttp "GET /admin/ HTTP/1.1" 200 15252
+INFO 2025-10-29 16:40:53,459 basehttp "GET /admin/ HTTP/1.1" 200 15252
+INFO 2025-10-29 16:40:58,240 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:40:58,263 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2025-10-29 16:41:02,918 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:41:02,949 basehttp "GET /admin/ HTTP/1.1" 200 15252
+INFO 2025-10-29 16:41:13,482 basehttp "GET /admin/auth/user/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:41:13,510 basehttp "GET /admin/login/?next=/admin/auth/user/ HTTP/1.1" 200 4193
+INFO 2025-10-29 16:41:18,143 basehttp "POST /admin/login/?next=/admin/auth/user/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:41:18,186 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 15231
+INFO 2025-10-29 16:41:18,276 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:41:18,276 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-10-29 16:41:18,277 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-10-29 16:41:22,669 basehttp "GET /admin/auth/user/2/change/ HTTP/1.1" 200 29667
+INFO 2025-10-29 16:41:22,737 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-10-29 16:41:22,750 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-10-29 16:41:22,755 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-10-29 16:41:22,756 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-10-29 16:41:22,758 basehttp "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-10-29 16:41:22,759 basehttp "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15709
+INFO 2025-10-29 16:41:22,762 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-10-29 16:41:22,764 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:41:22,773 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-10-29 16:41:22,860 basehttp "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-10-29 16:41:22,861 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-10-29 16:41:22,861 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-10-29 16:42:03,578 basehttp "GET /admin/auth/user/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:42:03,611 basehttp "GET /admin/login/?next=/admin/auth/user/ HTTP/1.1" 200 4193
+INFO 2025-10-29 16:42:08,348 basehttp "POST /admin/login/?next=/admin/auth/user/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:42:08,377 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 15231
+INFO 2025-10-29 16:42:08,479 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:42:10,226 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 15231
+INFO 2025-10-29 16:42:10,314 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:42:23,940 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:42:23,967 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 200 4219
+INFO 2025-10-29 16:42:28,273 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:42:28,406 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58504
+INFO 2025-10-29 16:42:28,481 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:42:34,281 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 16:42:35,315 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 16:42:58,807 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-10-29 16:43:03,898 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:43:03,924 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 200 4219
+INFO 2025-10-29 16:43:08,353 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:43:08,516 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58504
+INFO 2025-10-29 16:43:08,591 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-29 16:44:13,444 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 16:44:13,445 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+WARNING 2025-10-29 16:45:14,065 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 16:45:14,066 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-29 16:47:29,350 autoreload Watching for file changes with StatReloader
+INFO 2025-10-29 16:47:34,208 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-29 16:47:34,240 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 16:47:36,302 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 16:47:40,566 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:47:40,613 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 200 4219
+INFO 2025-10-29 16:47:46,605 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:47:46,774 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58504
+INFO 2025-10-29 16:47:46,856 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:48:02,945 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:48:02,962 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 200 4219
+INFO 2025-10-29 16:48:10,614 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:48:10,757 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58504
+INFO 2025-10-29 16:48:10,836 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:48:22,730 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-10-29 16:48:26,910 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:48:26,929 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 200 4219
+INFO 2025-10-29 16:48:31,778 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:48:31,919 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58504
+INFO 2025-10-29 16:48:31,998 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:48:43,492 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-29 16:48:43,515 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 16:48:45,881 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:48:45,894 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 200 4219
+INFO 2025-10-29 16:48:56,873 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:48:57,010 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58504
+INFO 2025-10-29 16:48:57,094 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:49:02,212 basehttp "GET /admin/auth/group/ HTTP/1.1" 200 11644
+INFO 2025-10-29 16:49:02,292 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:49:04,341 basehttp "GET /admin/auth/user/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:49:04,358 basehttp "GET /admin/login/?next=/admin/auth/user/ HTTP/1.1" 200 4193
+INFO 2025-10-29 16:49:08,043 basehttp "POST /admin/login/?next=/admin/auth/user/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:49:08,071 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 15231
+INFO 2025-10-29 16:49:08,152 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:49:14,514 basehttp "GET /admin/studentManagerApp/administrateur/ HTTP/1.1" 200 14920
+INFO 2025-10-29 16:49:14,580 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:49:16,833 basehttp "GET /admin/studentManagerApp/enseignant/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:49:16,859 basehttp "GET /admin/login/?next=/admin/studentManagerApp/enseignant/ HTTP/1.1" 200 4231
+INFO 2025-10-29 16:49:20,383 basehttp "POST /admin/login/?next=/admin/studentManagerApp/enseignant/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:49:20,418 basehttp "GET /admin/studentManagerApp/enseignant/ HTTP/1.1" 200 14953
+INFO 2025-10-29 16:49:20,496 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:49:36,905 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:49:36,929 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 200 4219
+INFO 2025-10-29 16:49:41,661 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 16:49:41,787 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58504
+INFO 2025-10-29 16:49:41,875 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:50:01,616 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 16:50:13,158 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-10-29 16:51:02,725 basehttp "GET /admin/studentManagerApp/note/?evaluation_id__evaluation_id__exact=4 HTTP/1.1" 302 0
+INFO 2025-10-29 16:51:02,748 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/%3Fevaluation_id__evaluation_id__exact%3D4 HTTP/1.1" 200 4299
+INFO 2025-10-29 16:51:06,886 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/%3Fevaluation_id__evaluation_id__exact%3D4 HTTP/1.1" 302 0
+INFO 2025-10-29 16:51:06,953 basehttp "GET /admin/studentManagerApp/note/?evaluation_id__evaluation_id__exact=4 HTTP/1.1" 200 21733
+INFO 2025-10-29 16:51:07,049 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 16:51:33,629 basehttp "GET /admin/studentManagerApp/note/?evaluation_id__evaluation_id__exact=5 HTTP/1.1" 302 0
+INFO 2025-10-29 16:51:33,651 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/%3Fevaluation_id__evaluation_id__exact%3D5 HTTP/1.1" 200 4299
+INFO 2025-10-29 16:51:38,886 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/%3Fevaluation_id__evaluation_id__exact%3D5 HTTP/1.1" 302 0
+INFO 2025-10-29 16:51:38,957 basehttp "GET /admin/studentManagerApp/note/?evaluation_id__evaluation_id__exact=5 HTTP/1.1" 200 21703
+INFO 2025-10-29 16:51:39,032 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-29 16:53:25,378 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 16:53:25,379 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-29 17:02:06,240 autoreload Watching for file changes with StatReloader
+INFO 2025-10-29 17:02:25,763 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-29 17:02:25,802 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 17:02:36,116 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-29 17:04:48,531 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-29 17:04:48,533 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-29 17:04:48,547 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 17:04:50,762 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 17:04:50,875 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 5440
+INFO 2025-10-29 17:04:54,452 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 17:04:57,497 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+WARNING 2025-10-29 17:05:40,674 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 17:05:40,675 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-29 17:06:00,613 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+WARNING 2025-10-29 17:06:00,683 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 17:06:00,684 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-29 17:06:01,808 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+WARNING 2025-10-29 17:06:01,866 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 17:06:01,867 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+WARNING 2025-10-29 17:06:29,573 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 17:06:29,574 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+WARNING 2025-10-29 17:08:43,270 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 17:08:43,271 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-29 17:13:05,237 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 17:13:05,285 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 304 0
+WARNING 2025-10-29 17:13:24,663 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 17:13:24,664 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-29 17:14:46,981 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+WARNING 2025-10-29 17:15:00,726 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 17:15:00,727 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-29 17:19:57,267 autoreload Watching for file changes with StatReloader
+INFO 2025-10-29 17:20:02,785 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-29 17:20:02,816 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 17:20:08,409 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 17:20:46,474 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 17:20:47,269 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 17:21:02,238 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-29 17:21:02,262 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 17:21:12,359 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 17:21:15,342 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 17:21:15,453 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 5494
+INFO 2025-10-29 17:21:57,144 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 17:21:57,178 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 304 0
+INFO 2025-10-29 17:22:38,050 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 17:22:38,089 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 304 0
+INFO 2025-10-29 17:32:50,511 autoreload Watching for file changes with StatReloader
+INFO 2025-10-29 17:32:55,671 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-29 17:32:55,704 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 17:32:57,895 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+WARNING 2025-10-29 17:33:19,129 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 17:33:19,130 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-29 17:34:43,655 autoreload Watching for file changes with StatReloader
+INFO 2025-10-29 17:34:46,011 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-29 17:35:00,272 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-29 17:35:00,273 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-29 17:35:00,295 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 17:35:01,925 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 17:35:02,057 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 5629
+WARNING 2025-10-29 17:35:12,792 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 17:35:12,793 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-29 17:38:00,975 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+WARNING 2025-10-29 17:38:01,031 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 17:38:01,034 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-29 17:38:01,037 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 304 0
+INFO 2025-10-29 17:46:15,071 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 17:46:15,109 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 304 0
+WARNING 2025-10-29 17:46:45,731 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 17:46:45,732 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-29 17:47:33,012 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+WARNING 2025-10-29 17:47:33,085 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 17:47:33,087 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-29 17:53:07,347 autoreload Watching for file changes with StatReloader
+INFO 2025-10-29 17:53:30,403 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-29 17:53:41,302 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-29 17:53:41,305 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-29 17:53:41,331 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 17:53:42,902 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 17:53:43,041 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 5749
+WARNING 2025-10-29 17:53:56,073 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 17:53:56,075 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-29 18:04:21,159 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-29 18:04:36,843 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-29 18:04:36,846 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-29 18:04:36,873 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 18:04:38,725 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 18:04:38,796 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 5684
+WARNING 2025-10-29 18:04:59,615 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 18:04:59,616 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-29 18:11:03,435 autoreload Watching for file changes with StatReloader
+INFO 2025-10-29 18:11:06,869 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-29 18:11:06,925 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 18:11:08,675 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 18:11:18,599 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+WARNING 2025-10-29 18:11:18,681 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 18:11:18,683 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-29 18:11:18,752 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 5742
+INFO 2025-10-29 18:24:07,595 autoreload Watching for file changes with StatReloader
+INFO 2025-10-29 18:24:11,671 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-29 18:24:11,707 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 18:24:18,606 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 18:24:27,623 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 18:24:27,671 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 200 4219
+INFO 2025-10-29 18:24:43,348 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 18:24:43,559 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58504
+INFO 2025-10-29 18:24:43,664 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 18:24:45,544 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 21272
+INFO 2025-10-29 18:24:45,644 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 18:24:47,343 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58504
+INFO 2025-10-29 18:24:47,423 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 18:24:48,613 basehttp "GET /admin/studentManagerApp/matiere/ HTTP/1.1" 200 18410
+INFO 2025-10-29 18:24:48,694 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 18:24:49,683 basehttp "GET /admin/studentManagerApp/evaluation/ HTTP/1.1" 200 21609
+INFO 2025-10-29 18:24:49,756 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 18:24:50,595 basehttp "GET /admin/studentManagerApp/etudiant/ HTTP/1.1" 302 0
+INFO 2025-10-29 18:24:50,619 basehttp "GET /admin/login/?next=/admin/studentManagerApp/etudiant/ HTTP/1.1" 200 4227
+INFO 2025-10-29 18:25:04,030 basehttp "POST /admin/login/?next=/admin/studentManagerApp/etudiant/ HTTP/1.1" 302 0
+INFO 2025-10-29 18:25:04,085 basehttp "GET /admin/studentManagerApp/etudiant/ HTTP/1.1" 200 17144
+INFO 2025-10-29 18:25:04,181 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 18:25:08,108 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 21272
+INFO 2025-10-29 18:25:08,189 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 18:25:09,997 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58504
+INFO 2025-10-29 18:25:10,074 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 18:25:34,871 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-10-29 18:25:43,502 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 18:25:43,520 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 200 4219
+INFO 2025-10-29 18:25:57,095 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 18:25:57,250 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58504
+INFO 2025-10-29 18:25:57,339 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 18:34:50,847 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-29 18:35:17,447 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-29 18:35:17,450 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-29 18:35:17,464 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 18:35:18,959 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 18:35:19,091 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 7864
+INFO 2025-10-29 18:35:35,980 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 200 4219
+INFO 2025-10-29 18:35:36,037 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-10-29 18:35:36,071 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-10-29 18:35:36,076 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-10-29 18:35:36,077 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-10-29 18:35:36,079 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-10-29 18:35:36,083 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-10-29 18:35:36,088 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-10-29 18:35:54,457 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 18:35:54,607 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58504
+INFO 2025-10-29 18:35:54,650 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-10-29 18:35:54,668 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-10-29 18:35:54,670 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-10-29 18:35:54,672 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-10-29 18:35:54,675 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-10-29 18:35:54,678 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-10-29 18:35:54,679 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-10-29 18:35:54,688 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 18:35:54,697 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-10-29 18:35:54,700 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-10-29 18:35:54,705 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-10-29 18:35:54,741 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-10-29 18:35:54,741 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-10-29 18:35:54,742 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-10-29 18:35:54,746 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+WARNING 2025-10-29 18:37:09,029 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 18:37:09,032 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-29 18:39:13,670 autoreload Watching for file changes with StatReloader
+INFO 2025-10-29 18:39:20,599 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 18:39:20,664 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 304 0
+WARNING 2025-10-29 18:39:20,683 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 18:39:20,686 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-29 18:41:46,489 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-29 18:42:08,666 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-29 18:42:08,667 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-29 18:42:08,685 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 18:42:10,952 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 18:42:11,093 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 7864
+WARNING 2025-10-29 18:42:43,386 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 18:42:43,395 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-29 18:51:12,376 autoreload Watching for file changes with StatReloader
+INFO 2025-10-29 18:51:29,108 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-29 18:51:38,384 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-29 18:51:38,386 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-29 18:51:38,414 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 18:51:39,893 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 18:51:40,022 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 6763
+WARNING 2025-10-29 18:51:47,720 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-29 18:51:47,721 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-29 18:54:25,100 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-10-29 19:01:58,508 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-10-29 19:05:20,740 autoreload Watching for file changes with StatReloader
+INFO 2025-10-29 19:06:29,275 autoreload Watching for file changes with StatReloader
+INFO 2025-10-29 19:07:44,651 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\models.py changed, reloading.
+INFO 2025-10-29 19:07:45,346 autoreload Watching for file changes with StatReloader
+INFO 2025-10-29 19:08:11,721 autoreload Watching for file changes with StatReloader
+INFO 2025-10-29 19:10:34,198 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-29 19:10:46,487 views Connexion réussie de l'utilisateur Djeufack Kafack (etudiant).
+INFO 2025-10-29 19:10:46,488 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-29 19:10:46,513 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 603
+INFO 2025-10-29 19:10:50,289 views Déconnexion réussie de l'utilisateur Djeufack Kafack (etudiant).
+INFO 2025-10-29 19:10:50,301 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-29 19:10:50,314 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-29 19:10:59,785 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-29 19:10:59,787 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-29 19:10:59,800 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 19:11:03,017 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 19:11:03,163 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 6763
+INFO 2025-10-29 19:14:54,409 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 200 4219
+INFO 2025-10-29 19:14:54,459 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-10-29 19:14:54,469 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-10-29 19:14:54,480 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-10-29 19:14:54,480 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-10-29 19:14:54,481 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-10-29 19:14:54,481 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-10-29 19:14:54,499 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-10-29 19:15:11,337 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 19:15:11,470 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58510
+INFO 2025-10-29 19:15:11,523 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-10-29 19:15:11,530 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-10-29 19:15:11,534 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-10-29 19:15:11,537 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-10-29 19:15:11,538 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-10-29 19:15:11,546 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-10-29 19:15:11,551 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-10-29 19:15:11,559 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 19:15:11,562 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-10-29 19:15:11,563 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-10-29 19:15:11,578 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-10-29 19:15:11,604 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-10-29 19:15:11,605 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-10-29 19:15:11,607 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-10-29 19:15:11,610 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-10-29 19:15:39,645 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-10-29 19:15:46,096 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 19:15:46,113 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 200 4219
+INFO 2025-10-29 19:16:04,118 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 19:16:04,264 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58510
+INFO 2025-10-29 19:16:04,326 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 19:16:38,788 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 19:16:38,822 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 304 0
+INFO 2025-10-29 19:17:26,964 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 200 4219
+INFO 2025-10-29 19:17:40,240 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 19:17:40,384 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58510
+INFO 2025-10-29 19:17:40,442 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 19:18:15,017 basehttp "GET /admin/studentManagerApp/note/14/change/ HTTP/1.1" 302 0
+INFO 2025-10-29 19:18:15,030 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/14/change/ HTTP/1.1" 200 4239
+INFO 2025-10-29 19:18:34,814 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/14/change/ HTTP/1.1" 302 0
+INFO 2025-10-29 19:18:34,889 basehttp "GET /admin/studentManagerApp/note/14/change/ HTTP/1.1" 200 17882
+INFO 2025-10-29 19:18:34,958 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-10-29 19:18:34,966 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-10-29 19:18:34,971 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 19:18:34,973 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-10-29 19:18:34,979 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-10-29 19:18:34,993 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-10-29 19:18:49,494 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-10-29 19:18:58,059 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 19:18:58,077 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 200 4219
+INFO 2025-10-29 19:19:14,520 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 19:19:14,539 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 200 4219
+INFO 2025-10-29 19:19:32,527 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 19:19:32,683 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58513
+INFO 2025-10-29 19:19:32,778 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 19:20:32,369 basehttp "GET /tableau-notes/administrateur/1 HTTP/1.1" 200 56286
+INFO 2025-10-29 19:20:38,264 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 19:20:38,303 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 304 0
+INFO 2025-10-29 19:21:18,288 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-10-29 19:21:23,941 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 19:21:23,966 basehttp "GET /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 200 4219
+INFO 2025-10-29 19:21:38,401 basehttp "POST /admin/login/?next=/admin/studentManagerApp/note/ HTTP/1.1" 302 0
+INFO 2025-10-29 19:21:38,563 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58513
+INFO 2025-10-29 19:21:38,646 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-29 19:24:27,911 autoreload Watching for file changes with StatReloader
+INFO 2025-10-29 19:24:36,923 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-29 19:24:36,951 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 19:24:43,292 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 19:24:46,397 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 19:24:55,056 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 19:25:03,097 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-29 19:25:11,116 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-29 19:25:12,782 basehttp "GET /tableau-notes/administrateur/1 HTTP/1.1" 200 56285
+INFO 2025-10-29 19:25:14,043 basehttp "GET /profile-page/administrateur/1 HTTP/1.1" 200 729
+INFO 2025-10-29 19:25:19,141 views Déconnexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-29 19:25:19,150 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-10-29 19:25:19,179 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-10-31 12:55:10,084 autoreload Watching for file changes with StatReloader
+INFO 2025-10-31 12:55:15,121 basehttp "GET / HTTP/1.1" 200 955
+WARNING 2025-10-31 12:55:15,322 log Not Found: /favicon.ico
+WARNING 2025-10-31 12:55:15,323 basehttp "GET /favicon.ico HTTP/1.1" 404 3553
+INFO 2025-10-31 12:55:32,715 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-31 12:55:32,733 basehttp "GET / HTTP/1.1" 200 1077
+INFO 2025-10-31 12:56:09,566 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-10-31 12:56:09,568 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-10-31 12:56:09,607 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-31 12:56:11,673 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-31 12:56:11,922 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 6669
+WARNING 2025-10-31 12:56:17,156 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-31 12:56:17,158 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-31 12:57:10,447 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-10-31 13:37:43,592 autoreload Watching for file changes with StatReloader
+INFO 2025-10-31 13:37:49,926 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-31 13:37:49,969 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-31 13:37:55,245 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58631
+INFO 2025-10-31 13:37:55,398 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 6757
+WARNING 2025-10-31 13:38:01,608 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-31 13:38:01,609 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-31 13:38:48,245 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-10-31 13:39:09,668 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-10-31 13:39:27,925 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58632
+WARNING 2025-10-31 13:39:28,015 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-31 13:39:28,019 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-31 13:39:28,019 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 304 0
+INFO 2025-10-31 13:40:05,519 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-10-31 13:42:37,915 autoreload Watching for file changes with StatReloader
+INFO 2025-10-31 13:42:47,670 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58632
+INFO 2025-10-31 13:42:47,741 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 304 0
+WARNING 2025-10-31 13:42:52,457 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-31 13:42:52,459 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-31 13:47:06,613 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-10-31 13:52:44,038 autoreload Watching for file changes with StatReloader
+INFO 2025-10-31 13:56:33,124 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-31 13:56:33,163 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+WARNING 2025-10-31 13:56:38,002 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-31 13:56:38,003 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-31 13:56:39,868 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58632
+WARNING 2025-10-31 13:56:39,950 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-31 13:56:39,951 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-31 13:56:40,081 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 6899
+INFO 2025-10-31 13:57:04,871 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-10-31 13:57:26,349 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-10-31 13:58:01,357 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58632
+WARNING 2025-10-31 13:58:01,465 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-31 13:58:01,469 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-31 13:58:01,470 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 304 0
+INFO 2025-10-31 13:58:43,189 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-10-31 13:59:07,015 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+INFO 2025-10-31 14:00:55,883 autoreload Watching for file changes with StatReloader
+INFO 2025-10-31 14:00:59,428 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-31 14:00:59,464 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-31 14:01:05,067 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58632
+INFO 2025-10-31 14:01:05,236 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 6998
+INFO 2025-10-31 14:01:28,609 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+WARNING 2025-10-31 14:01:35,633 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-31 14:01:35,635 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-31 14:18:06,223 autoreload Watching for file changes with StatReloader
+INFO 2025-10-31 14:18:15,479 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-10-31 14:18:15,515 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-10-31 14:18:19,625 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58633
+INFO 2025-10-31 14:18:19,782 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 7023
+INFO 2025-10-31 14:18:29,156 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+WARNING 2025-10-31 14:18:33,491 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-31 14:18:33,492 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664
+INFO 2025-10-31 14:19:55,796 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58633
+INFO 2025-10-31 14:19:55,866 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 7011
+INFO 2025-10-31 14:20:01,728 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 55
+WARNING 2025-10-31 14:20:07,863 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-10-31 14:20:07,864 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3664

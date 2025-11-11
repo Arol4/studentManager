@@ -23,7 +23,7 @@
 </select><br>
 <div id="modification_par_choix">
     {% if liste_des_matieres_enseignees %}
-        <label>Matière</label>
+        <label>Matière: </label>
         <select id="liste_des_matieres_enseignees">
         {% if liste_des_matieres_enseignees|length == 1 %}
             {% for matiere_enseignee in liste_des_matieres_enseignees %}
@@ -36,7 +36,7 @@
             {% endfor %}
         {% endif %}
         </select><br>
-        <label>Type d'évaluation</label>
+        <label>Type d'évaluation: </label>
         {% if user.role == "administrateur" %}
         <select id="types_evaluation">
             <option value="" disabled selected>Selectionnez un type d'évaluation</option>
@@ -88,6 +88,25 @@
         },
         urls: {
             enregistrer_notes: "{% url 'enregistrer_notes' %}"
+        },
+        etudiants: {
+            {% for etudiant in etudiants %}
+                "{{ etudiant.etudiant_id|escapejs }}":{
+                    nom:  "{{ etudiant.nom|escapejs }} {{ etudiant.prenom|escapejs }}",
+                    matricule: " {{ etudiant.matricule|escapejs }}"
+                }
+            {% if not forloop.last %},{% endif %}
+            {% endfor %}          
+        },
+        role : "{{ user.role|escapejs }}",
+        liste_des_matieres : {
+            {% for matiere in liste_des_matieres_enseignees %}
+                "{{ matiere.matiere_id|escapejs }}":{
+                    libelle : "{{ matiere.libelle|escapejs }} - Semestre {{ matiere.semestre|escapejs }}",
+                    enseignant_id : "{{ matiere.enseignant_id|escapejs }}"
+                }
+            {% if not forloop.last %},{% endif %}
+            {% endfor %}
         }
     };
 </script>

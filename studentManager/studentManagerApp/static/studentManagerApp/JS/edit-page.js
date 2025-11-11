@@ -44,10 +44,74 @@ document.addEventListener('DOMContentLoaded', function() {
             // Réafficher les notes
             afficherNotes();
         } else if (type_modification == "par_etudiant") {
-            modification_par_choix.innerHTML = "Le menu de la modification par étudiant doit s'afficher ici.";
+            modification_par_choix.innerHTML = "";
+            const studentArray = Object.entries(window.notesData.etudiants);
+            if (studentArray.length == 0) {
+                modification_par_choix.textContent = "Aucun étudiant n'est enregistré.";
+            } else {
+                const listeDesEtudiants = document.createElement('select');
+                const  labelListeDesEtudiants = document.createElement('label');
+                labelListeDesEtudiants.textContent = "Nom de l'étudiant: ";
+                modification_par_choix.appendChild(labelListeDesEtudiants);
+                listeDesEtudiants.id = "listeDesEtudiants";
+                if (studentArray.length == 1) {
+                    studentArray.forEach(([etudiant_id, etudiant]) =>{
+                        const optionSurEtudiant = document.createElement('option');
+                        optionSurEtudiant.textContent = etudiant.nom;
+                        optionSurEtudiant.value = etudiant_id;
+                        optionSurEtudiant.selected = true;
+                        listeDesEtudiants.appendChild(optionSurEtudiant);
+                    });
+                }else{
+                    const enteteSelection = document.createElement('option');
+                    enteteSelection.textContent = "Selectionnez un étudiant";
+                    enteteSelection.selected = true;
+                    enteteSelection.value = "";
+                    enteteSelection.disabled = true;
+                    listeDesEtudiants.appendChild(enteteSelection);
+                    studentArray.forEach(([etudiant_id, etudiant]) =>{
+                        const optionSurEtudiant = document.createElement('option');
+                        optionSurEtudiant.textContent = etudiant.nom;
+                        optionSurEtudiant.value = etudiant_id;
+                        listeDesEtudiants.appendChild(optionSurEtudiant);
+                    });                    
+                }
+                modification_par_choix.appendChild(listeDesEtudiants);
+                const returnLine1 = document.createElement('br');
+                modification_par_choix.appendChild(returnLine1);
+                const labelTypeEvaluation = document.createElement('label');
+                labelTypeEvaluation.textContent = "Type d'évaluation :";
+                modification_par_choix.appendChild(labelTypeEvaluation);
+                const listeTypesEvaluation = document.createElement('select');
+
+                const optionSurCC = document.createElement('option');
+                optionSurCC.value = "CC";
+                optionSurCC.textContent = "Contrôle Continu (CC)";
+                if (window.notesData.role == "enseignant") {
+                    listeTypesEvaluation.disabled = true;
+                    optionSurCC.selected = true;
+                    listeTypesEvaluation.appendChild(optionSurCC);
+                }else{
+                    const enteteSelectionTypeEvaluation = document.createElement('option');
+                    enteteSelectionTypeEvaluation.textContent = "Selectionnez un type d'évaluation";
+                    enteteSelectionTypeEvaluation.selected = true;
+                    enteteSelectionTypeEvaluation.value = "";
+                    enteteSelectionTypeEvaluation.disabled = true;
+                    const optionSurSN = document.createElement('option');
+                    optionSurSN.value = "SN";
+                    optionSurSN.textContent = "Session Normale (SN)";
+                    listeTypesEvaluation.appendChild(enteteSelectionTypeEvaluation);
+                    listeTypesEvaluation.appendChild(optionSurCC);
+                    listeTypesEvaluation.appendChild(optionSurSN);
+                }
+                modification_par_choix.appendChild(listeTypesEvaluation);
+                console.log(window.notesData.liste_des_matieres);
+            }
         }
     }
+    function creerLeTableauEtudiant(etudiant_id, type_evaluation){
 
+    }
     function creerTableauHTML(data) {
         const table = document.createElement('table');
         const thead = document.createElement('thead');

@@ -286,7 +286,7 @@ def enregistrer_notes(request):
             matiere_id = int(data['matiere_id'])
             type_evaluation = data['type_evaluation']
             notes = data['notes']
-
+            
             try:
                 matiere = Matiere.objects.get(matiere_id=matiere_id)
             except Matiere.DoesNotExist:
@@ -302,18 +302,76 @@ def enregistrer_notes(request):
                     type_evaluation=type_evaluation,
                     defaults={'date_evaluation': date.today()}
                 )
-                Note.objects.update_or_create(
+                ancienne_note, created = Note.objects.get_or_create(
                     etudiant_id=etudiant,
-                    evaluation_id=evaluation,
-                    defaults={'note': note}
+                    evaluation_id=evaluation  
                 )
-            return JsonResponse({'message': 'Notes enregistrées avec succès'})
+                ancienne_note = ancienne_note.note
+                if ancienne_note != note:
+                    if ancienne_note == None:
+                        logger.info(f"Ajout de la note: {etudiant.nom}, {matiere.libelle}, {type_evaluation} (note: {note})")
+                    elif note == None:
+                        logger.info(f"Suppression de la note: {etudiant.nom}, {matiere.libelle}, {type_evaluation} (ancienne note: {ancienne_note})")
+                    else:
+                        logger.info(f"Modification de la note: {etudiant.nom}, {matiere.libelle}, {type_evaluation} (ancienne note: {ancienne_note} => Nouvelle note: {note})")
+                    
+                    Note.objects.update_or_create(
+                        etudiant_id=etudiant,
+                        evaluation_id=evaluation,
+                        defaults={'note': note}
+                    )
+            return JsonResponse({'message': f'Notes de {matiere.libelle} enregistrées avec succès'})
         except Exception as e:
             return JsonResponse({
                 'error': str(e)
             }, status=400)
     
     return JsonResponse({'error': 'Méthode non autorisée'}, status=405)
+
+@csrf_exempt
+def enregistrer_notes_etudiant(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            etudiant_id = int(data["etudiant_id"])
+            type_evaluation = data["type_evaluation"]
+            notes = data["notes"]
+            try:
+                etudiant = Etudiant.objects.get(etudiant_id=etudiant_id)
+            except Etudiant.DoesNotExist:
+                return JsonResponse({"error": "Etudiant non trouvé"}, status = 404)
+            for matiere_id, note in notes.items():
+                try:
+                    matiere = Matiere.objects.get(matiere_id = matiere_id)
+                except Matiere.DoesNotExist:
+                    return JsonResponse({"error": f"Matière {matiere_id} non trouvée"}, status = 404)
+                
+                evaluation, created = Evaluation.objects.get_or_create(
+                    matiere_id=matiere,
+                    type_evaluation=type_evaluation,
+                    defaults={"date_evaluation": date.today()}
+                )
+                ancienne_note, created = Note.objects.get_or_create(
+                    etudiant_id = etudiant,
+                    evaluation_id = evaluation
+                )
+                ancienne_note = ancienne_note.note
+                if ancienne_note != note:
+                    if ancienne_note == None:
+                        logger.info(f"Ajout de la note: {etudiant.nom}, {matiere.libelle}, {type_evaluation} (note: {note})")
+                    elif note == None:
+                        logger.info(f"Suppression de la note: {etudiant.nom}, {matiere.libelle}, {type_evaluation} (ancienne note: {ancienne_note})")
+                    else:
+                        logger.info(f"Modification de la note: {etudiant.nom}, {matiere.libelle}, {type_evaluation} (ancienne note: {ancienne_note} => Nouvelle note: {note})")
+                    Note.objects.update_or_create(
+                            etudiant_id=etudiant,
+                            evaluation_id=evaluation,
+                            defaults={'note': note}
+                    )
+            return JsonResponse({"message": f"Notes de {etudiant.nom} enregistrées avec succès"})
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=400)
+    return JsonResponse({"error": "Méthode de sauvegarde  etudiant non autorisée"}, status=405)
 
 def profile_page_view(request, id, role):
     if role == "etudiant":

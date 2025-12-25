@@ -87,7 +87,8 @@
             {% endfor %}
         },
         urls: {
-            enregistrer_notes: "{% url 'enregistrer_notes' %}"
+            enregistrer_notes: "{% url 'enregistrer_notes' %}",
+            enregistrer_notes_etudiant: "{% url 'enregistrer_notes_etudiant' %}"
         },
         etudiants: {
             {% for etudiant in etudiants %}

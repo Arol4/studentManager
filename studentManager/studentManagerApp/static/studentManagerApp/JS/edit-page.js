@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modification_par_choix_html_initial = modification_par_choix.innerHTML;
     let types_evaluation, liste_des_matieres_enseignees, notes_de_la_matiere_selectionnee;
     let valeur_type_evaluation, valeur_matiere;
+    let valeur_type_evaluation_par_etudiants, valeur_etudiant_id;
 
     // Fonction pour réinitialiser les références aux éléments
     function initialiserReferences() {
@@ -105,12 +106,114 @@ document.addEventListener('DOMContentLoaded', function() {
                     listeTypesEvaluation.appendChild(optionSurSN);
                 }
                 modification_par_choix.appendChild(listeTypesEvaluation);
-                console.log(window.notesData.liste_des_matieres);
+                const notesParEtudiants = document.createElement('div');
+                modification_par_choix.appendChild(notesParEtudiants);
+                listeDesEtudiants.addEventListener('change', afficherNotesParEtudiants);
+                listeTypesEvaluation.addEventListener('change', afficherNotesParEtudiants);
+                if (valeur_type_evaluation_par_etudiants) {
+                    listeDesEtudiants.value = valeur_etudiant_id;
+                }
+                if (valeur_etudiant_id) {
+                    listeTypesEvaluation.value = valeur_type_evaluation_par_etudiants;
+                }
+                afficherNotesParEtudiants();
+                function afficherNotesParEtudiants(){
+                    const etudiant_id = listeDesEtudiants.value;
+                    const type_evaluation = listeTypesEvaluation.value;
+                    if (etudiant_id && type_evaluation) {
+                        const table = creerLeTableauEtudiant(etudiant_id, type_evaluation);
+                        notesParEtudiants.innerHTML = "";
+                        notesParEtudiants.appendChild(table);
+                        const saveButton = document.createElement("button");
+                        saveButton.textContent = "Enregistrer les notes";
+                        saveButton.addEventListener('click', enregistrerNotesEtudiant);
+                        notesParEtudiants.appendChild(saveButton);
+                    } else {
+                        notesParEtudiants.textContent = "Sélectionnez un étudiant et un type d'évaluation pour afficher ses notes.";
+                    }
+                    valeur_etudiant_id = etudiant_id;
+                    valeur_type_evaluation_par_etudiants = type_evaluation; 
+                }
+                function enregistrerNotesEtudiant(){
+                    const rows = notesParEtudiants.querySelectorAll("tbody tr");
+                    notes = {};
+                    rows.forEach(row => {
+                        const matiere_id = row.getAttribute("matiere-id");
+                        const input = row.querySelector("input");
+                        const noteValue = parseFloat(input.value);
+                        const note = isNaN(noteValue) ? null : noteValue;
+                        notes[matiere_id] = note;
+                    });
+                    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                    fetch(window.notesData.urls.enregistrer_notes_etudiant, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': csrfToken
+                        },
+                        body: JSON.stringify({
+                            etudiant_id: valeur_etudiant_id,
+                            type_evaluation: valeur_type_evaluation_par_etudiants,
+                            notes: notes
+                        })
+                    }).then(response => {
+                        if (!response.ok){
+                            throw new Error('Erreur réseau');
+                        }
+                        return response.json();
+                    }).then(data => {
+                        if (data.message){ 
+                            alert(data.message);
+                            Object.entries(notes).forEach(([matiere_id, note]) => {
+                                ((window.notesData.tableaux[matiere_id][valeur_type_evaluation_par_etudiants]).rows)[valeur_etudiant_id].note = note;
+                            });
+                        }else{
+                            alert("Erreur inconnue");
+                        }
+                    }).catch(error => {
+                        console.error('Erreur:', error);
+                        alert('Erreur réseau: '+ error.message);
+                    });
+                }
             }
         }
     }
     function creerLeTableauEtudiant(etudiant_id, type_evaluation){
-
+        tableauDesMatieres = Object.entries(window.notesData.liste_des_matieres);
+        const table = document.createElement('table');
+        const thead = document.createElement('thead');
+        const headerRow = document.createElement('tr');
+        const headers = ['Matiere', 'Note'];
+        headers.forEach(header => {
+            const th = document.createElement('th');
+            th.scope = "col";
+            th.textContent = header;
+            headerRow.appendChild(th);
+        });
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+        const tbody = document.createElement("tbody");
+        tableauDesMatieres.forEach(([matiere_id, matiere]) =>{
+            const tr = document.createElement('tr');
+            const th = document.createElement('th');
+            const note = (((((window.notesData.tableaux)[matiere_id])[type_evaluation]).rows)[etudiant_id]).note; 
+            th.scope = "row";
+            tr.setAttribute("matiere-id", parseInt(matiere_id, 10));
+            th.textContent = matiere.libelle;
+            tr.appendChild(th);
+            const td = document.createElement("td");
+            const input = document.createElement("input");
+            input.type = "number";
+            input.value = note !== null ? note:'';
+            input.max = 20;
+            input.min = 0;
+            input.step = 0.5;
+            td.appendChild(input);
+            tr.appendChild(td);
+            tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        return table;
     }
     function creerTableauHTML(data) {
         const table = document.createElement('table');
@@ -131,9 +234,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const row = document.createElement('tr');
             row.setAttribute('data-id', parseInt(id, 10));
             
-            const tdNom = document.createElement('td');
-            tdNom.textContent = rowData.nom;
-            row.appendChild(tdNom);
+            const thNom = document.createElement('th');
+            thNom.scope = "row";
+            thNom.textContent = rowData.nom;
+            row.appendChild(thNom);
         
             const tdNote = document.createElement('td');
             const input = document.createElement('input');
@@ -142,10 +246,8 @@ document.addEventListener('DOMContentLoaded', function() {
             input.min = 0;
             input.max = 20;
             input.step = 0.5;
-            input.style.width = '50px';
             tdNote.appendChild(input);
             row.appendChild(tdNote);
-            
             tbody.appendChild(row);
         });
         

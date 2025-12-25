@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-SESSION_COOKIE_AGE = 7 # in days
+SESSION_DURATION = 7 # in days
 # Application definition
 
 INSTALLED_APPS = [

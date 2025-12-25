@@ -43,7 +43,7 @@ def login_view(request):
                         messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos administrateurs")
                         return redirect('login-page')
             token = secrets.token_urlsafe(50)
-            date_expiration = datetime.datetime.now() + datetime.timedelta(days=settings.SESSION_COOKIE_AGE)
+            date_expiration = datetime.datetime.now() + datetime.timedelta(days=settings.SESSION_DURATION)
             session = SessionUtilisateur(
                 type_utilisateur = role,
                 utilisateur_id = id,
@@ -286,7 +286,7 @@ def enregistrer_notes(request):
             matiere_id = int(data['matiere_id'])
             type_evaluation = data['type_evaluation']
             notes = data['notes']
-            
+
             try:
                 matiere = Matiere.objects.get(matiere_id=matiere_id)
             except Matiere.DoesNotExist:

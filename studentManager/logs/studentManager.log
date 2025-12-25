@@ -3758,3 +3758,221 @@ INFO 2025-12-25 07:33:35,667 views Ajout de la note: Dzeuffo Tadong, Projet tute
 INFO 2025-12-25 07:33:35,710 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 78
 INFO 2025-12-25 07:33:51,728 views Modification de la note: Dzeuffo Tadong, Projet tuteuré, SN (ancienne note: 12.0 => Nouvelle note: 13)
 INFO 2025-12-25 07:33:51,751 basehttp "POST /enregistrer-notes-etudiant/ HTTP/1.1" 200 73
+INFO 2025-12-25 08:09:55,660 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 08:10:00,134 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-12-25 08:10:00,187 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-12-25 08:10:12,832 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58242
+INFO 2025-12-25 08:10:26,602 views Modification de la note: Djeufack Kafack, Anglais, CC (ancienne note: 18.0 => Nouvelle note: 20)
+INFO 2025-12-25 08:10:26,642 basehttp "POST /enregistrer-notes-etudiant/ HTTP/1.1" 200 74
+INFO 2025-12-25 08:12:13,911 basehttp "POST /enregistrer-notes-etudiant/ HTTP/1.1" 200 74
+INFO 2025-12-25 08:12:44,293 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58242
+INFO 2025-12-25 08:13:23,168 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-12-25 08:13:33,517 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-12-25 08:13:33,518 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-12-25 08:13:33,532 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-12-25 08:13:35,089 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58242
+INFO 2025-12-25 08:13:35,234 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 16205
+INFO 2025-12-25 08:14:14,208 views Modification de la note: Djeufack Kafack, Analyse 4, SN (ancienne note: 17.5 => Nouvelle note: 20)
+INFO 2025-12-25 08:14:14,257 basehttp "POST /enregistrer-notes-etudiant/ HTTP/1.1" 200 74
+INFO 2025-12-25 08:15:06,463 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2025-12-25 08:15:06,504 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-12-25 08:15:06,521 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-12-25 08:15:06,523 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-12-25 08:15:06,524 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-12-25 08:15:06,525 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-12-25 08:15:06,527 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-12-25 08:15:06,543 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-12-25 08:15:23,616 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-12-25 08:15:23,670 basehttp "GET /admin/ HTTP/1.1" 200 15193
+INFO 2025-12-25 08:15:23,712 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-12-25 08:15:23,721 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-12-25 08:15:23,723 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-12-25 08:15:23,724 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-12-25 08:15:26,917 basehttp "GET /admin/studentManagerApp/administrateur/ HTTP/1.1" 200 14920
+INFO 2025-12-25 08:15:26,955 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-12-25 08:15:26,976 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-12-25 08:15:26,976 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-12-25 08:15:26,977 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-12-25 08:15:26,987 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-12-25 08:15:26,992 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-12-25 08:15:26,994 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-12-25 08:15:26,997 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:15:27,002 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-12-25 08:15:27,006 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-12-25 08:15:27,010 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-12-25 08:15:27,047 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-12-25 08:15:27,049 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-12-25 08:15:27,049 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-12-25 08:15:29,362 basehttp "GET /admin/studentManagerApp/enseignant/ HTTP/1.1" 200 14953
+INFO 2025-12-25 08:15:29,402 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:15:30,861 basehttp "GET /admin/studentManagerApp/etudiant/ HTTP/1.1" 302 0
+INFO 2025-12-25 08:15:30,877 basehttp "GET /admin/login/?next=/admin/studentManagerApp/etudiant/ HTTP/1.1" 200 4227
+INFO 2025-12-25 08:17:12,977 basehttp "POST /admin/login/?next=/admin/studentManagerApp/etudiant/ HTTP/1.1" 302 0
+INFO 2025-12-25 08:17:13,018 basehttp "GET /admin/studentManagerApp/etudiant/ HTTP/1.1" 200 17144
+INFO 2025-12-25 08:17:13,091 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:17:21,247 basehttp "GET /admin/studentManagerApp/evaluation/ HTTP/1.1" 302 0
+INFO 2025-12-25 08:17:21,263 basehttp "GET /admin/login/?next=/admin/studentManagerApp/evaluation/ HTTP/1.1" 200 4231
+INFO 2025-12-25 08:17:47,706 basehttp "POST /admin/login/?next=/admin/studentManagerApp/evaluation/ HTTP/1.1" 302 0
+INFO 2025-12-25 08:17:47,768 basehttp "GET /admin/studentManagerApp/evaluation/ HTTP/1.1" 200 21609
+INFO 2025-12-25 08:17:47,830 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:17:50,436 basehttp "GET /admin/studentManagerApp/evaluation/4/change/ HTTP/1.1" 200 15904
+INFO 2025-12-25 08:17:50,475 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-12-25 08:17:50,493 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:17:50,495 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-12-25 08:17:50,495 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-12-25 08:17:50,495 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-12-25 08:17:50,499 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-12-25 08:17:50,520 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-12-25 08:17:50,574 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-12-25 08:17:53,867 basehttp "GET /admin/studentManagerApp/evaluation/ HTTP/1.1" 200 21609
+INFO 2025-12-25 08:17:56,515 basehttp "GET /admin/studentManagerApp/evaluation/6/change/ HTTP/1.1" 302 0
+INFO 2025-12-25 08:17:56,533 basehttp "GET /admin/login/?next=/admin/studentManagerApp/evaluation/6/change/ HTTP/1.1" 200 4249
+INFO 2025-12-25 08:18:00,992 basehttp "GET /admin/studentManagerApp/evaluation/ HTTP/1.1" 302 0
+INFO 2025-12-25 08:18:01,006 basehttp "GET /admin/login/?next=/admin/studentManagerApp/evaluation/ HTTP/1.1" 200 4231
+INFO 2025-12-25 08:18:15,134 basehttp "POST /admin/login/?next=/admin/studentManagerApp/evaluation/ HTTP/1.1" 302 0
+INFO 2025-12-25 08:18:15,180 basehttp "GET /admin/studentManagerApp/evaluation/ HTTP/1.1" 200 21609
+INFO 2025-12-25 08:18:15,251 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:18:27,378 basehttp "GET /admin/studentManagerApp/etudiant/ HTTP/1.1" 302 0
+INFO 2025-12-25 08:18:27,396 basehttp "GET /admin/login/?next=/admin/studentManagerApp/etudiant/ HTTP/1.1" 200 4227
+INFO 2025-12-25 08:18:40,056 basehttp "POST /admin/login/?next=/admin/studentManagerApp/etudiant/ HTTP/1.1" 302 0
+INFO 2025-12-25 08:18:40,101 basehttp "GET /admin/studentManagerApp/etudiant/ HTTP/1.1" 200 17144
+INFO 2025-12-25 08:18:40,147 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:18:47,872 basehttp "GET /admin/studentManagerApp/evaluation/ HTTP/1.1" 302 0
+INFO 2025-12-25 08:18:47,887 basehttp "GET /admin/login/?next=/admin/studentManagerApp/evaluation/ HTTP/1.1" 200 4231
+INFO 2025-12-25 08:19:45,488 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2025-12-25 08:19:56,460 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-12-25 08:19:56,488 basehttp "GET /admin/ HTTP/1.1" 200 15193
+INFO 2025-12-25 08:20:09,508 basehttp "GET /admin/studentManagerApp/etudiant/ HTTP/1.1" 302 0
+INFO 2025-12-25 08:20:09,534 basehttp "GET /admin/login/?next=/admin/studentManagerApp/etudiant/ HTTP/1.1" 200 4227
+INFO 2025-12-25 08:27:43,176 autoreload Watching for file changes with StatReloader
+INFO 2025-12-25 08:27:48,783 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-12-25 08:27:48,813 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-12-25 08:27:54,129 basehttp "GET /admin/login/?next=/admin/studentManagerApp/etudiant/ HTTP/1.1" 200 4227
+INFO 2025-12-25 08:28:08,016 basehttp "POST /admin/login/?next=/admin/studentManagerApp/etudiant/ HTTP/1.1" 302 0
+INFO 2025-12-25 08:28:08,090 basehttp "GET /admin/studentManagerApp/etudiant/ HTTP/1.1" 200 17144
+INFO 2025-12-25 08:28:08,182 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:28:11,955 basehttp "GET /admin/studentManagerApp/enseignant/ HTTP/1.1" 200 14953
+INFO 2025-12-25 08:28:12,021 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:28:13,115 basehttp "GET /admin/studentManagerApp/etudiant/ HTTP/1.1" 200 17144
+INFO 2025-12-25 08:28:13,177 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:28:15,808 basehttp "GET /admin/studentManagerApp/evaluation/ HTTP/1.1" 200 21609
+INFO 2025-12-25 08:28:15,872 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:28:16,840 basehttp "GET /admin/studentManagerApp/matiere/ HTTP/1.1" 200 18410
+INFO 2025-12-25 08:28:16,909 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:28:17,958 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58554
+INFO 2025-12-25 08:28:18,031 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:28:20,010 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 28887
+INFO 2025-12-25 08:28:20,079 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:28:22,575 basehttp "GET /admin/studentManagerApp/note/ HTTP/1.1" 200 58554
+INFO 2025-12-25 08:28:22,642 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:28:24,594 basehttp "GET /admin/studentManagerApp/matiere/ HTTP/1.1" 200 18410
+INFO 2025-12-25 08:28:24,664 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:28:26,118 basehttp "GET /admin/studentManagerApp/evaluation/ HTTP/1.1" 200 21609
+INFO 2025-12-25 08:28:26,186 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:29:05,012 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-12-25 08:29:38,186 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-12-25 08:29:38,188 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-12-25 08:29:38,200 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-12-25 08:30:01,559 basehttp "GET /admin/studentManagerApp/administrateur/ HTTP/1.1" 200 14920
+INFO 2025-12-25 08:30:01,655 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:30:04,816 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 29394
+INFO 2025-12-25 08:30:04,898 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:30:46,199 basehttp "POST /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 17061
+INFO 2025-12-25 08:30:46,364 basehttp "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2025-12-25 08:30:49,473 basehttp "POST /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 302 0
+INFO 2025-12-25 08:30:49,507 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 12421
+INFO 2025-12-25 08:30:49,587 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:30:49,632 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-12-25 08:30:59,621 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-12-25 08:31:11,118 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-12-25 08:31:11,120 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-12-25 08:31:11,140 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-12-25 08:31:12,775 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58242
+INFO 2025-12-25 08:31:17,398 basehttp "GET /tableau-notes/administrateur/1 HTTP/1.1" 200 56447
+INFO 2025-12-25 08:31:24,418 views Déconnexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2025-12-25 08:31:24,429 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-12-25 08:31:24,443 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-12-25 08:31:42,433 views Connexion réussie de l'utilisateur Tambou (enseignant).
+INFO 2025-12-25 08:31:42,434 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-12-25 08:31:42,453 basehttp "GET /home-page/enseignant/7 HTTP/1.1" 200 671
+INFO 2025-12-25 08:31:45,787 basehttp "GET /edit-page/enseignant/7 HTTP/1.1" 200 20052
+INFO 2025-12-25 08:32:02,876 views Ajout de la note: Djeufack Kafack, Programmation structurée, CC (note: 20)
+INFO 2025-12-25 08:32:02,894 basehttp "POST /enregistrer-notes-etudiant/ HTTP/1.1" 200 74
+INFO 2025-12-25 08:32:40,386 basehttp "POST /enregistrer-notes-etudiant/ HTTP/1.1" 200 74
+WARNING 2025-12-25 08:32:48,313 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 08:32:48,315 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 3869
+INFO 2025-12-25 08:33:17,189 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-12-25 08:33:24,412 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2025-12-25 08:33:24,465 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-12-25 08:33:24,479 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-12-25 08:33:24,484 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-12-25 08:33:24,484 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-12-25 08:33:24,486 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-12-25 08:33:24,488 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-12-25 08:33:24,502 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-12-25 08:33:39,282 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-12-25 08:33:39,309 basehttp "GET /admin/ HTTP/1.1" 200 14861
+INFO 2025-12-25 08:33:39,362 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-12-25 08:33:39,378 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-12-25 08:33:39,378 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-12-25 08:33:39,379 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-12-25 08:33:42,343 basehttp "GET /admin/studentManagerApp/administrateur/ HTTP/1.1" 200 14920
+INFO 2025-12-25 08:33:42,384 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-12-25 08:33:42,403 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-12-25 08:33:42,404 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-12-25 08:33:42,405 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-12-25 08:33:42,411 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-12-25 08:33:42,419 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-12-25 08:33:42,424 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-12-25 08:33:42,426 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:33:42,431 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-12-25 08:33:42,434 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-12-25 08:33:42,444 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-12-25 08:33:42,478 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-12-25 08:33:42,480 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-12-25 08:33:42,481 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-12-25 08:33:44,932 basehttp "GET /admin/studentManagerApp/enseignant/ HTTP/1.1" 200 14953
+INFO 2025-12-25 08:33:44,983 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:33:47,779 basehttp "GET /admin/studentManagerApp/matiere/ HTTP/1.1" 200 18410
+INFO 2025-12-25 08:33:47,826 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-12-25 08:33:52,030 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 15182
+INFO 2025-12-25 08:33:52,074 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-12-25 08:34:16,357 log Forbidden (CSRF token from POST incorrect.): /
+WARNING 2025-12-25 08:34:16,359 basehttp "POST / HTTP/1.1" 403 2503
+WARNING 2025-12-25 08:34:24,804 log Forbidden (CSRF token from POST incorrect.): /
+WARNING 2025-12-25 08:34:24,805 basehttp "POST / HTTP/1.1" 403 2503
+INFO 2025-12-25 08:34:53,324 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-12-25 08:34:54,188 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 696
+INFO 2025-12-25 08:34:55,443 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58242
+INFO 2025-12-25 08:34:55,482 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 16205
+ERROR 2025-12-25 08:34:56,525 log Internal Server Error: /log-out
+Traceback (most recent call last):
+  File "C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py", line 409, in log_out_view
+    session_utilisateur = SessionUtilisateur.objects.get(token_session = token)
+  File "C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+studentManagerApp.models.SessionUtilisateur.DoesNotExist: SessionUtilisateur matching query does not exist.
+ERROR 2025-12-25 08:34:56,536 basehttp "GET /log-out HTTP/1.1" 500 80406
+INFO 2025-12-25 08:35:08,385 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-12-25 08:35:19,831 views Connexion réussie de l'utilisateur Tambou (enseignant).
+INFO 2025-12-25 08:35:19,832 basehttp "POST / HTTP/1.1" 302 0
+INFO 2025-12-25 08:35:19,845 basehttp "GET /home-page/enseignant/7 HTTP/1.1" 200 671
+INFO 2025-12-25 08:35:21,460 basehttp "GET /edit-page/enseignant/7 HTTP/1.1" 200 20052
+INFO 2025-12-25 08:35:59,651 views Modification de la note: Djeufack Kafack, Programmation structurée, CC (ancienne note: 20.0 => Nouvelle note: 15)
+INFO 2025-12-25 08:35:59,671 basehttp "POST /enregistrer-notes-etudiant/ HTTP/1.1" 200 74
+INFO 2025-12-25 08:36:20,465 views Modification de la note: Djeufack Kafack, Programmation structurée, CC (ancienne note: 15.0 => Nouvelle note: 14)
+INFO 2025-12-25 08:36:20,515 basehttp "POST /enregistrer-notes/ HTTP/1.1" 200 88
+INFO 2025-12-25 08:37:35,747 views Déconnexion réussie de l'utilisateur Tambou (enseignant).
+INFO 2025-12-25 08:37:35,763 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2025-12-25 08:37:35,773 basehttp "GET / HTTP/1.1" 200 955
+INFO 2025-12-25 08:37:44,011 basehttp "GET /admin/studentManagerApp/sessionutilisateur/ HTTP/1.1" 200 15182
+INFO 2025-12-25 08:37:44,086 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342

@@ -125,7 +125,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGGING = {
     'version': 1,
-    'desable_existing_loggers': False,
+    'disable_existing_loggers': False,
     'formatters': {
         'verbose': {
             'format': '{levelname} {asctime} {module} {message}',
@@ -138,11 +138,25 @@ LOGGING = {
     },
 
     'handlers' : {
-        'file': {
-            'level': 'DEBUG',
-            'class' : 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR,'logs', 'studentManager.log'),
+        'file_for_app_only':{
+            'level': 'INFO',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': os.path.join(BASE_DIR,'logs', 'studentManager_logs_for_app_only.log'),
+            'when': 'midnight',
+            'interval': 30,
+            'backupCount': 3,
             'formatter': 'verbose',
+            'encoding': 'utf-8'
+        },
+        'file_for_all':{
+            'level': 'DEBUG',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': os.path.join(BASE_DIR,'logs', 'studentManager_logs_for_all.log'),
+            'when': 'midnight',
+            'interval': 30,
+            'backupCount': 3,
+            'formatter': 'verbose',
+            'encoding': 'utf-8'
         },
         'console' : {
             'level': 'INFO',
@@ -153,12 +167,12 @@ LOGGING = {
 
     'loggers': {
         'django' : {
-            'handlers': ['file','console'],
+            'handlers': ['file_for_all','console'],
             'level':'INFO',
             'propagate': False,
         },
         'studentManagerApp':{
-            'handlers': ['file','console'],
+            'handlers': ['file_for_all', 'console', 'file_for_app_only'],
             'level': 'DEBUG',
             'propagate': False,
         }

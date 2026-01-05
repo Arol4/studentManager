@@ -7,6 +7,7 @@
         <a href="{% url 'edit-page' role=user.role id=user.id %}" >Édition des notes</a>
     {% endif %}
     <a href="{% url 'tableau-notes' role=user.role id=user.id %}" >Tableau de notes</a>
+    <a href="{% url 'stats-page' role=user.role id=user.id %}" >Statistiques</a>
     Profil
     <a href="{% url 'log-out' %}" >Déconnexion</a>
 </nav>

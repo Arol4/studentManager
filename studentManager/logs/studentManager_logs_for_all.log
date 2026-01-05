@@ -1,1 +1,43 @@
 INFO 2026-01-02 21:17:38,992 autoreload Watching for file changes with StatReloader
+INFO 2026-01-05 13:15:35,082 autoreload Watching for file changes with StatReloader
+INFO 2026-01-05 13:15:44,224 basehttp "GET / HTTP/1.1" 200 955
+WARNING 2026-01-05 13:15:44,438 log Not Found: /favicon.ico
+WARNING 2026-01-05 13:15:44,439 basehttp "GET /favicon.ico HTTP/1.1" 404 3962
+INFO 2026-01-05 13:15:55,058 views Connexion réussie de l'utilisateur Djeufack Kafack (etudiant).
+INFO 2026-01-05 13:15:55,061 basehttp "POST / HTTP/1.1" 302 0
+INFO 2026-01-05 13:15:55,093 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 658
+INFO 2026-01-05 13:16:21,232 basehttp "GET /stats-page/etudiant/1 HTTP/1.1" 200 657
+INFO 2026-01-05 13:17:14,523 basehttp "GET /stats-page/etudiant/1 HTTP/1.1" 200 662
+INFO 2026-01-05 13:19:21,033 basehttp "GET /stats-page/etudiant/1 HTTP/1.1" 200 662
+INFO 2026-01-05 13:19:22,405 basehttp "GET /tableau-notes/etudiant/1 HTTP/1.1" 200 5311
+INFO 2026-01-05 13:19:23,830 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 658
+INFO 2026-01-05 13:19:27,133 basehttp "GET /stats-page/etudiant/1 HTTP/1.1" 200 662
+INFO 2026-01-05 13:19:29,139 basehttp "GET /profile-page/etudiant/1 HTTP/1.1" 200 763
+INFO 2026-01-05 13:19:30,184 basehttp "GET /stats-page/etudiant/1 HTTP/1.1" 200 662
+INFO 2026-01-05 13:19:42,508 basehttp "GET /tableau-notes/etudiant/1 HTTP/1.1" 200 5311
+INFO 2026-01-05 13:19:44,949 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 658
+INFO 2026-01-05 13:21:00,037 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 538
+INFO 2026-01-05 13:21:03,229 basehttp "GET /stats-page/etudiant/1 HTTP/1.1" 200 662
+INFO 2026-01-05 13:22:22,682 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2026-01-05 13:22:24,063 autoreload Watching for file changes with StatReloader
+INFO 2026-01-05 13:23:07,086 autoreload C:\Users\arold\OneDrive\Desktop\Projets\projetsDjango\studentManager\studentManager\studentManagerApp\views.py changed, reloading.
+INFO 2026-01-05 13:23:08,642 autoreload Watching for file changes with StatReloader
+INFO 2026-01-05 13:23:14,389 basehttp "GET /tableau-notes/etudiant/1 HTTP/1.1" 200 5311
+INFO 2026-01-05 13:23:15,361 basehttp "GET /home-page/etudiant/1 HTTP/1.1" 200 538
+INFO 2026-01-05 13:23:17,262 basehttp "GET /tableau-notes/etudiant/1 HTTP/1.1" 200 5311
+INFO 2026-01-05 13:23:19,070 basehttp "GET /profile-page/etudiant/1 HTTP/1.1" 200 763
+INFO 2026-01-05 13:23:21,036 views Déconnexion réussie de l'utilisateur Djeufack Kafack (etudiant).
+INFO 2026-01-05 13:23:21,048 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2026-01-05 13:23:21,082 basehttp "GET / HTTP/1.1" 200 955
+INFO 2026-01-05 13:23:32,559 views Connexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2026-01-05 13:23:32,561 basehttp "POST / HTTP/1.1" 302 0
+INFO 2026-01-05 13:23:32,578 basehttp "GET /home-page/administrateur/1 HTTP/1.1" 200 637
+INFO 2026-01-05 13:23:35,298 basehttp "GET /edit-page/administrateur/1 HTTP/1.1" 200 58303
+INFO 2026-01-05 13:23:35,486 basehttp "GET /static/studentManagerApp/JS/edit-page.js HTTP/1.1" 200 16205
+INFO 2026-01-05 13:23:37,790 basehttp "GET /tableau-notes/administrateur/1 HTTP/1.1" 200 56518
+INFO 2026-01-05 13:23:39,577 basehttp "GET /profile-page/administrateur/1 HTTP/1.1" 200 790
+INFO 2026-01-05 13:23:41,557 basehttp "GET /stats-page/administrateur/1 HTTP/1.1" 200 761
+INFO 2026-01-05 13:23:43,604 basehttp "GET /profile-page/administrateur/1 HTTP/1.1" 200 790
+INFO 2026-01-05 13:23:45,576 views Déconnexion réussie de l'utilisateur Djeufack Kafack (administrateur).
+INFO 2026-01-05 13:23:45,591 basehttp "GET /log-out HTTP/1.1" 302 0
+INFO 2026-01-05 13:23:45,606 basehttp "GET / HTTP/1.1" 200 955

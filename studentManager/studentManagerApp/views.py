@@ -70,6 +70,33 @@ def login_view(request):
     return render(request,'studentManagerApp/HTML/log-in.html',{'form':form})
 
 def home_page_view(request, id, role):
+    if role == "etudiant":
+        try:
+            user=Etudiant.objects.get(etudiant_id=id)
+        except Etudiant.DoesNotExist:
+                messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos étudiants")
+                return redirect('login-page')
+    elif role == "enseignant":
+        try:
+            user=Enseignant.objects.get(enseignant_id=id)
+        except Enseignant.DoesNotExist:
+                messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos enseigants")
+                return redirect('login-page')
+    else:
+        try:
+            user=Administrateur.objects.get(administrateur_id=id)
+        except Administrateur.DoesNotExist:
+                messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos administrateurs")
+                return redirect('login-page')
+    
+    del(user.password)
+    delattr(user, role + "_id")
+    del(user._state)
+    user.id = id
+    user.role = role
+    return render(request,'studentManagerApp/HTML/home-page.html',{'user':user})
+
+def stats_page_view(request, id, role):
     nombre_etudiants = Etudiant.objects.count()
     nombre_matieres1 = len(Matiere.objects.filter(semestre=1))
     nombre_matieres2 = len(Matiere.objects.filter(semestre=2))
@@ -102,8 +129,8 @@ def home_page_view(request, id, role):
     del(user._state)
     user.id = id
     user.role = role
-    return render(request,'studentManagerApp/HTML/home-page.html',{'user':user, 'statistics': statistics})
-
+    return render(request,'studentManagerApp/HTML/stats-page.html',{'user':user, 'statistics': statistics})
+  
 def edit_page_view(request, id, role):
     # Common setup
     etudiants = Etudiant.objects.order_by('etudiant_id')

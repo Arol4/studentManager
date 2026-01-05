@@ -9,6 +9,7 @@
     {% endif %}
     Tableau de notes
     <a href="{% url 'profile-page' role=user.role id=user.id %}" >Profil</a>
+    <a href="{% url 'stats-page' role=user.role id=user.id %}" >Statistiques</a>
     <a href="{% url 'log-out' %}" >Déconnexion</a>
 </nav>
 <p>image ou initiale</p>

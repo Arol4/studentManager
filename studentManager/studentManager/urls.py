@@ -9,6 +9,7 @@ urlpatterns = [
     path('enregistrer-notes/', views.enregistrer_notes, name='enregistrer_notes'),
     path('enregistrer-notes-etudiant/', views.enregistrer_notes_etudiant, name='enregistrer_notes_etudiant'),
     path('tableau-notes/<str:role>/<int:id>', views.tableau_notes_view, name='tableau-notes'),
+    path('stats-page/<str:role>/<int:id>', views.stats_page_view, name='stats-page'),
     path('log-out',views.log_out_view, name='log-out'),
     path('admin/', admin.site.urls),
 ]

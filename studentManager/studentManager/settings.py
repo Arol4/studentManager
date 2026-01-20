@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'studentManagerApp'
+    'studentManagerApp',
+    'django_crontab',
 ]
 
 MIDDLEWARE = [
@@ -80,7 +81,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+CRONJOBS = [
+    ('0 0 1 * *', 'studentManagerApp.cron.monthly_cleanup', f">> {BASE_DIR/ 'logs/cron.log'} 2>&1"),
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

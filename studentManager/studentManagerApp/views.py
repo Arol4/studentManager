@@ -259,6 +259,26 @@ def tableau_notes_view(request, id, role):
                 messages.error(request, "Les données ne correspondent à aucun enseignant")
                 return redirect('login-page')
             matieres = Matiere.objects.filter(enseignant_id=user)
+            # J'initialise un grands classeurs pour toutes les notes de CC des matières concernées et tous les étudiants
+            ccs=[]
+            etudiants = Etudiant.objects.all()
+            # Je récupere les notes de tous les étudiants dans les matières concernées 
+            for matiere in matieres:
+                # J'initialise les listes contenant les notes de CC de tous les étudiants pour matière 
+                notes_cc=[]
+                # Je récupere ou cree les evaluations concernées
+                eval_cc, _= Evaluation.objects.get_or_create(type_evaluation='CC', matiere_id = matiere)
+                # Je récupere les notes de CC de chaque etudiant
+                for etudiant in etudiants:
+                    # Je récupere les notes de CC de l'étudiant
+                    note,_ = Note.objects.get_or_create(etudiant_id=etudiant, evaluation_id=eval_cc)
+                    note_cc=note.note 
+                    # Je mets ces notes dans leurs listes respectives
+                    notes_cc.append(note_cc)
+                # Je mets les listes de notes de CC dans le grand classeur
+                ccs.append(notes_cc)
+            # Je crée un dictionnaire contenant les notes de CC de tous les étudiants
+            notes={'CC':ccs}
         else:
             try:
                 user = Administrateur.objects.get(administrateur_id=id)
@@ -266,33 +286,33 @@ def tableau_notes_view(request, id, role):
                 messages.error(request, "Les données ne correspondent à aucun administrateur")
                 return redirect('login-page')
             matieres = Matiere.objects.all()
-        # J'initialise 2 grands classeurs pour toutes les notes de CC et de SN des matières concernées et tous les étudiants
-        ccs=[]
-        sns=[]
-        etudiants = Etudiant.objects.all()
-        # Je récupere les notes de tous les étudiants dans les matières concernées 
-        for matiere in matieres:
-            # J'initialise les listes contenant les notes de CC et de SN de tous les étudiants pour matière 
-            notes_cc=[]
-            notes_sn=[]
-            # Je récupere ou cree les evaluations concernées
-            eval_cc, _= Evaluation.objects.get_or_create(type_evaluation='CC', matiere_id = matiere)
-            eval_sn, _ = Evaluation.objects.get_or_create(type_evaluation='SN', matiere_id = matiere)
-            # Je récupere les notes de CC et de SN de chaque etudiant
-            for etudiant in etudiants:
-                # Je récupere les notes de CC et de SN de l'étudiant
-                note,_ = Note.objects.get_or_create(etudiant_id=etudiant, evaluation_id=eval_cc)
-                note_cc=note.note
-                note,_ = Note.objects.get_or_create(etudiant_id=etudiant, evaluation_id=eval_sn)
-                note_sn=note.note  
-                # Je mets ces notes dans leurs listes respectives
-                notes_cc.append(note_cc)
-                notes_sn.append(note_sn)
-            # Je mets les listes de notes de CC et SN dans le grand classeur
-            ccs.append(notes_cc)
-            sns.append(notes_sn)
-        # Je crée un dictionnaire contenant les notes de CC et de SN de tous les étudiants
-        notes={'CC':ccs, 'SN':sns}
+            # J'initialise 2 grands classeurs pour toutes les notes de CC et de SN des matières concernées et tous les étudiants
+            ccs=[]
+            sns=[]
+            etudiants = Etudiant.objects.all()
+            # Je récupere les notes de tous les étudiants dans les matières concernées 
+            for matiere in matieres:
+                # J'initialise les listes contenant les notes de CC et de SN de tous les étudiants pour matière 
+                notes_cc=[]
+                notes_sn=[]
+                # Je récupere ou cree les evaluations concernées
+                eval_cc, _= Evaluation.objects.get_or_create(type_evaluation='CC', matiere_id = matiere)
+                eval_sn, _ = Evaluation.objects.get_or_create(type_evaluation='SN', matiere_id = matiere)
+                # Je récupere les notes de CC et de SN de chaque etudiant
+                for etudiant in etudiants:
+                    # Je récupere les notes de CC et de SN de l'étudiant
+                    note,_ = Note.objects.get_or_create(etudiant_id=etudiant, evaluation_id=eval_cc)
+                    note_cc=note.note
+                    note,_ = Note.objects.get_or_create(etudiant_id=etudiant, evaluation_id=eval_sn)
+                    note_sn=note.note  
+                    # Je mets ces notes dans leurs listes respectives
+                    notes_cc.append(note_cc)
+                    notes_sn.append(note_sn)
+                # Je mets les listes de notes de CC et SN dans le grand classeur
+                ccs.append(notes_cc)
+                sns.append(notes_sn)
+            # Je crée un dictionnaire contenant les notes de CC et de SN de tous les étudiants
+            notes={'CC':ccs, 'SN':sns}
         # Je prépare le dictionnaire contenant les variables á transmettre á la vue du tableau de note
         del(user.password)
         delattr(user, role + "_id")
@@ -306,7 +326,7 @@ def tableau_notes_view(request, id, role):
     return render(request, 'studentManagerApp/HTML/tableau-notes.html', variables)
 
 @csrf_exempt
-def enregistrer_notes(request):
+def enregistrer_notes_matiere(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
@@ -318,7 +338,7 @@ def enregistrer_notes(request):
                 matiere = Matiere.objects.get(matiere_id=matiere_id)
             except Matiere.DoesNotExist:
                 return JsonResponse({'error': 'Matière non trouvée'}, status=404)
-            
+            message = ''
             for etudiant_id, note in notes.items():
                 try:
                     etudiant = Etudiant.objects.get(etudiant_id=etudiant_id)
@@ -337,17 +357,25 @@ def enregistrer_notes(request):
                 if ancienne_note != note:
                     if ancienne_note == None:
                         logger.info(f"Ajout de la note: {etudiant.nom}, {matiere.libelle}, {type_evaluation} (note: {note})")
+                        message +=  f"\nAjout: {etudiant.nom} (note: {note})"
                     elif note == None:
                         logger.info(f"Suppression de la note: {etudiant.nom}, {matiere.libelle}, {type_evaluation} (ancienne note: {ancienne_note})")
+                        message += f"\nSuppression: {etudiant.nom} (ancienne note: {ancienne_note})"
                     else:
                         logger.info(f"Modification de la note: {etudiant.nom}, {matiere.libelle}, {type_evaluation} (ancienne note: {ancienne_note} => Nouvelle note: {note})")
+                        message += f"\nModification: {etudiant.nom} ({ancienne_note} => {note})"
                     
                     Note.objects.update_or_create(
                         etudiant_id=etudiant,
                         evaluation_id=evaluation,
                         defaults={'note': note}
                     )
-            return JsonResponse({'message': f'Notes de {matiere.libelle} enregistrées avec succès'})
+            
+            if message:
+                message = f"Actions ci-dessous sur les notes de {type_evaluation} de {matiere.libelle} enregistrées avec succès:" + message
+            else:
+                message = "Aucune modification n'a été détectée."
+            return JsonResponse({'message': message})
         except Exception as e:
             return JsonResponse({
                 'error': str(e)
@@ -367,6 +395,7 @@ def enregistrer_notes_etudiant(request):
                 etudiant = Etudiant.objects.get(etudiant_id=etudiant_id)
             except Etudiant.DoesNotExist:
                 return JsonResponse({"error": "Etudiant non trouvé"}, status = 404)
+            message = ''
             for matiere_id, note in notes.items():
                 try:
                     matiere = Matiere.objects.get(matiere_id = matiere_id)
@@ -386,16 +415,23 @@ def enregistrer_notes_etudiant(request):
                 if ancienne_note != note:
                     if ancienne_note == None:
                         logger.info(f"Ajout de la note: {etudiant.nom}, {matiere.libelle}, {type_evaluation} (note: {note})")
+                        message += f"\nAjout: {matiere.libelle} (note: {note})"
                     elif note == None:
                         logger.info(f"Suppression de la note: {etudiant.nom}, {matiere.libelle}, {type_evaluation} (ancienne note: {ancienne_note})")
+                        message += f"\nSuppression: {matiere.libelle} (ancienne note: {ancienne_note})"
                     else:
                         logger.info(f"Modification de la note: {etudiant.nom}, {matiere.libelle}, {type_evaluation} (ancienne note: {ancienne_note} => Nouvelle note: {note})")
+                        message += f"\nModification: {matiere.libelle} ({ancienne_note} => {note})"
                     Note.objects.update_or_create(
                             etudiant_id=etudiant,
                             evaluation_id=evaluation,
                             defaults={'note': note}
                     )
-            return JsonResponse({"message": f"Notes de {etudiant.nom} enregistrées avec succès"})
+            if message:
+                message = f"Actions ci-dessous sur les notes de {type_evaluation} de {etudiant.nom} enregistrées avec succès:" + message
+            else:
+                message = "Aucune modification n'a été détectée."
+            return JsonResponse({"message": message})
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=400)
     return JsonResponse({"error": "Méthode de sauvegarde  etudiant non autorisée"}, status=405)

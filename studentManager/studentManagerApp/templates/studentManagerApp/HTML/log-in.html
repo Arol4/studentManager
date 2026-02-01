@@ -1,5 +1,5 @@
-{% extends 'studentManagerApp/HTML/base.html' %}
-{% block content %}
+{% extends 'studentManagerApp/HTML/initial-authentificate.html' %}
+{% block content_without_footer %}
 <h1>Connexion</h1>
 <form method="post">
     {% csrf_token %}

@@ -70,33 +70,61 @@ def login_view(request):
     return render(request,'studentManagerApp/HTML/log-in.html',{'form':form})
 
 def home_page_view(request, id, role):
-    if role == "etudiant":
+    true_id = request.utilisateur_id
+    true_role = request.role
+    if true_role == "etudiant":
         try:
-            user=Etudiant.objects.get(etudiant_id=id)
+            user=Etudiant.objects.get(etudiant_id=true_id)
         except Etudiant.DoesNotExist:
-                messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos étudiants")
+                messages.error(request,"Les donneés que vous avez entré sont invalides")
                 return redirect('login-page')
-    elif role == "enseignant":
+    elif true_role == "enseignant":
         try:
-            user=Enseignant.objects.get(enseignant_id=id)
+            user=Enseignant.objects.get(enseignant_id=true_id)
         except Enseignant.DoesNotExist:
-                messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos enseigants")
+                messages.error(request,"Les donneés que vous avez entré sont invalides")
+                return redirect('login-page')
+    elif true_role == "administrateur":
+        try:
+            user=Administrateur.objects.get(administrateur_id=true_id)
+        except Administrateur.DoesNotExist:
+                messages.error(request,"Les donneés que vous avez entré sont invalides")
                 return redirect('login-page')
     else:
-        try:
-            user=Administrateur.objects.get(administrateur_id=id)
-        except Administrateur.DoesNotExist:
-                messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos administrateurs")
-                return redirect('login-page')
+        messages.error(request,"Les donneés que vous avez entré sont invalides")
+        return redirect('login-page')
     
     del(user.password)
-    delattr(user, role + "_id")
+    delattr(user, true_role + "_id")
     del(user._state)
-    user.id = id
-    user.role = role
+    user.id = true_id
+    user.role = true_role
     return render(request,'studentManagerApp/HTML/home-page.html',{'user':user})
 
 def stats_page_view(request, id, role):
+    true_id = request.utilisateur_id
+    true_role = request.role
+    if true_role == "etudiant":
+        try:
+            user=Etudiant.objects.get(etudiant_id=true_id)
+        except Etudiant.DoesNotExist:
+                messages.error(request,"Les donneés que vous avez entré sont invalides")
+                return redirect('login-page')
+    elif true_role == "enseignant":
+        try:
+            user=Enseignant.objects.get(enseignant_id=true_id)
+        except Enseignant.DoesNotExist:
+                messages.error(request,"Les donneés que vous avez entré sont invalides")
+                return redirect('login-page')
+    elif true_role == "administrateur":
+        try:
+            user=Administrateur.objects.get(administrateur_id=true_id)
+        except Administrateur.DoesNotExist:
+                messages.error(request,"Les donneés que vous avez entré sont invalides")
+                return redirect('login-page')
+    else:
+        messages.error(request,"Les donneés que vous avez entré sont invalides")
+        return redirect('login-page')   
     nombre_etudiants = Etudiant.objects.count()
     nombre_matieres1 = len(Matiere.objects.filter(semestre=1))
     nombre_matieres2 = len(Matiere.objects.filter(semestre=2))
@@ -105,55 +133,37 @@ def stats_page_view(request, id, role):
                    'nombre_matieres1': nombre_matieres1,
                     'nombre_matieres2':nombre_matieres2, 
                     'nombre_enseignants':nombre_enseignants}
-    if role == "etudiant":
-        try:
-            user=Etudiant.objects.get(etudiant_id=id)
-        except Etudiant.DoesNotExist:
-                messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos étudiants")
-                return redirect('login-page')
-    elif role == "enseignant":
-        try:
-            user=Enseignant.objects.get(enseignant_id=id)
-        except Enseignant.DoesNotExist:
-                messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos enseigants")
-                return redirect('login-page')
-    else:
-        try:
-            user=Administrateur.objects.get(administrateur_id=id)
-        except Administrateur.DoesNotExist:
-                messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos administrateurs")
-                return redirect('login-page')
     
     del(user.password)
-    delattr(user, role + "_id")
+    delattr(user, true_role + "_id")
     del(user._state)
-    user.id = id
-    user.role = role
+    user.id = true_id
+    user.role = true_role
     return render(request,'studentManagerApp/HTML/stats-page.html',{'user':user, 'statistics': statistics})
   
 def edit_page_view(request, id, role):
-    # Common setup
-    etudiants = Etudiant.objects.order_by('etudiant_id')
-    
-    if role == "enseignant":
+    true_id = request.utilisateur_id
+    true_role = request.role
+    if true_role == "enseignant":
         try:
-            user = Enseignant.objects.get(enseignant_id=id)
+            user = Enseignant.objects.get(enseignant_id=true_id)
             matieres = Matiere.objects.filter(enseignant_id=user).order_by('matiere_id')
         except Enseignant.DoesNotExist:
-            messages.error(request, "Les données ne correspondent à aucun enseignant")
+            messages.error(request, "Les donneés que vous avez entré sont invalides")
             return redirect('login-page')
             
-    elif role == "administrateur":
+    elif true_role == "administrateur":
         try:
-            user = Administrateur.objects.get(administrateur_id=id)
+            user = Administrateur.objects.get(administrateur_id=true_id)
             matieres = Matiere.objects.all().order_by('matiere_id')
         except Administrateur.DoesNotExist:
-            messages.error(request, "Les données ne correspondent à aucun administrateur")
+            messages.error(request, "Les donneés que vous avez entré sont invalides")
             return redirect('login-page')
     else:
-        messages.error(request, "Rôle incorrect")
+        messages.error(request, "Les donneés que vous avez entré sont invalides")
         return redirect('login-page')
-
+    
+    etudiants = Etudiant.objects.order_by('etudiant_id')
     # Prefetch evaluations and notes in optimized way
     evaluations = Evaluation.objects.filter(
         matiere_id__in=matieres,
@@ -205,10 +215,11 @@ def edit_page_view(request, id, role):
                 
         ccs.append(cc_notes)
         sns.append(sn_notes)
-    delattr(user, role + "_id")
+    del(user.password)
+    delattr(user, true_role + "_id")
     del(user._state)
-    user.id = id
-    user.role = role
+    user.id = true_id
+    user.role = true_role
     return render(request, 'studentManagerApp/HTML/edit-page.html', {
         'user': user,
         'liste_des_matieres_enseignees': matieres,
@@ -219,11 +230,13 @@ def edit_page_view(request, id, role):
 
 # Vue qui renvoie vers le tableau de note
 def tableau_notes_view(request, id, role):
-    if role == "etudiant":
+    true_id = request.utilisateur_id
+    true_role = request.role
+    if true_role == "etudiant":
         try:
-            user = Etudiant.objects.get(etudiant_id=id)
+            user = Etudiant.objects.get(etudiant_id=true_id)
         except Etudiant.DoesNotExist:
-            messages.error(request, "Les données ne correspondent à aucun étudiant")
+            messages.error(request, "Les donneés que vous avez entré sont invalides")
             return redirect('login-page')
         matieres = Matiere.objects.all()
         # J'initialise les listes contenants les notes de CC et de SN de toutes les matières pour l'étudiant conserné
@@ -244,85 +257,79 @@ def tableau_notes_view(request, id, role):
             notes_sn.append(note_sn)
         # Je crée un dictionnaire contenant les notes de CC et de SN
         notes={'CC':notes_cc, 'SN':notes_sn}
-        # Je prépare le dictionnaire contenant les variables á transmettre á la vue du tableau de note
-        del(user.password)
-        del(user._state)
-        delattr(user, role + "_id")
-        user.id = id
-        user.role = role
-        variables= {'user':user, 'notes':notes, 'matieres':matieres}
-    elif role == "enseignant" or role == "administrateur":
-        if role == "enseignant":
-            try:
-                user = Enseignant.objects.get(enseignant_id=id)
-            except Enseignant.DoesNotExist:
-                messages.error(request, "Les données ne correspondent à aucun enseignant")
-                return redirect('login-page')
-            matieres = Matiere.objects.filter(enseignant_id=user)
-            # J'initialise un grands classeurs pour toutes les notes de CC des matières concernées et tous les étudiants
-            ccs=[]
-            etudiants = Etudiant.objects.all()
-            # Je récupere les notes de tous les étudiants dans les matières concernées 
-            for matiere in matieres:
-                # J'initialise les listes contenant les notes de CC de tous les étudiants pour matière 
-                notes_cc=[]
-                # Je récupere ou cree les evaluations concernées
-                eval_cc, _= Evaluation.objects.get_or_create(type_evaluation='CC', matiere_id = matiere)
-                # Je récupere les notes de CC de chaque etudiant
-                for etudiant in etudiants:
-                    # Je récupere les notes de CC de l'étudiant
-                    note,_ = Note.objects.get_or_create(etudiant_id=etudiant, evaluation_id=eval_cc)
-                    note_cc=note.note 
-                    # Je mets ces notes dans leurs listes respectives
-                    notes_cc.append(note_cc)
-                # Je mets les listes de notes de CC dans le grand classeur
-                ccs.append(notes_cc)
-            # Je crée un dictionnaire contenant les notes de CC de tous les étudiants
-            notes={'CC':ccs}
-        else:
-            try:
-                user = Administrateur.objects.get(administrateur_id=id)
-            except Administrateur.DoesNotExist:
-                messages.error(request, "Les données ne correspondent à aucun administrateur")
-                return redirect('login-page')
-            matieres = Matiere.objects.all()
-            # J'initialise 2 grands classeurs pour toutes les notes de CC et de SN des matières concernées et tous les étudiants
-            ccs=[]
-            sns=[]
-            etudiants = Etudiant.objects.all()
-            # Je récupere les notes de tous les étudiants dans les matières concernées 
-            for matiere in matieres:
-                # J'initialise les listes contenant les notes de CC et de SN de tous les étudiants pour matière 
-                notes_cc=[]
-                notes_sn=[]
-                # Je récupere ou cree les evaluations concernées
-                eval_cc, _= Evaluation.objects.get_or_create(type_evaluation='CC', matiere_id = matiere)
-                eval_sn, _ = Evaluation.objects.get_or_create(type_evaluation='SN', matiere_id = matiere)
-                # Je récupere les notes de CC et de SN de chaque etudiant
-                for etudiant in etudiants:
-                    # Je récupere les notes de CC et de SN de l'étudiant
-                    note,_ = Note.objects.get_or_create(etudiant_id=etudiant, evaluation_id=eval_cc)
-                    note_cc=note.note
-                    note,_ = Note.objects.get_or_create(etudiant_id=etudiant, evaluation_id=eval_sn)
-                    note_sn=note.note  
-                    # Je mets ces notes dans leurs listes respectives
-                    notes_cc.append(note_cc)
-                    notes_sn.append(note_sn)
-                # Je mets les listes de notes de CC et SN dans le grand classeur
-                ccs.append(notes_cc)
-                sns.append(notes_sn)
-            # Je crée un dictionnaire contenant les notes de CC et de SN de tous les étudiants
-            notes={'CC':ccs, 'SN':sns}
-        # Je prépare le dictionnaire contenant les variables á transmettre á la vue du tableau de note
-        del(user.password)
-        delattr(user, role + "_id")
-        del(user._state)
-        user.id = id
-        user.role = role
-        variables= {'user':user, 'notes':notes, 'matieres':matieres, 'etudiants':etudiants}
+        variables= dict()
+    elif true_role == "enseignant":
+        try:
+            user = Enseignant.objects.get(enseignant_id=true_id)
+        except Enseignant.DoesNotExist:
+            messages.error(request, "Les donneés que vous avez entré sont invalides")
+            return redirect('login-page')
+        matieres = Matiere.objects.filter(enseignant_id=user)
+        # J'initialise un grands classeurs pour toutes les notes de CC des matières concernées et tous les étudiants
+        ccs=[]
+        etudiants = Etudiant.objects.all()
+        # Je récupere les notes de tous les étudiants dans les matières concernées 
+        for matiere in matieres:
+            # J'initialise les listes contenant les notes de CC de tous les étudiants pour matière 
+            notes_cc=[]
+            # Je récupere ou cree les evaluations concernées
+            eval_cc, _= Evaluation.objects.get_or_create(type_evaluation='CC', matiere_id = matiere)
+            # Je récupere les notes de CC de chaque etudiant
+            for etudiant in etudiants:
+                # Je récupere les notes de CC de l'étudiant
+                note,_ = Note.objects.get_or_create(etudiant_id=etudiant, evaluation_id=eval_cc)
+                note_cc=note.note 
+                # Je mets ces notes dans leurs listes respectives
+                notes_cc.append(note_cc)
+            # Je mets les listes de notes de CC dans le grand classeur
+            ccs.append(notes_cc)
+        # Je crée un dictionnaire contenant les notes de CC de tous les étudiants
+        notes={'CC':ccs}
+        variables= {'etudiants':etudiants}
+    elif true_role == "administrateur":
+        try:
+            user = Administrateur.objects.get(administrateur_id=true_id)
+        except Administrateur.DoesNotExist:
+            messages.error(request, "Les donneés que vous avez entré sont invalides")
+            return redirect('login-page')
+        matieres = Matiere.objects.all()
+        # J'initialise 2 grands classeurs pour toutes les notes de CC et de SN des matières concernées et tous les étudiants
+        ccs=[]
+        sns=[]
+        etudiants = Etudiant.objects.all()
+        # Je récupere les notes de tous les étudiants dans les matières concernées 
+        for matiere in matieres:
+            # J'initialise les listes contenant les notes de CC et de SN de tous les étudiants pour matière 
+            notes_cc=[]
+            notes_sn=[]
+            # Je récupere ou cree les evaluations concernées
+            eval_cc, _= Evaluation.objects.get_or_create(type_evaluation='CC', matiere_id = matiere)
+            eval_sn, _ = Evaluation.objects.get_or_create(type_evaluation='SN', matiere_id = matiere)
+            # Je récupere les notes de CC et de SN de chaque etudiant
+            for etudiant in etudiants:
+                # Je récupere les notes de CC et de SN de l'étudiant
+                note,_ = Note.objects.get_or_create(etudiant_id=etudiant, evaluation_id=eval_cc)
+                note_cc=note.note
+                note,_ = Note.objects.get_or_create(etudiant_id=etudiant, evaluation_id=eval_sn)
+                note_sn=note.note  
+                # Je mets ces notes dans leurs listes respectives
+                notes_cc.append(note_cc)
+                notes_sn.append(note_sn)
+            # Je mets les listes de notes de CC et SN dans le grand classeur
+            ccs.append(notes_cc)
+            sns.append(notes_sn)
+        # Je crée un dictionnaire contenant les notes de CC et de SN de tous les étudiants
+        notes={'CC':ccs, 'SN':sns}
+        variables= {'etudiants':etudiants}
     else:
-        messages.error(request, "Rôle incorrect")
+        messages.error(request, "Les donneés que vous avez entré sont invalides")
         return redirect('login-page')
+    del(user.password)
+    delattr(user, true_role + "_id")
+    del(user._state)
+    user.id = true_id
+    user.role = true_role
+    variables.update({'user':user, 'notes':notes, 'matieres':matieres})
     return render(request, 'studentManagerApp/HTML/tableau-notes.html', variables)
 
 @csrf_exempt
@@ -437,26 +444,28 @@ def enregistrer_notes_etudiant(request):
     return JsonResponse({"error": "Méthode de sauvegarde  etudiant non autorisée"}, status=405)
 
 def profile_page_view(request, id, role):
-    if role == "etudiant":
+    true_id = request.utilisateur_id
+    true_role = request.role
+    if true_role == "etudiant":
         try:
-            user = Etudiant.objects.get(etudiant_id=id)
+            user = Etudiant.objects.get(etudiant_id=true_id)
         except Etudiant.DoesNotExist:
-            messages.error(request, "Les données ne correspondent à aucun étudiant")
+            messages.error(request, "Les donneés que vous avez entré sont invalides")
             return redirect('login-page')
-    elif role == "enseignant":
+    elif true_role == "enseignant":
         try:
-            user = Enseignant.objects.get(enseignant_id=id)
+            user = Enseignant.objects.get(enseignant_id=true_id)
         except Enseignant.DoesNotExist:
-            messages.error(request, "Les données ne correspondent à aucun enseignant")
+            messages.error(request, "Les donneés que vous avez entré sont invalides")
             return redirect('login-page')
-    elif role == "administrateur":
+    elif true_role == "administrateur":
         try:
-            user = Administrateur.objects.get(administrateur_id=id)
+            user = Administrateur.objects.get(administrateur_id=true_id)
         except Administrateur.DoesNotExist:
-            messages.error(request, "Les données ne correspondent à aucun administrateur")
+            messages.error(request, "Les donneés que vous avez entré sont invalides")
             return redirect('login-page')
     else:
-        messages.error(request, "Rôle incorrect")
+        messages.error(request, "Les donneés que vous avez entré sont invalides")
         return redirect('login-page')
     
     del(user.password)

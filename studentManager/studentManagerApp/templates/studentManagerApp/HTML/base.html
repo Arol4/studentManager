@@ -3,13 +3,9 @@
     <head>
         <title>StudentManagerApp</title>
         <link rel = "icon" type = "image/png" href = "{% static 'studentManagerApp/Images/favicon.png' %}">
+        {% block style %}{% endblock %}
     </head>
     <body>
-        {% if messages %}
-        {% for message in messages %}
-        {{message}}<br>
-        {% endfor %}
-        {% endif %}
         {%  block content %}
         {% endblock %}
     </body>

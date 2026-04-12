@@ -20,27 +20,28 @@ def login_view(request):
             nom=form.cleaned_data['nom']
             password=form.cleaned_data['password']
             role=form.cleaned_data['role']
+            error_message = "Erreur de nom d'utilisateur ou de mot de passe ou de rôle."
             if role == "etudiant":
                 try:
                     utilisateur = Etudiant.objects.get(nom=nom,password=password)
                     id = utilisateur.etudiant_id
                     
                 except Etudiant.DoesNotExist:
-                        messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos étudiants")
+                        messages.error(request, error_message)
                         return redirect('login-page')
             elif role == "enseignant":
                 try:
                     utilisateur = Enseignant.objects.get(nom=nom,password=password)
                     id = utilisateur.enseignant_id
                 except Enseignant.DoesNotExist:
-                        messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos enseigants")
+                        messages.error(request, error_message)
                         return redirect('login-page')
             else:
                 try:
                     utilisateur= Administrateur.objects.get(nom=nom,password=password)
                     id = utilisateur.administrateur_id
                 except Administrateur.DoesNotExist:
-                        messages.error(request,"Les donneés que vous avez entré ne correspondent á aucun de nos administrateurs")
+                        messages.error(request, error_message)
                         return redirect('login-page')
             token = secrets.token_urlsafe(50)
             date_expiration = datetime.datetime.now() + datetime.timedelta(days=settings.SESSION_DURATION)
@@ -126,8 +127,8 @@ def stats_page_view(request, id, role):
         messages.error(request,"Les donneés que vous avez entré sont invalides")
         return redirect('login-page')   
     nombre_etudiants = Etudiant.objects.count()
-    nombre_matieres1 = len(Matiere.objects.filter(semestre=1))
-    nombre_matieres2 = len(Matiere.objects.filter(semestre=2))
+    nombre_matieres1 = Matiere.objects.filter(semestre=1).count()
+    nombre_matieres2 = Matiere.objects.filter(semestre=2).count()
     nombre_enseignants = Enseignant.objects.count()
     statistics = { 'nombre_etudiants':nombre_etudiants,
                    'nombre_matieres1': nombre_matieres1,
@@ -345,49 +346,59 @@ def enregistrer_notes_matiere(request):
                 matiere = Matiere.objects.get(matiere_id=matiere_id)
             except Matiere.DoesNotExist:
                 return JsonResponse({'error': 'Matière non trouvée'}, status=404)
-            message = ''
-            for etudiant_id, note in notes.items():
-                try:
-                    etudiant = Etudiant.objects.get(etudiant_id=etudiant_id)
-                except Etudiant.DoesNotExist:
-                    return JsonResponse({'error': f'Étudiant {etudiant_id} non trouvé'}, status=404)
-                evaluation, created = Evaluation.objects.get_or_create(
-                    matiere_id=matiere,
-                    type_evaluation=type_evaluation,
-                    defaults={'date_evaluation': date.today()}
-                )
-                ancienne_note, created = Note.objects.get_or_create(
-                    etudiant_id=etudiant,
-                    evaluation_id=evaluation  
-                )
-                ancienne_note = ancienne_note.note
-                if ancienne_note != note:
-                    if ancienne_note == None:
-                        logger.info(f"Ajout de la note: {etudiant.nom}, {matiere.libelle}, {type_evaluation} (note: {note})")
-                        message +=  f"\nAjout: {etudiant.nom} (note: {note})"
-                    elif note == None:
-                        logger.info(f"Suppression de la note: {etudiant.nom}, {matiere.libelle}, {type_evaluation} (ancienne note: {ancienne_note})")
-                        message += f"\nSuppression: {etudiant.nom} (ancienne note: {ancienne_note})"
-                    else:
-                        logger.info(f"Modification de la note: {etudiant.nom}, {matiere.libelle}, {type_evaluation} (ancienne note: {ancienne_note} => Nouvelle note: {note})")
-                        message += f"\nModification: {etudiant.nom} ({ancienne_note} => {note})"
-                    
-                    Note.objects.update_or_create(
-                        etudiant_id=etudiant,
-                        evaluation_id=evaluation,
-                        defaults={'note': note}
-                    )
             
+            evaluation, created = Evaluation.objects.get_or_create(
+                matiere_id=matiere,
+                type_evaluation=type_evaluation,
+                defaults={'date_evaluation': date.today()}
+            )
+
+            notes_existantes_qs = Note.objects.filter(evaluation_id=evaluation)
+            map_notes_existantes = { note.etudiant_id_id: note.note for note in notes_existantes_qs }
+
+            ids_etudiants = [int(k) for k in notes.keys()]
+            etudiants_qs = Etudiant.objects.filter(etudiant_id__in=ids_etudiants).only('etudiant_id', 'nom')
+            map_etudiants = { e.etudiant_id: e.nom for e in etudiants_qs }
+
+            notes_to_upsert = []
+            message = ''
+            for etudiant_id_str, nouvelle_note in notes.items():
+                etudiant_id = int(etudiant_id_str)
+                nom_etudiant = map_etudiants.get(etudiant_id, f"ID {etudiant_id}")
+                ancienne_note = map_notes_existantes.get(etudiant_id)
+                if ancienne_note != nouvelle_note:
+                    if ancienne_note is None:
+                        logger.info(f"Ajout de la note: {nom_etudiant}, {matiere.libelle}, {type_evaluation} (note: {nouvelle_note})")
+                        message +=  f"\nAjout: {nom_etudiant} (note: {nouvelle_note})"
+                    elif nouvelle_note is None:
+                        logger.info(f"Suppression de la note: {nom_etudiant}, {matiere.libelle}, {type_evaluation} (ancienne note: {ancienne_note})")
+                        message += f"\nSuppression: {nom_etudiant} (ancienne note: {ancienne_note})"
+                    else:
+                        logger.info(f"Modification de la note: {nom_etudiant}, {matiere.libelle}, {type_evaluation} (ancienne note: {ancienne_note} => Nouvelle note: {nouvelle_note})")
+                        message += f"\nModification: {nom_etudiant} ({ancienne_note} => {nouvelle_note})"
+                    
+                    note_obj = Note(
+                        etudiant_id_id=etudiant_id,
+                        evaluation_id=evaluation,
+                        note = nouvelle_note
+                    )
+                    notes_to_upsert.append(note_obj)
+            if notes_to_upsert:
+                Note.objects.bulk_create(
+                    notes_to_upsert,
+                    update_conflicts=True,
+                    unique_fields=['etudiant_id', 'evaluation_id'],
+                    update_fields=['note']
+                )
             if message:
                 message = f"Actions ci-dessous sur les notes de {type_evaluation} de {matiere.libelle} enregistrées avec succès:" + message
             else:
                 message = "Aucune modification n'a été détectée."
             return JsonResponse({'message': message})
         except Exception as e:
-            return JsonResponse({
-                'error': str(e)
-            }, status=400)
-    
+            logger.error(f"Erreur lors de l'enregistrement : {type(e).__name__} - {e}")
+            return JsonResponse({'error': str(e)}, status=400)
+    logger.warning(f"Requête avec méthode {request.method} non autorisée pour l'enregistrement des notes d'une matière.")
     return JsonResponse({'error': 'Méthode non autorisée'}, status=405)
 
 @csrf_exempt
@@ -398,50 +409,72 @@ def enregistrer_notes_etudiant(request):
             etudiant_id = int(data["etudiant_id"])
             type_evaluation = data["type_evaluation"]
             notes = data["notes"]
+            
             try:
                 etudiant = Etudiant.objects.get(etudiant_id=etudiant_id)
             except Etudiant.DoesNotExist:
                 return JsonResponse({"error": "Etudiant non trouvé"}, status = 404)
-            message = ''
-            for matiere_id, note in notes.items():
-                try:
-                    matiere = Matiere.objects.get(matiere_id = matiere_id)
-                except Matiere.DoesNotExist:
-                    return JsonResponse({"error": f"Matière {matiere_id} non trouvée"}, status = 404)
-                
-                evaluation, created = Evaluation.objects.get_or_create(
-                    matiere_id=matiere,
+            
+            ids_matieres = [int(k) for k in notes.keys()]
+            matieres_qs = Matiere.objects.filter(matiere_id__in=ids_matieres).only('matiere_id', 'libelle')
+            map_matieres = { m.matiere_id: m.libelle for m in matieres_qs }
+            matiere_id_to_new_note = {m_id: round(float(notes[str(m_id)]), 2) if notes[str(m_id)] else None for m_id in map_matieres.keys() }
+            evaluations_to_upsert = [
+                Evaluation(
+                    matiere_id_id=int(matiere_id),
                     type_evaluation=type_evaluation,
-                    defaults={"date_evaluation": date.today()}
-                )
-                ancienne_note, created = Note.objects.get_or_create(
-                    etudiant_id = etudiant,
-                    evaluation_id = evaluation
-                )
-                ancienne_note = ancienne_note.note
-                if ancienne_note != note:
+                    date_evaluation=date.today()
+                ) for matiere_id in map_matieres.keys()
+            ]
+            Evaluation.objects.bulk_create(
+                evaluations_to_upsert,
+                ignore_conflicts=True
+            )
+            evaluations_qs = Evaluation.objects.filter(
+                matiere_id_id__in = map_matieres.keys(),
+                type_evaluation=type_evaluation
+            )
+            map_evaluations = { e.matiere_id_id: e.evaluation_id for e in evaluations_qs}
+            anciennes_notes = Note.objects.filter(etudiant_id_id = etudiant_id, evaluation_id_id__in=map_evaluations.values())
+            matiere_id_to_old_note = {m_id: n.note for m_id, e_id in map_evaluations.items() for n in anciennes_notes if n.evaluation_id_id == e_id}
+            notes_to_upsert = []
+            message = ''
+            for matiere_id, nouvelle_note in matiere_id_to_new_note.items():
+                ancienne_note = matiere_id_to_old_note[matiere_id]
+                if ancienne_note != nouvelle_note:
                     if ancienne_note == None:
-                        logger.info(f"Ajout de la note: {etudiant.nom}, {matiere.libelle}, {type_evaluation} (note: {note})")
-                        message += f"\nAjout: {matiere.libelle} (note: {note})"
-                    elif note == None:
-                        logger.info(f"Suppression de la note: {etudiant.nom}, {matiere.libelle}, {type_evaluation} (ancienne note: {ancienne_note})")
-                        message += f"\nSuppression: {matiere.libelle} (ancienne note: {ancienne_note})"
+                        logger.info(f"Ajout de la note: {etudiant.nom}, {map_matieres[matiere_id]}, {type_evaluation} (note: {nouvelle_note})")
+                        message += f"\nAjout: {map_matieres[matiere_id]} (note: {nouvelle_note})"
+                    elif nouvelle_note == None:
+                        logger.info(f"Suppression de la note: {etudiant.nom}, {map_matieres[matiere_id]}, {type_evaluation} (ancienne note: {ancienne_note})")
+                        message += f"\nSuppression: {map_matieres[matiere_id]} (ancienne note: {ancienne_note})"
                     else:
-                        logger.info(f"Modification de la note: {etudiant.nom}, {matiere.libelle}, {type_evaluation} (ancienne note: {ancienne_note} => Nouvelle note: {note})")
-                        message += f"\nModification: {matiere.libelle} ({ancienne_note} => {note})"
-                    Note.objects.update_or_create(
-                            etudiant_id=etudiant,
-                            evaluation_id=evaluation,
-                            defaults={'note': note}
+                        logger.info(f"Modification de la note: {etudiant.nom}, {map_matieres[matiere_id]}, {type_evaluation} (ancienne note: {ancienne_note} => Nouvelle note: {nouvelle_note})")
+                        message += f"\nModification: {map_matieres[matiere_id]} ({ancienne_note} => {nouvelle_note})"
+
+                    note_obj = Note(
+                        etudiant_id_id=etudiant_id,
+                        evaluation_id_id=map_evaluations[matiere_id],
+                        note=nouvelle_note
                     )
+                    notes_to_upsert.append(note_obj)
+            if notes_to_upsert:
+                Note.objects.bulk_create(
+                    notes_to_upsert,
+                    update_conflicts=True,
+                    unique_fields=['etudiant_id', 'evaluation_id'],
+                    update_fields=['note']
+                )
             if message:
                 message = f"Actions ci-dessous sur les notes de {type_evaluation} de {etudiant.nom} enregistrées avec succès:" + message
             else:
                 message = "Aucune modification n'a été détectée."
             return JsonResponse({"message": message})
         except Exception as e:
+            logger.error(f"Erreur lors de l'enregistrement: {type(e).__name__} - {e}")
             return JsonResponse({"error": str(e)}, status=400)
-    return JsonResponse({"error": "Méthode de sauvegarde  etudiant non autorisée"}, status=405)
+    logger.warning(f"Requête avec méthode {request.method} non autorisée pour l'enregistrement des notes d'un étudiant")
+    return JsonResponse({"error": "Méthode non autorisée"}, status=405)
 
 def profile_page_view(request, id, role):
     true_id = request.utilisateur_id

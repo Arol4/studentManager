@@ -298,26 +298,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 notes: notes 
             })
         })
-        .then(response => {
+        .then(async response => {
+            const data = await response.json();
             if (!response.ok) {
-                throw new Error('Erreur réseau');
+                const errorMessage = data.error || 'Erreur réseau';
+                throw new Error(errorMessage);
             }
-            return response.json();
+            return data;
         })
         .then(data => {
-            if (data.message) {
-                alert(data.message);
-                Object.entries(notes).forEach(([id, note]) =>
-                {
-                    ((((window.notesData).tableaux[matiere_selectionnee][type_evaluation]).rows)[id]).note = note; 
-                });
-            } else {
-                alert('Erreur inconnue');
-            }
+            alert(data.message);
+            Object.entries(notes).forEach(([id, note]) =>
+            {
+                ((((window.notesData).tableaux[matiere_selectionnee][type_evaluation]).rows)[id]).note = note; 
+            });
         })
         .catch(error => {
-            console.error('Erreur:', error);
-            alert('Erreur réseau : ' + error.message);
+            console.error("Détails de l'erreur :", error);
+            alert('Erreur : ' + error.message);
         });
     }
 });

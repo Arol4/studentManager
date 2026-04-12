@@ -82,7 +82,10 @@ class Note(models.Model):
     etudiant_id = models.ForeignKey(Etudiant, on_delete= models.CASCADE)
     evaluation_id = models.ForeignKey(Evaluation, on_delete=models.CASCADE)
     note = models.FloatField(null= True,blank=True, validators=[MinValueValidator(0), MaxValueValidator(20)])
-
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['etudiant_id','evaluation_id'],name="Constraint_of_unicity_etudiant_evaluation_note") 
+        ]
 class SessionUtilisateur(models.Model):
     TYPE_UTILISATEUR = (
         ('etudiant', 'Étudiant'),

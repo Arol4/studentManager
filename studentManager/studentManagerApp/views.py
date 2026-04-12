@@ -2,7 +2,7 @@ from django.db.models import Prefetch
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.conf import settings
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt 
 from datetime import date
 import json
@@ -54,7 +54,7 @@ def login_view(request):
                 user_agent = request.META.get('HTTP_USER_AGENT', '')
             )
             session.save()
-            response = redirect('home-page', id=id, role=role)
+            response = redirect('home-page')
             response.set_cookie(
                 'session_token',
                 token,
@@ -65,12 +65,12 @@ def login_view(request):
             logger.info(f"Connexion réussie de l'utilisateur {nom} ({role}).")                 
             return response
     elif request.role and request.utilisateur_id:
-        return redirect('home-page', id=request.utilisateur_id, role=request.role)
+        return redirect('home-page')
     else:
         form=LoginForm()
     return render(request,'studentManagerApp/HTML/log-in.html',{'form':form})
 
-def home_page_view(request, id, role):
+def home_page_view(request):
     true_id = request.utilisateur_id
     true_role = request.role
     if true_role == "etudiant":
@@ -102,7 +102,7 @@ def home_page_view(request, id, role):
     user.role = true_role
     return render(request,'studentManagerApp/HTML/home-page.html',{'user':user})
 
-def stats_page_view(request, id, role):
+def stats_page_view(request):
     true_id = request.utilisateur_id
     true_role = request.role
     if true_role == "etudiant":
@@ -142,7 +142,7 @@ def stats_page_view(request, id, role):
     user.role = true_role
     return render(request,'studentManagerApp/HTML/stats-page.html',{'user':user, 'statistics': statistics})
   
-def edit_page_view(request, id, role):
+def edit_page_view(request):
     true_id = request.utilisateur_id
     true_role = request.role
     if true_role == "enseignant":
@@ -230,7 +230,7 @@ def edit_page_view(request, id, role):
     })
 
 # Vue qui renvoie vers le tableau de note
-def tableau_notes_view(request, id, role):
+def tableau_notes_view(request):
     true_id = request.utilisateur_id
     true_role = request.role
     if true_role == "etudiant":
@@ -476,7 +476,7 @@ def enregistrer_notes_etudiant(request):
     logger.warning(f"Requête avec méthode {request.method} non autorisée pour l'enregistrement des notes d'un étudiant")
     return JsonResponse({"error": "Méthode non autorisée"}, status=405)
 
-def profile_page_view(request, id, role):
+def profile_page_view(request):
     true_id = request.utilisateur_id
     true_role = request.role
     if true_role == "etudiant":
@@ -503,9 +503,9 @@ def profile_page_view(request, id, role):
     
     del(user.password)
     del(user._state)
-    delattr(user, role + "_id")
-    user.id = id
-    user.role = role
+    delattr(user, true_role + "_id")
+    user.id = true_id
+    user.role = true_role
     return render(request, 'studentManagerApp/HTML/profile-page.html', {'user': user})
 
 def log_out_view(request):

@@ -4,11 +4,11 @@
     <p>2024-2025</p>
     Acceuil
     {% if user.role != "etudiant" %}
-        <a href="{% url 'edit-page' role=user.role id=user.id %}" >Édition des notes</a>
+        <a href="{% url 'edit-page'%}" >Édition des notes</a>
     {% endif %}
-    <a href="{% url 'tableau-notes' role=user.role id=user.id %}" >Tableau de notes</a>
-    <a href="{% url 'stats-page' role=user.role id=user.id %}" >Statistiques</a>
-    <a href="{% url 'profile-page' role=user.role id=user.id %}" >Profil</a>
+    <a href="{% url 'tableau-notes'%}" >Tableau de notes</a>
+    <a href="{% url 'stats-page'%}" >Statistiques</a>
+    <a href="{% url 'profile-page'%}" >Profil</a>
     <a href="{% url 'log-out' %}" >Déconnexion</a>
 </nav>
 <p>image ou initiale</p>

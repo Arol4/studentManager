@@ -4,14 +4,14 @@
 {% block content_without_footer %}
 <nav>
     <p>2024-2025</p>
-    <a href="{% url 'home-page' role=user.role id=user.id %}" >Acceuil</a>
+    <a href="{% url 'home-page'%}" >Acceuil</a>
     {% if user.role != "etudiant" %}
         Édition des notes
     {% endif %}
-    <a href="{% url 'tableau-notes' role=user.role id=user.id %}" >Tableau de notes</a>
-    <a href="{% url 'stats-page' role=user.role id=user.id %}" >Statistiques</a>
-    <a href="{% url 'profile-page' role=user.role id=user.id %}" >Profil</a>
-    <a href="{% url 'log-out' %}" >Déconnexion</a>
+    <a href="{% url 'tableau-notes'%}" >Tableau de notes</a>
+    <a href="{% url 'stats-page'%}" >Statistiques</a>
+    <a href="{% url 'profile-page'%}" >Profil</a>
+    <a href="{% url 'log-out'%}" >Déconnexion</a>
 </nav>
 <p>image ou initiale</p>
 <p>{{user.nom}}-{{user.role}}</p>

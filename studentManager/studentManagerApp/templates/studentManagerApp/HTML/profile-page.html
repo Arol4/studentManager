@@ -2,12 +2,12 @@
 {% block content_without_footer %}
 <nav>
     <p>2024-2025</p>
-    <a href="{% url 'home-page' role=user.role id=user.id %}" >Acceuil</a>
+    <a href="{% url 'home-page'%}" >Acceuil</a>
     {% if user.role != "etudiant" %}
-        <a href="{% url 'edit-page' role=user.role id=user.id %}" >Édition des notes</a>
+        <a href="{% url 'edit-page'%}" >Édition des notes</a>
     {% endif %}
-    <a href="{% url 'tableau-notes' role=user.role id=user.id %}" >Tableau de notes</a>
-    <a href="{% url 'stats-page' role=user.role id=user.id %}" >Statistiques</a>
+    <a href="{% url 'tableau-notes'%}" >Tableau de notes</a>
+    <a href="{% url 'stats-page'%}" >Statistiques</a>
     Profil
     <a href="{% url 'log-out' %}" >Déconnexion</a>
 </nav>

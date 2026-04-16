@@ -71,23 +71,23 @@ def login_view(request):
     return render(request,'studentManagerApp/HTML/log-in.html',{'form':form})
 
 def home_page_view(request):
-    true_id = request.utilisateur_id
-    true_role = request.role
-    if true_role == "etudiant":
+    id = request.utilisateur_id
+    role = request.role
+    if role == "etudiant":
         try:
-            user=Etudiant.objects.get(etudiant_id=true_id)
+            user=Etudiant.objects.get(etudiant_id=id)
         except Etudiant.DoesNotExist:
                 messages.error(request,"Les donneés que vous avez entré sont invalides")
                 return redirect('login-page')
-    elif true_role == "enseignant":
+    elif role == "enseignant":
         try:
-            user=Enseignant.objects.get(enseignant_id=true_id)
+            user=Enseignant.objects.get(enseignant_id=id)
         except Enseignant.DoesNotExist:
                 messages.error(request,"Les donneés que vous avez entré sont invalides")
                 return redirect('login-page')
-    elif true_role == "administrateur":
+    elif role == "administrateur":
         try:
-            user=Administrateur.objects.get(administrateur_id=true_id)
+            user=Administrateur.objects.get(administrateur_id=id)
         except Administrateur.DoesNotExist:
                 messages.error(request,"Les donneés que vous avez entré sont invalides")
                 return redirect('login-page')
@@ -96,30 +96,30 @@ def home_page_view(request):
         return redirect('login-page')
     
     del(user.password)
-    delattr(user, true_role + "_id")
+    delattr(user, role + "_id")
     del(user._state)
-    user.id = true_id
-    user.role = true_role
+    user.id = id
+    user.role = role
     return render(request,'studentManagerApp/HTML/home-page.html',{'user':user})
 
 def stats_page_view(request):
-    true_id = request.utilisateur_id
-    true_role = request.role
-    if true_role == "etudiant":
+    id = request.utilisateur_id
+    role = request.role
+    if role == "etudiant":
         try:
-            user=Etudiant.objects.get(etudiant_id=true_id)
+            user=Etudiant.objects.get(etudiant_id=id)
         except Etudiant.DoesNotExist:
                 messages.error(request,"Les donneés que vous avez entré sont invalides")
                 return redirect('login-page')
-    elif true_role == "enseignant":
+    elif role == "enseignant":
         try:
-            user=Enseignant.objects.get(enseignant_id=true_id)
+            user=Enseignant.objects.get(enseignant_id=id)
         except Enseignant.DoesNotExist:
                 messages.error(request,"Les donneés que vous avez entré sont invalides")
                 return redirect('login-page')
-    elif true_role == "administrateur":
+    elif role == "administrateur":
         try:
-            user=Administrateur.objects.get(administrateur_id=true_id)
+            user=Administrateur.objects.get(administrateur_id=id)
         except Administrateur.DoesNotExist:
                 messages.error(request,"Les donneés que vous avez entré sont invalides")
                 return redirect('login-page')
@@ -136,32 +136,31 @@ def stats_page_view(request):
                     'nombre_enseignants':nombre_enseignants}
     
     del(user.password)
-    delattr(user, true_role + "_id")
+    delattr(user, role + "_id")
     del(user._state)
-    user.id = true_id
-    user.role = true_role
+    user.id = id
+    user.role = role
     return render(request,'studentManagerApp/HTML/stats-page.html',{'user':user, 'statistics': statistics})
   
 def edit_page_view(request):
-    true_id = request.utilisateur_id
-    true_role = request.role
-    if true_role == "enseignant":
+    id = request.utilisateur_id
+    role = request.role
+    if role == "enseignant":
         try:
-            user = Enseignant.objects.get(enseignant_id=true_id)
+            user = Enseignant.objects.get(enseignant_id=id)
             matieres = Matiere.objects.filter(enseignant_id=user).order_by('matiere_id')
         except Enseignant.DoesNotExist:
             messages.error(request, "Les donneés que vous avez entré sont invalides")
-            return redirect('login-page')
-            
-    elif true_role == "administrateur":
+            return redirect('login-page')      
+    elif role == "administrateur":
         try:
-            user = Administrateur.objects.get(administrateur_id=true_id)
+            user = Administrateur.objects.get(administrateur_id=id)
             matieres = Matiere.objects.all().order_by('matiere_id')
         except Administrateur.DoesNotExist:
             messages.error(request, "Les donneés que vous avez entré sont invalides")
             return redirect('login-page')
     else:
-        messages.error(request, "Les donneés que vous avez entré sont invalides")
+        messages.error(request, "Veuillez vous connecter pour continuer.")
         return redirect('login-page')
     
     etudiants = Etudiant.objects.order_by('etudiant_id')
@@ -217,10 +216,10 @@ def edit_page_view(request):
         ccs.append(cc_notes)
         sns.append(sn_notes)
     del(user.password)
-    delattr(user, true_role + "_id")
+    delattr(user, role + "_id")
     del(user._state)
-    user.id = true_id
-    user.role = true_role
+    user.id = id
+    user.role = role
     return render(request, 'studentManagerApp/HTML/edit-page.html', {
         'user': user,
         'liste_des_matieres_enseignees': matieres,
@@ -231,11 +230,11 @@ def edit_page_view(request):
 
 # Vue qui renvoie vers le tableau de note
 def tableau_notes_view(request):
-    true_id = request.utilisateur_id
-    true_role = request.role
-    if true_role == "etudiant":
+    id = request.utilisateur_id
+    role = request.role
+    if role == "etudiant":
         try:
-            user = Etudiant.objects.get(etudiant_id=true_id)
+            user = Etudiant.objects.get(etudiant_id=id)
         except Etudiant.DoesNotExist:
             messages.error(request, "Les donneés que vous avez entré sont invalides")
             return redirect('login-page')
@@ -259,9 +258,9 @@ def tableau_notes_view(request):
         # Je crée un dictionnaire contenant les notes de CC et de SN
         notes={'CC':notes_cc, 'SN':notes_sn}
         variables= dict()
-    elif true_role == "enseignant":
+    elif role == "enseignant":
         try:
-            user = Enseignant.objects.get(enseignant_id=true_id)
+            user = Enseignant.objects.get(enseignant_id=id)
         except Enseignant.DoesNotExist:
             messages.error(request, "Les donneés que vous avez entré sont invalides")
             return redirect('login-page')
@@ -287,9 +286,9 @@ def tableau_notes_view(request):
         # Je crée un dictionnaire contenant les notes de CC de tous les étudiants
         notes={'CC':ccs}
         variables= {'etudiants':etudiants}
-    elif true_role == "administrateur":
+    elif role == "administrateur":
         try:
-            user = Administrateur.objects.get(administrateur_id=true_id)
+            user = Administrateur.objects.get(administrateur_id=id)
         except Administrateur.DoesNotExist:
             messages.error(request, "Les donneés que vous avez entré sont invalides")
             return redirect('login-page')
@@ -326,10 +325,10 @@ def tableau_notes_view(request):
         messages.error(request, "Les donneés que vous avez entré sont invalides")
         return redirect('login-page')
     del(user.password)
-    delattr(user, true_role + "_id")
+    delattr(user, role + "_id")
     del(user._state)
-    user.id = true_id
-    user.role = true_role
+    user.id = id
+    user.role = role
     variables.update({'user':user, 'notes':notes, 'matieres':matieres})
     return render(request, 'studentManagerApp/HTML/tableau-notes.html', variables)
 
@@ -477,23 +476,23 @@ def enregistrer_notes_etudiant(request):
     return JsonResponse({"error": "Méthode non autorisée"}, status=405)
 
 def profile_page_view(request):
-    true_id = request.utilisateur_id
-    true_role = request.role
-    if true_role == "etudiant":
+    id = request.utilisateur_id
+    role = request.role
+    if role == "etudiant":
         try:
-            user = Etudiant.objects.get(etudiant_id=true_id)
+            user = Etudiant.objects.get(etudiant_id=id)
         except Etudiant.DoesNotExist:
             messages.error(request, "Les donneés que vous avez entré sont invalides")
             return redirect('login-page')
-    elif true_role == "enseignant":
+    elif role == "enseignant":
         try:
-            user = Enseignant.objects.get(enseignant_id=true_id)
+            user = Enseignant.objects.get(enseignant_id=id)
         except Enseignant.DoesNotExist:
             messages.error(request, "Les donneés que vous avez entré sont invalides")
             return redirect('login-page')
-    elif true_role == "administrateur":
+    elif role == "administrateur":
         try:
-            user = Administrateur.objects.get(administrateur_id=true_id)
+            user = Administrateur.objects.get(administrateur_id=id)
         except Administrateur.DoesNotExist:
             messages.error(request, "Les donneés que vous avez entré sont invalides")
             return redirect('login-page')
@@ -503,9 +502,9 @@ def profile_page_view(request):
     
     del(user.password)
     del(user._state)
-    delattr(user, true_role + "_id")
-    user.id = true_id
-    user.role = true_role
+    delattr(user, role + "_id")
+    user.id = id
+    user.role = role
     return render(request, 'studentManagerApp/HTML/profile-page.html', {'user': user})
 
 def log_out_view(request):

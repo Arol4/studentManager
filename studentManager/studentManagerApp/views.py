@@ -220,12 +220,44 @@ def edit_page_view(request):
     del(user._state)
     user.id = id
     user.role = role
+    noteData = dict()
+    noteData["role"] = role
+    noteData["liste_des_matieres"] = {matiere.matiere_id: {"libelle": f"{matiere.libelle} - Semestre {matiere.semestre}", "enseignant_id": str(matiere.enseignant_id)} for matiere in matieres}
+    noteData["etudiants"] = {etudiant.etudiant_id: {"nom": f"{etudiant.nom} {etudiant.prenom}", "matricule": etudiant.matricule} for etudiant in etudiants}
+    noteData["urls"] = {
+        "enregistrer_notes": "/enregistrer-notes/",
+        "enregistrer_notes_etudiant": "/enregistrer-notes-etudiant/"
+    }
+    matieres_mapped = [(matieres[i], i) for i in range(len(matieres))]
+    etudiants_mapped = [(etudiants[i], i) for i in range(len(etudiants))]
+    noteData["tableaux"] = { matiere.matiere_id : {
+        "CC":{
+            "headers":["Étudiant", "Note"],
+            "rows":{
+                etudiant.etudiant_id: {
+                    "nom": f"{etudiant.nom} {etudiant.prenom}",
+                    "note": ccs[matiere_index][etudiant_index]
+                } for (etudiant, etudiant_index) in etudiants_mapped
+            }
+        },
+        "SN":{
+            "headers":["Étudiant", "Note"],
+            "rows":{
+                etudiant.etudiant_id: {
+                    "nom": f"{etudiant.nom} {etudiant.prenom}",
+                    "note": sns[matiere_index][etudiant_index]
+                } for (etudiant, etudiant_index) in etudiants_mapped
+            }
+        }
+    } for (matiere, matiere_index) in matieres_mapped}
+    # print(noteData["liste_des_matieres"])
     return render(request, 'studentManagerApp/HTML/edit-page.html', {
         'user': user,
         'liste_des_matieres_enseignees': matieres,
         'etudiants': etudiants,
         'ccs': ccs,
-        'sns': sns
+        'sns': sns,
+        "notesData": noteData
     })
 
 # Vue qui renvoie vers le tableau de note

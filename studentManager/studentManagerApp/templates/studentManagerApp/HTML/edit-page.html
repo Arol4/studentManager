@@ -16,100 +16,47 @@
 <p>image ou initiale</p>
 <p>{{user.nom}}-{{user.role}}</p>
 <h1>Editer les notes</h1>
-{% csrf_token %}
-<label>Modifier par: </label>
-<select id="types_modification">
-    <option selected value="par_matiere">Matière</option>
-    <option value="par_etudiant">Étudiant</option>
-</select><br>
-<div id="modification_par_choix">
-    {% if liste_des_matieres_enseignees %}
-        <label>Matière: </label>
-        <select id="liste_des_matieres_enseignees">
-        {% if liste_des_matieres_enseignees|length == 1 %}
-            {% for matiere_enseignee in liste_des_matieres_enseignees %}
-        <option value="{{ matiere_enseignee.matiere_id|escape }}" selected>{{ matiere_enseignee.libelle|escape }} - Semestre {{ matiere_enseignee.semestre|escape }}</option>
-            {% endfor %}
+<form>
+    {% csrf_token %}
+    <label>Modifier par: </label>
+    <select id="types_modification">
+        <option selected value="par_matiere">Matière</option>
+        <option value="par_etudiant">Étudiant</option>
+    </select><br>
+    <div id="modification_par_choix">
+        {% if liste_des_matieres_enseignees %}
+            <label>Matière: </label>
+            <select id="liste_des_matieres_enseignees">
+            {% if liste_des_matieres_enseignees|length == 1 %}
+                {% for matiere_enseignee in liste_des_matieres_enseignees %}
+            <option value="{{ matiere_enseignee.matiere_id|escape }}" selected>{{ matiere_enseignee.libelle|escape }} - Semestre {{ matiere_enseignee.semestre|escape }}</option>
+                {% endfor %}
+            {% else %}
+            <option value="" disabled selected>Selectionnez une matière</option>
+                {% for matiere_enseignee in liste_des_matieres_enseignees %}
+            <option value="{{ matiere_enseignee.matiere_id|escape }}">{{ matiere_enseignee.libelle|escape }} - Semestre {{ matiere_enseignee.semestre|escape }}</option>
+                {% endfor %}
+            {% endif %}
+            </select><br>
+            <label>Type d'évaluation: </label>
+            {% if user.role == "administrateur" %}
+            <select id="types_evaluation">
+                <option value="" disabled selected>Selectionnez un type d'évaluation</option>
+                <option value="CC">Contrôle Continu (CC)</option>
+                <option value="SN">Session Normale (SN)</option>
+            </select>
+            {% else %}
+            <select id="types_evaluation" disabled>
+                <option value="CC" selected>Contrôle Continu (CC)</option>
+            </select>
+            {% endif %}
+            <div id="notes_de_la_matiere_selectionnee"> Sélectionnez une matière et un type d'évaluation pour afficher les notes des étudiants </div>
         {% else %}
-        <option value="" disabled selected>Selectionnez une matière</option>
-            {% for matiere_enseignee in liste_des_matieres_enseignees %}
-        <option value="{{ matiere_enseignee.matiere_id|escape }}">{{ matiere_enseignee.libelle|escape }} - Semestre {{ matiere_enseignee.semestre|escape }}</option>
-            {% endfor %}
+        <p>Aucune matière</p>
         {% endif %}
-        </select><br>
-        <label>Type d'évaluation: </label>
-        {% if user.role == "administrateur" %}
-        <select id="types_evaluation">
-            <option value="" disabled selected>Selectionnez un type d'évaluation</option>
-            <option value="CC">Contrôle Continu (CC)</option>
-            <option value="SN">Session Normale (SN)</option>
-        </select>
-        {% else %}
-        <select id="types_evaluation" disabled>
-            <option value="CC" selected>Contrôle Continu (CC)</option>
-        </select>
-        {% endif %}
-        <div id="notes_de_la_matiere_selectionnee"> Sélectionnez une matière et un type d'évaluation pour afficher les notes des étudiants </div>
-    {% else %}
-    <p>Aucune matière</p>
-    {% endif %}
-</div>
+    </div>
+</form>
+{{ notesData|json_script:"notesData" }}
 <script src = "{% static 'studentManagerApp/JS/edit-page.js' %}"></script>
-<script>
-    window.notesData = {
-        tableaux : {
-            {% for matiere_enseignee in liste_des_matieres_enseignees %}
-            "{{ matiere_enseignee.matiere_id|escapejs }}":{
-                "CC":{
-                    headers:["Étudiant","Note"],
-                    rows:{
-                        {% for etudiant in etudiants %}
-                        "{{ etudiant.etudiant_id|escapejs }}":{
-                                nom: "{{ etudiant.nom|escapejs }} {{ etudiant.prenom|escapejs }}",
-                                note: {% with cc_note=ccs|get_index:forloop.parentloop.counter0|get_index:forloop.counter0 %}{% if cc_note is None %}null{% else %}{{ cc_note }}{% endif %}{% endwith %}
-                            }
-                        {% if not forloop.last %},{% endif %}
-                        {% endfor %}
-                    }
-                },
-                "SN":{
-                    headers:["Étudiant","Note"],
-                    rows:{
-                        {% for etudiant in etudiants %}
-                        "{{ etudiant.etudiant_id|escapejs }}":{
-                                nom: "{{ etudiant.nom|escapejs }} {{ etudiant.prenom|escapejs }}",
-                                note: {% with sn_note=sns|get_index:forloop.parentloop.counter0|get_index:forloop.counter0 %}{% if sn_note is None %}null{% else %}{{ sn_note }}{% endif %}{% endwith %}
-                            }
-                        {% if not forloop.last %},{% endif %}
-                        {% endfor %}
-                    }
-                }
-            }{% if not forloop.last %},{% endif %}
-            {% endfor %}
-        },
-        urls: {
-            enregistrer_notes: "{% url 'enregistrer_notes' %}",
-            enregistrer_notes_etudiant: "{% url 'enregistrer_notes_etudiant' %}"
-        },
-        etudiants: {
-            {% for etudiant in etudiants %}
-                "{{ etudiant.etudiant_id|escapejs }}":{
-                    nom:  "{{ etudiant.nom|escapejs }} {{ etudiant.prenom|escapejs }}",
-                    matricule: " {{ etudiant.matricule|escapejs }}"
-                }
-            {% if not forloop.last %},{% endif %}
-            {% endfor %}          
-        },
-        role : "{{ user.role|escapejs }}",
-        liste_des_matieres : {
-            {% for matiere in liste_des_matieres_enseignees %}
-                "{{ matiere.matiere_id|escapejs }}":{
-                    libelle : "{{ matiere.libelle|escapejs }} - Semestre {{ matiere.semestre|escapejs }}",
-                    enseignant_id : "{{ matiere.enseignant_id|escapejs }}"
-                }
-            {% if not forloop.last %},{% endif %}
-            {% endfor %}
-        }
-    };
-</script>
+<script>    window.notesData = JSON.parse(document.getElementById('notesData').textContent);</script>
 {% endblock %}

@@ -40,4 +40,12 @@ def get_decision(note):
             DEC="NV"
         return DEC
     except (TypeError, NameError):
-        return None        
+        return None
+
+@register.filter
+def get_initials(name):
+    try:
+        initials = ''.join([part[0].upper() for part in name.split()])
+        return initials
+    except (AttributeError, IndexError):
+        return None

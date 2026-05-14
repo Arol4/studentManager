@@ -87,6 +87,10 @@ body {
     color: white;
 }
 
+.nav-links a.active {
+    pointer-events: none;
+}
+
 .nav-links a i, .sidebar-footer a i {
     margin-right: 10px;
     width: 24px;

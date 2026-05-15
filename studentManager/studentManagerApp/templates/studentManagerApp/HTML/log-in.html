@@ -63,7 +63,7 @@
                 {% endif %}
             </div>
             {% if messages %}
-            <div class="messages-error">  
+            <div class="messages-error" id="messages-error">  
                     {% for message in messages %}
                         <div class="error_block">
                             <div class="error_icon">
@@ -87,4 +87,11 @@
         <p class="copyright">StudentManageR © 2025 - Tous droits réservés</p>
     </div>
 </div>
+<script>
+    const popup = document.getElementById("messages-error");
+    popup.classList.add("show");
+    setTimeout(function () {
+        popup.classList.remove("show");
+    }, 3000);
+</script>
 {% endblock %}

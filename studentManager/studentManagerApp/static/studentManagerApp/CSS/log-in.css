@@ -170,6 +170,7 @@ body {
 }
 
 .btn-primary:hover {
+    transform: translateY(-2.5px);
     background-color: var(--secondary);
 }
 
@@ -180,6 +181,7 @@ body {
 }
 
 .btn-secondary:hover {
+    transform: translateY(-2.5px);
     background-color: #e9ecef;
 }
 
@@ -308,11 +310,30 @@ body {
     font-weight: 500;
     line-height: 1.4;
     text-align: center;
-    padding-left: 5px;
+    padding: 0.5em;
 }
 
 
 .error_icon svg {
     background-color: red;
     display: block;
+}
+
+.messages-error {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: white;
+    text-align: center;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    transition: opacity 0.5s, visibility 0.5s;
+    opacity: 0;
+}
+
+.messages-error.show {
+    visibility: visible;
+    opacity: 1;
 }

@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    window.notesData = JSON.parse(document.getElementById('notesData').textContent);
     const formulaire = document.querySelector('form');
     const types_modification = document.getElementById('types_modification');
     const modification_par_choix = document.getElementById('modification_par_choix');

@@ -58,5 +58,4 @@
 </form>
 {{ notesData|json_script:"notesData" }}
 <script src = "{% static 'studentManagerApp/JS/edit-page.js' %}"></script>
-<script>    window.notesData = JSON.parse(document.getElementById('notesData').textContent);</script>
 {% endblock %}

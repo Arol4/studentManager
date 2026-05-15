@@ -41,7 +41,6 @@ body {
     transition: all 0.3s;
     display: flex;
     flex-direction : column;
-    /* overflow-y: scroll; */
 }
 
 .sidebar-header {
@@ -87,24 +86,11 @@ body {
     color: white;
 }
 
-.nav-links a.active {
-    pointer-events: none;
-}
-
 .nav-links a i, .sidebar-footer a i {
     margin-right: 10px;
     width: 24px;
     text-align: center;
 }
-
-/* .nav-links a::before{
-    margin-right: 10px;
-    width: 24px;
-    text-align: center; 
-}
-.nav-links a{
-    font-weight: normal;
-} */
 
 .sidebar-footer{
     margin-top: auto;

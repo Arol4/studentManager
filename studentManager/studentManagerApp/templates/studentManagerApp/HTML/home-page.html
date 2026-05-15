@@ -14,7 +14,7 @@
                     <div class="year-display">2024-2025</div>
                 </div>
                 <nav class="nav-links">
-                    <a href="#" class="active"><i class="fas fa-home"></i><span>Accueil</span></a>
+                    <a class="active"><i class="fas fa-home"></i><span>Accueil</span></a>
                     {% if user.role != "etudiant" %}
                         <a href="{% url 'edit-page' %}"><i class="fas fa-edit"></i><span>Édition des notes</span></a>
                     {% endif %}

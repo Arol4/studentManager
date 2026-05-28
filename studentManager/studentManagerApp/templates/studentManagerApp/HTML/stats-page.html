@@ -1,19 +1,27 @@
-{% extends 'studentManagerApp/HTML/initial-authentificate.html' %}
-{% block content_without_footer %}
-<nav>
-    <p>2024-2025</p>
-    <a href="{% url 'home-page'%}" >Acceuil</a>
-    {% if user.role != "etudiant" %}
-        <a href="{% url 'edit-page'%}" >Édition des notes</a>
+{% extends 'studentManagerApp/HTML/page-structure.html' %}
+{% block navBars %}
+    <nav class="nav-links">
+        <a href="{% url 'home-page'%}"><i class="fas fa-home"></i><span>Accueil</span></a>
+        {% if user.role != "etudiant" %}
+            <a href="{% url 'edit-page' %}"><i class="fas fa-edit"></i><span>Édition des notes</span></a>
+        {% endif %}
+        <a href="{% url 'tableau-notes' %}"><i class="fas fa-table"></i><span>Tableau de notes</span></a>
+        <a class="active"><i class="fas fa-chart-line"></i><span>Statistiques</span></a>
+    </nav>
+    <nav class="sidebar-footer">
+        <a href="{% url 'profile-page' %}"><i class="fas fa-user"></i><span>Profil</span></a>
+        <a href="{% url 'log-out' %}"><i class="fas fa-sign-out-alt"></i><span>Déconnexion</span></a>
+    </nav>
+{% endblock %}
+{% block title %}
+    <h1><i class="fas fa-chart-line"></i>Statistiques</h1>
+    {% if user.role == "etudiant" %}
+        <p>Aies une vision générale des notes de ta classe</p>
+    {% else %}
+        <p>Ayez une vision générale des notes de vos étudiants</p>
     {% endif %}
-    <a href="{% url 'tableau-notes'%}" >Tableau de notes</a>
-    Statistiques
-    <a href="{% url 'profile-page'%}" >Profil</a>
-    <a href="{% url 'log-out'%}" >Déconnexion</a>
-</nav>
-<p>image ou initiale</p>
-<p>{{user.nom}}-{{user.role}}</p>
-<h1>Statistiques</h1>
+{% endblock title %}
+{% block trueBody %}
 nombre total d'étudiants : {{statistics.nombre_etudiants}}<br>
 nombre total de matières du semestre 1: {{statistics.nombre_matieres1}}<br>
 nombre total de matières du semestre 2: {{statistics.nombre_matieres2}}<br>

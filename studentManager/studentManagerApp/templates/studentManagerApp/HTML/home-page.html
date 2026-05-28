@@ -1,117 +1,48 @@
-{% load custom_filters %}
-<html lang="fr">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>StudentManageR</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link rel="stylesheet" href="./../../../static/studentManagerApp/CSS/home-page.css">
-    </head>
-    <body>
-        <div class="container">
-            <aside class="sidebar">
-                <div class="sidebar-header">
-                    <h2><span>StudenT</span><i class="fas fa-graduation-cap"></i><span>ManageR</span></h2>
-                    <div class="year-display">2024-2025</div>
-                </div>
-                <nav class="nav-links">
-                    <a class="active"><i class="fas fa-home"></i><span>Accueil</span></a>
-                    {% if user.role != "etudiant" %}
-                        <a href="{% url 'edit-page' %}"><i class="fas fa-edit"></i><span>Édition des notes</span></a>
-                    {% endif %}
-                    <a href="{% url 'tableau-notes' %}"><i class="fas fa-table"></i><span>Tableau de notes</span></a>
-                    <a href="{% url 'stats-page' %}"><i class="fas fa-chart-line"></i><span>Statistiques</span></a>
-                </nav>
-                <nav class="sidebar-footer">
-                    <a href="{% url 'profile-page' %}"><i class="fas fa-user"></i><span>Profil</span></a>
-                    <a href="{% url 'log-out' %}"><i class="fas fa-sign-out-alt"></i><span>Déconnexion</span></a>
-                </nav>
-            </aside>
-            <main class="main-content">
-                <header class="header">
-                    <div class="tab-title">
-                        <h1><i class="fas fa-home"></i>Accueil</h1>
-                        <p>Bienvenue, Welcome, Willkommen, uzier</p>
-                    </div>
-                    <img src="./../../../static/studentManagerApp/images/logoIME.png" alt="Logo de l'école ime Business and Engineering School avec le mot 'ime' en bleu et un point rouge au-dessus du 'i', accompagné du texte 'Business and Engineering School' en rouge.">
-                    <div class="user-info">
-                        <div class="user-avatar">{{user.nom|get_initials}}</div>
-                        <div class="user-details">
-                            <h3>{{user.nom|title}}</h3>
-                            <span class="role">{{user.role|capfirst}}</span>
-                        </div>
-                    </div>
-                </header>
-                <section class="body">
-                    <div class="image">
-                        <div class="image-container">
-                            <img src="./../../../static/studentManagerApp/images/rentreeAcademique.png" alt="Affiche de la rentrée académique 2022 de l'école ime Business and Engineering School, avec un étudiant souriant sur un ordinateur portable et les détails des campus et de la date de rentrée.">
-                        </div>
-                        <div class="image-container">
-                            <img src="./../../../static/studentManagerApp/images/mobiliteStudentSud-sud.png" alt="Visuel du réseau RAMSESS avec un emblème central représentant un pharaon stylisé et les logos de plusieurs institutions africaines partenaires, illustrant la mobilité scientifique des étudiants Sud-Sud.">
-                        </div>
-                    </div>
-                    <div class="separator"></div>
-                    <div class="imageInfo">
-                        <div class="descriptionImage">
-                            <p>
-                                L'Institut des Métiers de l'Entreprise (IME) a le plaisir d'annoncer la rentrée académique 2024-2025, marquant le début d'une nouvelle année d'apprentissage et de croissance pour nos étudiants.
-                                Nous sommes ravis d'accueillir nos nouveaux étudiants ainsi que de retrouver nos étudiants actuels pour une année riche en opportunités éducatives et professionnelles.
-                            </p>                
-                        </div>
-                        <div class="descriptionImage">
-                            <p>
-                                Cette année, nous continuons à offrir des programmes de formation innovants et adaptés aux besoins du marché du travail, avec un accent particulier sur le développement des compétences pratiques et la préparation à la vie professionnelle.
-                                Nos étudiants bénéficieront d'un environnement d'apprentissage dynamique, soutenu par une équipe pédagogique dévouée et des ressources modernes.
-                            </p>
-                        </div> 
-                    </div>
-                </section>
-                <footer>
-                    <div class="footer-header">
-                        <div class="AboutUs">
-                            <h3>À propos</h3>
-                            <p class="OurMessage">"Nous sommes un institut qui oeuvre depuis 2008 pour former des ingénieurs du futur."</p>
-                        </div>
-                        <div class="links">
-                            <div class="FollowUs">
-                                <h3>Suivez-nous</h3>
-                                <a href="https://www.ime-school.com" title="lien vers le site web de l'IME" class="fas fa-globe"></a>
-                                <a href="https://web.facebook.com/ime.school" title="lien vers la page facebook de l'IME" target="_blank" class="fab fa-facebook"></a>
-                                <a href="https://youtube.com/@imebusinessandengeneerings153?si=8l7QO3UFos8cOQFE" title="lien vers la chaine youtube de l'IME" target="_blank" class="fab fa-youtube"></a>
-                                <a href="https://www.linkedin.com/company/ime-school2017/posts/?feedView=all" title="lien vers la page linkedIn de l'IME" target="_blank" class="fab fa-linkedin"></a>
-                            </div>
-                            <div class="ContactUS">
-                                <h3>Contactez-nous</h3>
-                                <a href="tel:+237683557834" title="Appeler +237 683557834" class="fas fa-phone"></a>
-                                <a href="https://wa.me/237690523505?text=Bonjour%20IME%2C%20je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20programmes." target="_blank" rel="noopener" title="Ecrire sur Whatsapp" class="fab fa-whatsapp"></a>
-                                <a href="mailto:infos@ime-school.com?subject=Demande%20d'information&body=Bonjour%2C%0A%0AJe%20souhaite%20obtenir%20des%20informations%20concernant..." title="Envoyer un email" class="fas fa-envelope"></a>
-                                <a href="https://www.google.com/maps/search/?api=1&query=3PRQ%2B3Q4%20Douala" target="_blank" title="Nous localiser" class="fas fa-map-marker-alt"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="https://www.flaticon.com/free-icons/student" title="student icons" class="reference" target="_blank">Student icons created by Freepik - Flaticon</a>
-                    <p class="copyright">StudentManageR © 2025 - Tous droits réservés</p>
-                </footer>
-            </main>
+{% extends 'studentManagerApp/HTML/page-structure.html' %}
+{% load static %}
+{% block navBars %}
+    <nav class="nav-links">
+        <a class="active"><i class="fas fa-home"></i><span>Accueil</span></a>
+        {% if user.role != "etudiant" %}
+            <a href="{% url 'edit-page' %}"><i class="fas fa-edit"></i><span>Édition des notes</span></a>
+        {% endif %}
+        <a href="{% url 'tableau-notes' %}"><i class="fas fa-table"></i><span>Tableau de notes</span></a>
+        <a href="{% url 'stats-page' %}"><i class="fas fa-chart-line"></i><span>Statistiques</span></a>
+    </nav>
+    <nav class="sidebar-footer">
+        <a href="{% url 'profile-page' %}"><i class="fas fa-user"></i><span>Profil</span></a>
+        <a href="{% url 'log-out' %}"><i class="fas fa-sign-out-alt"></i><span>Déconnexion</span></a>
+    </nav>
+{% endblock %}
+{% block title %}
+    <h1><i class="fas fa-home"></i>Accueil</h1>
+    <p>Bienvenue, Welcome, Willkommen, uzier</p>
+{% endblock title %}
+{% block trueBody %}
+    <div class="body">
+        <div class="image">
+            <div class="image-container">
+                <img src="{% static "studentManagerApp/images/rentreeAcademique.png" %}" alt="Affiche de la rentrée académique 2022 de l'école ime Business and Engineering School, avec un étudiant souriant sur un ordinateur portable et les détails des campus et de la date de rentrée.">
+            </div>
+            <div class="image-container">
+                <img src="{% static "studentManagerApp/images/mobiliteStudentSud-sud.png" %}" alt="Visuel du réseau RAMSESS avec un emblème central représentant un pharaon stylisé et les logos de plusieurs institutions africaines partenaires, illustrant la mobilité scientifique des étudiants Sud-Sud.">
+            </div>
         </div>
-        <script>
-            window.addEventListener('load', adjustTextSize);
-            window.addEventListener('resize', adjustTextSize);
-
-            function adjustTextSize() {
-                const containers = document.querySelectorAll('.descriptionImage');
-                containers.forEach(container => {
-                    const p = container.querySelector('p');
-                    let fontSize = 1;
-                    p.style.fontSize = fontSize + 'px';
-                    
-                    while (p.scrollHeight <= container.clientHeight && fontSize < 200) {
-                        fontSize++;
-                        p.style.fontSize = fontSize + 'px';
-                    }
-                    p.style.fontSize = (fontSize - 1) + 'px';
-                });
-            }
-        </script>
-    </body>
-</html>
+        <div class="separator"></div>
+        <div class="imageInfo">
+            <div class="descriptionImage">
+                <p>
+                    L'Institut des Métiers de l'Entreprise (IME) a le plaisir d'annoncer la rentrée académique 2024-2025, marquant le début d'une nouvelle année d'apprentissage et de croissance pour nos étudiants.
+                    Nous sommes ravis d'accueillir nos nouveaux étudiants ainsi que de retrouver nos étudiants actuels pour une année riche en opportunités éducatives et professionnelles.
+                </p>                
+            </div>
+            <div class="descriptionImage">
+                <p>
+                    Cette année, nous continuons à offrir des programmes de formation innovants et adaptés aux besoins du marché du travail, avec un accent particulier sur le développement des compétences pratiques et la préparation à la vie professionnelle.
+                    Nos étudiants bénéficieront d'un environnement d'apprentissage dynamique, soutenu par une équipe pédagogique dévouée et des ressources modernes.
+                </p>
+            </div> 
+        </div>
+    </div>
+{% endblock %}
+{% block script %}<script src="{% static "studentManagerApp/JS/home-page.js" %}"></script>{% endblock %}

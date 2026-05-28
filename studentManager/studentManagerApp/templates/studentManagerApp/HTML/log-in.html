@@ -62,8 +62,8 @@
                     </div>
                 {% endif %}
             </div>
-            {% if messages %}
-            <div class="messages-error" id="messages-error">  
+            <div class="messages-error" id="messages-error">
+            {% if messages %} 
                     {% for message in messages %}
                         <div class="error_block">
                             <div class="error_icon">
@@ -75,9 +75,9 @@
                             </div>
                             <div class="error_text">{{ message }}</div>
                         </div>
-                    {% endfor %}  
-            </div>
+                    {% endfor %}
             {% endif %}
+            </div>
             <div class="button-group">
                 <input type="submit" value="Se connecter" class="btn btn-primary">
                 <input type="reset" value="Réinitialiser" class="btn btn-secondary">

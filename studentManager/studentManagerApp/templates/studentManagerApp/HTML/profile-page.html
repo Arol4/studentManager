@@ -1,19 +1,23 @@
-{% extends 'studentManagerApp/HTML/initial-authentificate.html' %}
-{% block content_without_footer %}
-<nav>
-    <p>2024-2025</p>
-    <a href="{% url 'home-page'%}" >Acceuil</a>
-    {% if user.role != "etudiant" %}
-        <a href="{% url 'edit-page'%}" >Édition des notes</a>
-    {% endif %}
-    <a href="{% url 'tableau-notes'%}" >Tableau de notes</a>
-    <a href="{% url 'stats-page'%}" >Statistiques</a>
-    Profil
-    <a href="{% url 'log-out' %}" >Déconnexion</a>
-</nav>
-<p>image ou initiale</p>
-<p>{{ user.nom }}-{{ user.role }}</p>
-<h1>Profil</h1>
+{% extends 'studentManagerApp/HTML/page-structure.html' %}
+{% block navBars %}
+    <nav class="nav-links">
+        <a href="{% url 'home-page'%}"><i class="fas fa-home"></i><span>Accueil</span></a>
+        {% if user.role != "etudiant" %}
+            <a href="{% url 'edit-page' %}"><i class="fas fa-edit"></i><span>Édition des notes</span></a>
+        {% endif %}
+        <a href="{% url 'tableau-notes' %}"><i class="fas fa-table"></i><span>Tableau de notes</span></a>
+        <a href="{% url 'stats-page' %}"><i class="fas fa-chart-line"></i><span>Statistiques</span></a>
+    </nav>
+    <nav class="sidebar-footer">
+        <a class="active"><i class="fas fa-user"></i><span>Profil</span></a>
+        <a href="{% url 'log-out' %}"><i class="fas fa-sign-out-alt"></i><span>Déconnexion</span></a>
+    </nav>
+{% endblock %}
+{% block title %}
+    <h1><i class="fas fa-user"></i>Profil</h1>
+    <p>Consulter et/ou modifier votre profil</p>
+{% endblock title %}
+{% block trueBody %}
 <table>
     {% if user.role == "etudiant" %}
         <tr><td>Matricule</td><td><strong>{{ user.matricule }}</strong></td></tr>

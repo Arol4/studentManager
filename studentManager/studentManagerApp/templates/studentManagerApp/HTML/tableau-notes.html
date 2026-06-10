@@ -1,19 +1,6 @@
 {% extends 'studentManagerApp/HTML/page-structure.html' %}
+{% load static %}
 {% load custom_filters %}
-{% block navBars %}
-    <nav class="nav-links">
-        <a href="{% url 'home-page'%}"><i class="fas fa-home"></i><span>Accueil</span></a>
-        {% if user.role != "etudiant" %}
-            <a href="{% url 'edit-page' %}"><i class="fas fa-edit"></i><span>Édition des notes</span></a>
-        {% endif %}
-        <a class="active"><i class="fas fa-table"></i><span>Tableau de notes</span></a>
-        <a href="{% url 'stats-page' %}"><i class="fas fa-chart-line"></i><span>Statistiques</span></a>
-    </nav>
-    <nav class="sidebar-footer">
-        <a href="{% url 'profile-page' %}"><i class="fas fa-user"></i><span>Profil</span></a>
-        <a href="{% url 'log-out' %}"><i class="fas fa-sign-out-alt"></i><span>Déconnexion</span></a>
-    </nav>
-{% endblock %}
 {% block title %}
     <h1><i class="fas fa-table"></i>Tableau de notes</h1>
     {% if user.role == "etudiant" %}
@@ -23,85 +10,92 @@
     {% endif %}
 {% endblock title %}
 {% block trueBody %}
-{% if user.role == "etudiant" %}
-    <table>
-    <tr><td>Matricule</td><td><strong>{{user.matricule}}</strong><td></tr>
-    <tr><td>Nom(s) et Prénom(s)</td><td><strong>{{user.nom}} {{user.prenom}}</strong><td></tr>
-    <tr><td>Né le</td><td><strong>{{user.dateNaiss}}</strong><td></tr>
-    </table>
-    <table border="1">
-        <tr>
-            <th>Matière</th>
-            <th>Crédit affectée</th>
-            <th>Controle Continu</th>
-            <th>Session Normale</th>
-            <th>Moyenne</th>
-            <th>Grade</th>
-            <th>Décision</th>
-        </tr>
-        {% for matiere in matieres %}
+<div class="tableau-de-notes">
+    {% if user.role == "etudiant" %}
+        <table>
+        <tr><th scope="row">Matricule</th><td><strong>{{user.matricule}}</strong><td></tr>
+        <tr><th scope="row">Nom(s) et Prénom(s)</th><td><strong>{{user.nom}} {{user.prenom}}</strong><td></tr>
+        <tr><th scope="row">Né le</th><td><strong>{{user.dateNaiss}}</strong><td></tr>
+        </table>
+        <table border="1">
             <tr>
-                {% with note_cc=notes.CC|get_index:forloop.counter0 note_sn=notes.SN|get_index:forloop.counter0 %}
-                {% with moy=note_sn|get_final_note:note_cc %}
-                {% with grade=moy|get_grade %}
-                {% with decision=moy|get_decision %}
-                    <td>{{ matiere.libelle }}</td>
-                    <td>{{ matiere.nbre_credit }}</td>  
-                    <td>{% if note_cc %}{{note_cc}}{% endif %}</td>
-                    <td>{% if note_sn %}{{note_sn}}{% endif %}</td>
-                    <td>{% if moy %}{{moy}}{% endif %} </td>
-                    <td>{% if grade %}{{grade}}{% endif %} </td>
-                    <td>{% if decision %}{{decision}}{% endif %} </td>
-                {% endwith %}
-                {% endwith %}
-                {% endwith %}
-                {% endwith %}
+                <th scope="col">Matière</th>
+                <th scope="col">Crédit affectée</th>
+                <th scope="col">Controle Continu</th>
+                <th scope="col">Session Normale</th>
+                <th scope="col">Moyenne</th>
+                <th scope="col">Grade</th>
+                <th scope="col">Décision</th>
             </tr>
-        {% endfor %}
-    </table>
-{% elif user.role == "administrateur" or  user.role == "enseignant" %}
-    <table border = "1">
-        <tr>
-            <th rowspan='2' >Nom(s) et Prénom(s)</th>
-            {% for  matiere in matieres %}
-                <th colspan={% if user.role == "administrateur" %}'5'{% else %}'1'{% endif %} >{{matiere.libelle}} {{matiere.semestre}}</th>
-            {% endfor %}
-        </tr>
-        <tr>
             {% for matiere in matieres %}
-                <th>CC</th>
-                {% if user.role == "administrateur" %}
-                    <th>SN</th>
-                    <th>MOY</th>
-                    <th>CR</th>
-                    <th>DEC</th>
-                {% endif %}
-            {% endfor %}
-        </tr>
-        {% for etudiant in etudiants %}
-            <tr>
-                <td>{{etudiant.nom}} {{etudiant.prenom}}</td>
-                {% for matiere in matieres %}
-                    {% with cc_note=notes.CC|get_index:forloop.counter0|get_index:forloop.parentloop.counter0 %}
-                    {% with sn_note=notes.SN|get_index:forloop.counter0|get_index:forloop.parentloop.counter0 %}
-                    {% with moy=sn_note|get_final_note:cc_note %}
-                    {% with credit=matiere.nbre_credit %}
+                <tr>
+                    {% with note_cc=notes.CC|get_index:forloop.counter0 note_sn=notes.SN|get_index:forloop.counter0 %}
+                    {% with moy=note_sn|get_final_note:note_cc %}
+                    {% with grade=moy|get_grade %}
                     {% with decision=moy|get_decision %}
-                        <td>{% if cc_note %}{{cc_note}}{% endif %}</td>
+                        <th scope="row">{{ matiere.libelle }}</th>
+                        <td>{{ matiere.nbre_credit }}</td>  
+                        <td class="note">{% if note_cc %}{{note_cc}}{% endif %}</td>
+                        <td class="note">{% if note_sn %}{{note_sn}}{% endif %}</td>
+                        <td class="note">{% if moy %}{{moy}}{% endif %} </td>
+                        <td>{% if grade %}{{grade}}{% endif %} </td>
+                        <td class="note">{% if decision %}{{decision}}{% endif %} </td>
+                    {% endwith %}
+                    {% endwith %}
+                    {% endwith %}
+                    {% endwith %}
+                </tr>
+            {% endfor %}
+        </table>
+    {% elif user.role == "administrateur" or  user.role == "enseignant" %}
+        <table border = "1">
+            <thead>
+                <tr>
+                    <th rowspan='2' scope="rowgroup" >Nom(s) et Prénom(s)</th>
+                    {% for  matiere in matieres %}
+                        <th {% if user.role == "administrateur" %}colspan='5' scope="colgroup"{% else %}scope="col"{% endif %} >{{matiere.libelle}} {{matiere.semestre}}</th>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    {% for matiere in matieres %}
+                        <th scope="col">CC</th>
                         {% if user.role == "administrateur" %}
-                            <td>{% if sn_note %}{{sn_note}}{% endif %}</td>
-                            <td>{% if moy %}{{moy}}{% endif %}</td>
-                            <td>{{credit}}</td>
-                            <td>{% if decision %}{{decision}}{% endif %}</td>
+                            <th scope="col">SN</th>
+                            <th scope="col">MOY</th>
+                            <th scope="col">CR</th>
+                            <th scope="col">DEC</th>
                         {% endif %}
-                    {% endwith %}
-                    {% endwith %}
-                    {% endwith %}
-                    {% endwith %}
-                    {% endwith %}
-                {% endfor %}
-            </tr>
-        {% endfor %}
-    </table>
-{% endif %}
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+            {% for etudiant in etudiants %}
+                <tr>
+                    <th scope="row">{{etudiant.nom}} {{etudiant.prenom}}</th>
+                    {% for matiere in matieres %}
+                        {% with cc_note=notes.CC|get_index:forloop.counter0|get_index:forloop.parentloop.counter0 %}
+                        {% with sn_note=notes.SN|get_index:forloop.counter0|get_index:forloop.parentloop.counter0 %}
+                        {% with moy=sn_note|get_final_note:cc_note %}
+                        {% with credit=matiere.nbre_credit %}
+                        {% with decision=moy|get_decision %}
+                            <td class="note">{% if cc_note %}{{cc_note}}{% endif %}</td>
+                            {% if user.role == "administrateur" %}
+                                <td class="note">{% if sn_note %}{{sn_note}}{% endif %}</td>
+                                <td class="note">{% if moy %}{{moy}}{% endif %}</td>
+                                <td>{{credit}}</td>
+                                <td class="note">{% if decision %}{{decision}}{% endif %}</td>
+                            {% endif %}
+                        {% endwith %}
+                        {% endwith %}
+                        {% endwith %}
+                        {% endwith %}
+                        {% endwith %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    </div>
 {% endblock %}
+{% block script %}<script src="{% static "studentManagerApp/JS/tableau-notes.js" %}"></script>{% endblock %}

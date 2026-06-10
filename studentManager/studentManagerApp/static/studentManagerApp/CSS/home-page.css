@@ -94,7 +94,7 @@ body {
 
 .sidebar-footer{
     margin-top: auto;
-    padding: 0 10px;
+    padding: 5px 10px 0 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -225,6 +225,23 @@ footer {
     width: 100%;
     height: 100%;
     animation: imageAnimation 8s infinite;          
+}
+
+.tableau-de-notes {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.bonne_note {
+    background-color: green;
+}
+
+.mauvaise_note {
+    background-color: red;
+}
+
+.aucune_note {
+    background-color: gray;
 }
 
 @keyframes imageAnimation {

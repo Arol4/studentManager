@@ -1,6 +1,7 @@
 {% extends 'studentManagerApp/HTML/base.html' %}
 {% load static %}
 {% load custom_filters %}
+{% load nav_helpers %}
 {% block style %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{% static "studentManagerApp/CSS/home-page.css" %}">
@@ -12,8 +13,18 @@
                 <h2><span>StudenT</span><i class="fas fa-graduation-cap"></i><span>ManageR</span></h2>
                 <div class="year-display">2024-2025</div>
             </div>
-            {% block navBars %}
-            {% endblock %}
+            <nav class="nav-links">
+                <a {% nav_link 'home-page'%}><i class="fas fa-home"></i><span>Accueil</span></a>
+                {% if user.role != "etudiant" %}
+                    <a {% nav_link 'edit-page' %}><i class="fas fa-edit"></i><span>Édition des notes</span></a>
+                {% endif %}
+                <a {% nav_link 'tableau-notes' %}><i class="fas fa-table"></i><span>Tableau de notes</span></a>
+                <a {% nav_link 'stats-page' %}><i class="fas fa-chart-line"></i><span>Statistiques</span></a>
+            </nav>
+            <nav class="sidebar-footer">
+                <a {% nav_link 'profile-page' %}><i class="fas fa-user"></i><span>Profil</span></a>
+                <a href="{% url 'log-out' %}"><i class="fas fa-sign-out-alt"></i><span>Déconnexion</span></a>
+            </nav>
         </aside>
         <main class="main-content">
             <header class="header">

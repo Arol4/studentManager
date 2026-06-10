@@ -7,14 +7,14 @@
 {% block trueBody %}
 <form>
     {% csrf_token %}
-    <label>Modifier par: </label>
+    <label for="types_modification">Modifier par: </label>
     <select id="types_modification">
         <option selected value="par_matiere">Matière</option>
         <option value="par_etudiant">Étudiant</option>
     </select><br>
     <div id="modification_par_choix">
         {% if liste_des_matieres_enseignees %}
-            <label>Matière: </label>
+            <label for="liste_des_matieres_enseignees">Matière: </label>
             <select id="liste_des_matieres_enseignees">
             {% if liste_des_matieres_enseignees|length == 1 %}
                 {% for matiere_enseignee in liste_des_matieres_enseignees %}
@@ -27,7 +27,7 @@
                 {% endfor %}
             {% endif %}
             </select><br>
-            <label>Type d'évaluation: </label>
+            <label for="types_evaluation">Type d'évaluation: </label>
             {% if user.role == "administrateur" %}
             <select id="types_evaluation">
                 <option value="" disabled selected>Selectionnez un type d'évaluation</option>

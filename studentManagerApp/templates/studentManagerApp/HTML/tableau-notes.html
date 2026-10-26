@@ -1,0 +1,103 @@
+{% extends 'studentManagerApp/HTML/page-structure.html' %}
+{% load static %}
+{% load custom_filters %}
+{% block title %}
+    <h1><i class="fas fa-table"></i>Tableau de notes</h1>
+    {% if user.role == "etudiant" %}
+        <p>Consulte tes notes</p>
+    {% else %}
+        <p>Consultez et gérez les notes de vos étudiants</p>
+    {% endif %}
+{% endblock title %}
+{% block trueBody %}
+    {% if user.role == "etudiant" %}
+        <table>
+        <tr><th scope="row">Matricule</th><td><strong>{{user.matricule}}</strong><td></tr>
+        <tr><th scope="row">Nom(s) et Prénom(s)</th><td><strong>{{user.nom}} {{user.prenom}}</strong><td></tr>
+        <tr><th scope="row">Né le</th><td><strong>{{user.dateNaiss}}</strong><td></tr>
+        </table>
+        <table class="march-table">
+            <thead>
+                <tr>
+                    <th scope="col">Matière</th>
+                    <th scope="col">Crédit affectée</th>
+                    <th scope="col">Controle Continu</th>
+                    <th scope="col">Session Normale</th>
+                    <th scope="col">Moyenne</th>
+                    <th scope="col">Grade</th>
+                    <th scope="col">Décision</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for matiere in matieres %}
+                    <tr>
+                        {% with note_cc=notes.CC|get_index:forloop.counter0 note_sn=notes.SN|get_index:forloop.counter0 %}
+                        {% with moy=note_sn|get_final_note:note_cc %}
+                        {% with grade=moy|get_grade %}
+                        {% with decision=moy|get_decision %}
+                            <th scope="row">{{ matiere.libelle }}</th>
+                            <td>{{ matiere.nbre_credit }}</td>  
+                            <td class="note">{% if note_cc %}{{note_cc}}{% endif %}</td>
+                            <td class="note">{% if note_sn %}{{note_sn}}{% endif %}</td>
+                            <td class="note">{% if moy %}{{moy}}{% endif %} </td>
+                            <td>{% if grade %}{{grade}}{% endif %} </td>
+                            <td class="note">{% if decision %}{{decision}}{% endif %} </td>
+                        {% endwith %}
+                        {% endwith %}
+                        {% endwith %}
+                        {% endwith %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% elif user.role == "administrateur" or  user.role == "enseignant" %}
+        <table class="march-table">
+            <thead>
+                <tr>
+                    <th rowspan='2' scope="rowgroup" >Nom(s) et Prénom(s)</th>
+                    {% for  matiere in matieres %}
+                        <th {% if user.role == "administrateur" %}colspan='5' scope="colgroup"{% else %}scope="col"{% endif %} >{{matiere.libelle}} {{matiere.semestre}}</th>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    {% for matiere in matieres %}
+                        <th scope="col">CC</th>
+                        {% if user.role == "administrateur" %}
+                            <th scope="col">SN</th>
+                            <th scope="col">MOY</th>
+                            <th scope="col">CR</th>
+                            <th scope="col">DEC</th>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+            {% for etudiant in etudiants %}
+                <tr>
+                    <th scope="row">{{etudiant.nom}} {{etudiant.prenom}}</th>
+                    {% for matiere in matieres %}
+                        {% with cc_note=notes.CC|get_index:forloop.counter0|get_index:forloop.parentloop.counter0 %}
+                        {% with sn_note=notes.SN|get_index:forloop.counter0|get_index:forloop.parentloop.counter0 %}
+                        {% with moy=sn_note|get_final_note:cc_note %}
+                        {% with credit=matiere.nbre_credit %}
+                        {% with decision=moy|get_decision %}
+                            <td class="note">{% if cc_note %}{{cc_note}}{% endif %}</td>
+                            {% if user.role == "administrateur" %}
+                                <td class="note">{% if sn_note %}{{sn_note}}{% endif %}</td>
+                                <td class="note">{% if moy %}{{moy}}{% endif %}</td>
+                                <td>{% if moy %}{% if moy == 10 or moy > 10 %}{{credit}}{% else %}0{% endif %}{% endif %}</td>
+                                <td class="note">{% if decision %}{{decision}}{% endif %}</td>
+                            {% endif %}
+                        {% endwith %}
+                        {% endwith %}
+                        {% endwith %}
+                        {% endwith %}
+                        {% endwith %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}
+{% block script %}<script src="{% static "studentManagerApp/JS/tableau-notes.js" %}"></script>{% endblock %}

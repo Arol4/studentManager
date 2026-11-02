@@ -145,7 +145,8 @@ LOGGING = {
             'interval': 30,
             'backupCount': 3,
             'formatter': 'verbose',
-            'encoding': 'utf-8'
+            'encoding': 'utf-8',
+            'delay': True
         },
         'file_for_all':{
             'level': 'DEBUG',
@@ -155,7 +156,8 @@ LOGGING = {
             'interval': 30,
             'backupCount': 3,
             'formatter': 'verbose',
-            'encoding': 'utf-8'
+            'encoding': 'utf-8',
+            'delay': True
         },
         'console' : {
             'level': 'INFO',
@@ -170,7 +172,8 @@ LOGGING = {
             'interval': 30,
             'backupCount': 3,
             'formatter': 'verbose',
-            'encoding': 'utf-8'            
+            'encoding': 'utf-8',
+            'delay': True
         }
     },
 

@@ -1,0 +1,4 @@
+# requirements-dev.in
+-r base.txt
+
+pip-tools
